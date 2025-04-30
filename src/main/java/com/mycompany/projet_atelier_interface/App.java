@@ -21,10 +21,17 @@ public class App extends Application {
         var scene = new Scene(new StackPane(label), 640, 480);
         stage.setScene(scene);
         stage.show();
+        
+        Accueil accueil = new Accueil();
+        Scene scene2 = new Scene(accueil, 400, 300);
+        stage.setTitle("fenêtre Accueil");
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {
         launch();
+        
     }
 
 }
