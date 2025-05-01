@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.projet_atelier_interface;
+package Modele;
+import com.mycompany.projet_atelier_interface.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.io.*;
