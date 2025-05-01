@@ -36,11 +36,7 @@ public class Chef_Atelier extends BorderPane{
         return home;
     }
     
-    public Scene getFenêtre_ChefAtelier(){
-         return new Scene(this, 600, 400);
-    }
-
-    public Button getBtnCalculer() {
+       public Button getBtnCalculer() {
         return calculer;
     }
 
