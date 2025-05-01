@@ -10,7 +10,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.scene.layout.HBox;
 import javafx.scene.Scene;
-import javafx.application.Application;
 
 /**
  *
@@ -40,6 +39,14 @@ public class Accueil extends BorderPane {
     
     public Button getBtnMaintenance(){
         return maintenance;
+    }
+    
+    public Button getBtnOperateur(){
+        return operateur;
+    }
+    
+    public Button getBtnChefAtelier(){
+        return chefAtelier;
     }
    
     public Scene getFenêtre_accueil(){

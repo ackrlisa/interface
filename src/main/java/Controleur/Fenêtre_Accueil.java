@@ -6,6 +6,7 @@ package Controleur;
 
 import Vue.Accueil;
 import Vue.Maintenance;
+import Vue.Affichage_Atelier;
 import javafx.stage.Stage;
 /**
  *
@@ -30,8 +31,20 @@ public class Fenêtre_Accueil {
             Maintenance vueMaintenance = new Maintenance();
 
             maintenance.setTitle("Fenêtre Maintenance");
-            maintenance.setScene(vueMaintenance.getScene());
+            maintenance.setScene(vueMaintenance.getFenêtre_maintenance());
             maintenance.show();
+        });
+        
+        accueil.getBtnOperateur().setOnAction(e -> { //quand on clique sur le bouton
+            // Ferme la fenêtre d'accueil
+            stage.close();
+            // Crée une nouvelle fenêtre pour la maintenance
+            Stage affichage_atelier = new Stage();
+            Affichage_Atelier vueAffichage_Atelier = new Affichage_Atelier();
+
+            affichage_atelier.setTitle("Fenêtre Affichage Atelier");
+            affichage_atelier.setScene(vueAffichage_Atelier.getFenêtre_Affichage_Atelier());
+            affichage_atelier.show();
         });
     }
 }

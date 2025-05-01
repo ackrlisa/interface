@@ -12,20 +12,30 @@ import javafx.stage.Stage;
 import javafx.scene.layout.HBox;
 import javafx.scene.Scene;
 import javafx.application.Application;
+import javafx.scene.layout.VBox;
 
 /**
  *
  * @author PC
  */
 public class Maintenance extends BorderPane{
+    private Button home;
+            
     public Maintenance(){
+        home = new Button("HOME");
         Button fiabilite = new Button("affichier la fiabilité des machines");
         Button affichage = new Button("affichier l'atelier de fabrication");
         Label titre = new Label("Que voulez-vous faire?");
         
         this.setTop(titre);
-        this.setCenter(fiabilite);
-        this.setBottom(affichage);
+        VBox milieu = new VBox(5); 
+        milieu.getChildren().addAll(affichage, fiabilite);
+        this.setCenter(milieu);
+        this.setRight(home);
+    }
+    
+    public Button getBtnHome() {
+        return home;
     }
     
     public Scene getFenêtre_maintenance(){
