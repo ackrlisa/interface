@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox;
  * @author lisaa
  */
 public class Operateur extends BorderPane {
-     private Button home;
+    private Button home;
     private Button affichage;
             
     public Operateur(){

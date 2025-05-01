@@ -34,7 +34,7 @@ public class Fenêtre_operateur {
         });
                 
       
-        
+        //inutile car dans fenêTRE Atelier on inicie pas de nvelle fenêtre, on ouvre la fenetre affichage donc le bouton Home correspond déjà à celui de affichage
         operateur.getBtnHome().setOnAction(e -> {
             // Ferme la fenêtre de maintenance
             stage.close();
