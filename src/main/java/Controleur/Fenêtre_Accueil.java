@@ -27,12 +27,8 @@ public class Fenêtre_Accueil {
             // Ferme la fenêtre d'accueil
             stage.close();
             // Crée une nouvelle fenêtre pour la maintenance
-            Stage maintenance = new Stage();
-            Maintenance vueMaintenance = new Maintenance();
-
-            maintenance.setTitle("Fenêtre Maintenance");
-            maintenance.setScene(vueMaintenance.getFenêtre_maintenance());
-            maintenance.show();
+            Stage maintenanceStage = new Stage();
+            new Fenêtre_Maintenance(maintenanceStage); // Utilise le contrôleur
         });
         
         accueil.getBtnOperateur().setOnAction(e -> { //quand on clique sur le bouton
