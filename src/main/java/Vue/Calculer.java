@@ -12,42 +12,41 @@ import javafx.scene.layout.VBox;
  *
  * @author lisaa
  */
-public class Gérer_Atelier extends BorderPane {
-    private Button créer;
+public class Calculer extends BorderPane {
+   private Button duréegamme;
+    private Button coutgamme;
     private Button home;
-    private Button modifier;
-    private Button supprimer;
    
     
-    public Gérer_Atelier (){
+    public Calculer (){
+        duréegamme = new Button("Durée de gamme");
+        coutgamme = new Button("Cout d'une gamme ");
         home = new Button("HOME");
-        créer = new Button("Créer ");
-        modifier = new Button("Modifier");
-        supprimer = new Button("Supprimer");
         Label question = new Label("Que voulez-vous faire ?");
     
         this.setTop(question);
         VBox milieu = new VBox(5); 
-        milieu.getChildren().addAll(créer, supprimer, modifier);
+        milieu.getChildren().addAll(duréegamme, coutgamme);
         this.setCenter(milieu);
         this.setRight(home);
     
     }
 
-    public Button getBtnCréer() {
-        return créer;
+    public Button getBtnCoutgamme() {
+        return coutgamme;
     }
 
-    public Button getBtnModifier() {
-        return modifier;
+    public Button getBtnDureegamme() {
+        return duréegamme;
     }
 
-    public Button getBtnSupprimer() {
-        return supprimer;
+    public Button getBtnHome() {
+        return home;
     }
  
-    public Scene getFenêtre_Gérer_Atelier(){
+    public Scene getFenêtre_Calculer(){
          return new Scene(this, 600, 400);
     }  
 }
+ 
 
