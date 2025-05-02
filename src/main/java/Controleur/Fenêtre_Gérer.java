@@ -29,7 +29,7 @@ public class Fenêtre_Gérer {
             Stage gestionmachineStage = new Stage();
             Gestion_Machine gestionmachine = new Gestion_Machine();
             gestionmachineStage.setTitle("Gestion des machines dans l'atelier");
-            gestionmachineStage.setScene(gestionmachine.getFenêtre_Gestion_Machine());
+            gestionmachineStage.setScene(gestionmachine.getFenêtre_Gérer_Machine());
             gestionmachineStage.show();
         });
         

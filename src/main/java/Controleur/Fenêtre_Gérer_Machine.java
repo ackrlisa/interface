@@ -18,7 +18,19 @@ public class Fenêtre_Gérer_Machine {
         gérermachine= new Gestion_Machine();
         
         stage.setTitle("Fenêtre gestion machine");
-        stage.setScene(gérermachine.getFenêtre_Gestion_Machine()); //Appelle la méthode d'instance de la fenêtre accueil
+        stage.setScene(gérermachine.getFenêtre_Gérer_Machine()); //Appelle la méthode d'instance de la fenêtre accueil
         stage.show();
+        
+        gérermachine.getBtnCréer().setOnAction(e -> {
+            
+           });
+        
+        gérermachine.getBtnSupprimer().setOnAction(e -> {
+           
+           });
+        gérermachine.getBtnModifier().setOnAction(e -> {
+            
+           });
+                
 }
 }

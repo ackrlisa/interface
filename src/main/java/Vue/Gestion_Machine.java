@@ -45,11 +45,11 @@ public class Gestion_Machine extends BorderPane {
     public Button getBtnSupprimer() {
         return supprimer;
     }
-    public Button getBtnMOdifier() {
+    public Button getBtnModifier() {
         return modifier;
     }
 
-   public Scene getFenêtre_Gestion_Machine(){
+   public Scene getFenêtre_Gérer_Machine(){
          return new Scene(this, 600, 400);
     }
 }
