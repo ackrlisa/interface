@@ -23,7 +23,7 @@ public class Affichage_Machine extends BorderPane {
 
     public Affichage_Machine() {
         home = new Button ("HOME");
-        afficher = new Button ("Calculer");
+        afficher = new Button ("Afficher");
         affichageMachine = new Label();
         comboMachine = new ComboBox<>();
         comboMachine.getItems().addAll(Machine.getListeMachines());
