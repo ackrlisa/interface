@@ -22,8 +22,8 @@ public class Maintenance extends BorderPane{
             
     public Maintenance(){
         home = new Button("HOME");
-        fiabilite = new Button("afficher la fiabilité des machines");
-        affichage = new Button("afficher l'atelier de fabrication");
+        fiabilite = new Button("Afficher la fiabilité des machines");
+        affichage = new Button("Afficher l'atelier de fabrication");
         Label titre = new Label("Que voulez-vous faire?");
         
         this.setTop(titre);

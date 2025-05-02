@@ -4,6 +4,7 @@
  */
 package Controleur;
 
+import Vue.Gestion_Machine;
 import Vue.Gérer_Atelier;
 import javafx.stage.Stage;
 
@@ -23,8 +24,14 @@ public class Fenêtre_Gérer {
         
         // Gestionnaire pour le bouton "Machines"
         gérerAtelier.getBtnMachine().setOnAction(e -> {
-            System.out.println("Affichage des machines");
-            });
+             stage.close();
+            // Crée une nouvelle fenêtre pour la maintenance
+            Stage gestionmachineStage = new Stage();
+            Gestion_Machine gestionmachine = new Gestion_Machine();
+            gestionmachineStage.setTitle("Gestion des machines dans l'atelier");
+            gestionmachineStage.setScene(gestionmachine.getFenêtre_Gestion_Machine());
+            gestionmachineStage.show();
+        });
         
         // Gestionnaire pour le bouton "Postes"
         gérerAtelier.getBtnPoste().setOnAction(e -> {

@@ -3,31 +3,33 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Vue;
-import javafx.scene.control.Label;
-import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
+
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+
 /**
  *
  * @author lisaa
  */
-public class Chef_Atelier extends BorderPane{
+public class Gestion_Machine extends BorderPane {
     private Button home;
-    private Button gérer_atelier;
-    private Button calculer;
-    private Button affichage;
+    private Button créer;
+    private Button supprimer;
+    private Button modifier;
             
-    public Chef_Atelier(){
+    public Gestion_Machine(){
         home = new Button("HOME");
-        calculer= new Button ("Calculer");
-        gérer_atelier = new Button("Gérer l'atelier");
-        affichage = new Button("Afficher l'atelier de fabrication");
+        créer= new Button ("Créer une machine");
+        supprimer = new Button("Supprimer une machine de l'atelier");
+        modifier = new Button("Modifier une machine");
         Label titre = new Label("Que voulez-vous faire?");
         
         this.setTop(titre);
         VBox milieu = new VBox(5); 
-        milieu.getChildren().addAll(affichage, gérer_atelier, calculer);
+        milieu.getChildren().addAll(créer, supprimer, modifier);
         this.setCenter(milieu);
         this.setRight(home);
     }
@@ -36,18 +38,18 @@ public class Chef_Atelier extends BorderPane{
         return home;
     }
     
-       public Button getBtnCalculer() {
-        return calculer;
+       public Button getBtnCréer() {
+        return créer;
     }
 
-    public Button getBtnAffichage() {
-        return affichage;
+    public Button getBtnSupprimer() {
+        return supprimer;
     }
-    public Button getBtnGérer_atelier() {
-        return gérer_atelier;
+    public Button getBtnMOdifier() {
+        return modifier;
     }
 
-   public Scene getFenêtre_chefAtelier(){
+   public Scene getFenêtre_Gestion_Machine(){
          return new Scene(this, 600, 400);
     }
 }

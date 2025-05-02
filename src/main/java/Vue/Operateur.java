@@ -18,7 +18,7 @@ public class Operateur extends BorderPane {
             
     public Operateur(){
         home = new Button("HOME");
-        affichage = new Button("afficher l'atelier de fabrication");
+        affichage = new Button("Afficher l'atelier de fabrication");
         Label titre = new Label("Que voulez-vous faire?");
         
         this.setTop(titre);
