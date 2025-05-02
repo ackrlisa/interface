@@ -19,10 +19,28 @@ public class Poste extends Equipement {
     public ArrayList<Machine> getListeMachine() {
         return listeMachine;
     }
+
+    public String getdPoste() {
+        return dPoste;
+    }
+
+    public String getRefPoste() {
+        return refPoste;
+    }
+    
+    
       public void setListeMachine(ArrayList<Machine> listeMachine) {
         this.listeMachine = listeMachine;
     }
 
+    public void setdPoste(String dPoste) {
+        this.dPoste = dPoste;
+    }
+
+    public void setRefPoste(String refPoste) {
+        this.refPoste = refPoste;
+    }
+   
     public Poste(ArrayList<Machine> listeMachine, String dPoste, String refPoste) {
         super(dPoste, refPoste, 0); // Initialisation --> coût sera recalculé
         this.dPoste = dPoste;

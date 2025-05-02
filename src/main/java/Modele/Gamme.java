@@ -55,7 +55,11 @@ public class Gamme {
         this.listeEquipement = listeEquipement;
         listeGammes.add(this);
     }
-    
+    // Méthode toString redéfinie
+    @Override
+    public String toString() {
+        return "Gamme [Référence: " + refGamme + ", Nombre d'opérations: " + listeOperation.size() + ", Nombre d'équipements: " + listeEquipement.size() + "]";
+    }
     
     public static void creerGamme(String refGamme) {
         Gamme nouvelle = new Gamme(refGamme, new ArrayList<>(), new ArrayList<>());

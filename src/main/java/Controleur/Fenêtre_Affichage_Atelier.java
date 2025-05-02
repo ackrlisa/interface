@@ -23,7 +23,11 @@ public class Fenêtre_Affichage_Atelier {
         
         // Gestionnaire pour le bouton "Machines"
         affichageAtelier.getBtnMachine().setOnAction(e -> {
-            System.out.println("Affichage des machines");
+            stage.close();
+            
+            // Ouvrir une fentre pour afficher les machines
+            Stage afficherMachineStage = new Stage();
+            new Fenêtre_Affichage_Machine(afficherMachineStage);
             });
         
         // Gestionnaire pour le bouton "Postes"

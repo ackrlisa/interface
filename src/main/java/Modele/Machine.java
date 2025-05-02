@@ -20,6 +20,8 @@ public class Machine extends Equipement {
     private ArrayList<Operation> operations = new ArrayList<>();    
     private Poste poste;
     private ArrayList<Operateur> operateursMachine = new ArrayList<>();
+    private static ArrayList<Machine> listeMachines = new ArrayList<>(); 
+
 
    
 
@@ -33,6 +35,7 @@ public class Machine extends Equipement {
         this.type = type;
         this.poste=poste;
         this.operateursMachine = new ArrayList<>(operateurMachine);
+        listeMachines.add(this);
     }
 
     public ArrayList<Operateur> getOperateursMachine() {
@@ -65,6 +68,10 @@ public class Machine extends Equipement {
 
     public String getType() {
         return type;
+    }
+    
+    public static ArrayList<Machine> getListeMachines() {
+        return listeMachines;
     }
 
        public void setX(float x) {
@@ -102,6 +109,12 @@ public class Machine extends Equipement {
     public void setOperateursMachine(ArrayList<Operateur> operateursMachine) {
         this.operateursMachine = operateursMachine;
     }
+    
+    @Override
+    public String toString() {
+        return "Machine [Réf: " + getRefEquipement() + ", Type: " + type + ", État: " + etatMachine + ", Poste: " + (poste != null ? poste.getdPoste() : "Aucun") + "]";
+    }
+
     
     public void afficheMachine(){
      super.afficheEquipement();
