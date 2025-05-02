@@ -15,6 +15,7 @@ public class Gamme {
     private String refGamme ;
     private ArrayList<Operation> listeOperation=new ArrayList<>();
     private ArrayList<Equipement> listeEquipement=new ArrayList<>() ;
+    private static ArrayList<Gamme> listeGammes = new ArrayList<>(); 
 
     public String getRefGamme() {
         return refGamme;
@@ -28,6 +29,11 @@ public class Gamme {
         return listeEquipement;
     }
 
+    public static ArrayList<Gamme> getListeGammes() {
+        return listeGammes;
+    }
+    
+    
     public void setRefGamme(String refGamme) {
         this.refGamme = refGamme;
     }
@@ -40,17 +46,20 @@ public class Gamme {
         this.listeEquipement = listeEquipement;
     }
 
+    
+    
+
     public Gamme(String refGamme, ArrayList<Operation> listeOperation, ArrayList<Equipement> listeEquipement) {
         this.refGamme = refGamme;
         this.listeOperation = listeOperation;
         this.listeEquipement = listeEquipement;
+        listeGammes.add(this);
     }
     
-    public void creerGamme(String refGamme) {
-        this.refGamme = refGamme;
-        this.listeOperation.clear();
-        this.listeEquipement.clear();
-        System.out.println("Nouvelle gamme créée de référence: " + refGamme);
+    
+    public static void creerGamme(String refGamme) {
+        Gamme nouvelle = new Gamme(refGamme, new ArrayList<>(), new ArrayList<>());
+        System.out.println("Nouvelle gamme créée de référence : " + refGamme);
     }
     //Modifier la référence de la game
     public void modifierGamme(String newRefGamme) {
@@ -60,11 +69,14 @@ public class Gamme {
     }
     
     public void supprimerGamme(){
-     this.refGamme = null;
+        this.refGamme = null;
         this.listeOperation.clear();
         this.listeEquipement.clear();
+        listeGammes.remove(this);  // Supprime cette instance de la liste
+        
         System.out.println("Gamme supprimée !");   
     }
+    
     
    //Modifier gamme en ajoutant ou supprimant une opération ou un équipement
     public void ajoutEquipementOperation(Equipement equipement,Operation operation){
