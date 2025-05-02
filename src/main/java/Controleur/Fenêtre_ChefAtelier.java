@@ -56,7 +56,7 @@ public class Fenêtre_ChefAtelier {
       
         
         chef_atelier.getBtnHome().setOnAction(e -> {
-            // Ferme la fenêtre de maintenance
+            // Ferme la fenêtre de chefAtelier
             stage.close();
             
             // Crée une nouvelle fenêtre d'accueil
