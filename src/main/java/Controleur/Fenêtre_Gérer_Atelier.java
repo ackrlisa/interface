@@ -4,7 +4,12 @@
  */
 package Controleur;
 
+import Vue.Gestion_Equi;
+import Vue.Gestion_Gamme;
 import Vue.Gestion_Machine;
+import Vue.Gestion_Poste;
+import Vue.Gestion_Stockbrut;
+import Vue.Gestion_Stockfini;
 import Vue.Gérer_Atelier;
 import javafx.stage.Stage;
 
@@ -35,39 +40,64 @@ public class Fenêtre_Gérer_Atelier {
         
         // Gestionnaire pour le bouton "Postes"
         gérerAtelier.getBtnPoste().setOnAction(e -> {
-            System.out.println("Affichage des postes");
-           });
+            stage.close();
+            // Crée une nouvelle fenêtre pour la maintenance
+            Stage gestionposteStage = new Stage();
+            Gestion_Poste gestionposte = new Gestion_Poste();
+            gestionposteStage.setTitle("Gestion des postes dans l'atelier");
+            gestionposteStage.setScene(gestionposte.getFenêtre_Gestion_Poste());
+            gestionposteStage.show();
+        });
         
         // Gestionnaire pour le bouton "Gammes"
         gérerAtelier.getBtnGamme().setOnAction(e -> {
-            System.out.println("Affichage des gammes");
+           stage.close();
+           
+           Stage gestiongammeStage = new Stage();
+           Gestion_Gamme gestiongamme= new Gestion_Gamme();
+           gestiongammeStage.setTitle ("Gestion des gammes ");
+           gestiongammeStage.setScene(gestiongamme.getFenêtre_Gestion_Gamme());
+           gestiongammeStage.show();
+           
           });
         
         // Gestionnaire pour le bouton "Personnel"
         gérerAtelier.getBtnPersonnel().setOnAction(e -> {
-            System.out.println("Affichage du personnel");
-            // À compléter selon vos besoins
+          
         });
-        // Gestionnaire pour le bouton "Equipement"
-        gérerAtelier.getBtnEquipement().setOnAction(e -> {
-            System.out.println("Affichage des équipements");
-            // À compléter selon vos besoins
-        });
-        
+               
         // Gestionnaire pour le bouton "Stock des produits finis"
         gérerAtelier.getBtnStock_produits_finis().setOnAction(e -> {
-            System.out.println("Affichage du stock des produits finis");
+            stage.close();
+           
+           Stage gestionstockfiniStage = new Stage();
+           Gestion_Stockfini gestionstockfini= new Gestion_Stockfini();
+           gestionstockfiniStage.setTitle ("Gestion ddu stock des produits finis ");
+           gestionstockfiniStage.setScene(gestionstockfini.getFenêtre_Gestion_Stockfini());
+           gestionstockfiniStage.show();
             });
         
         // Gestionnaire pour le bouton "Stock brut"
         gérerAtelier.getBtnStock_brut().setOnAction(e -> {
-            System.out.println("Affichage du stock brut");
+            stage.close();
+           
+           Stage gestionstockbrutStage = new Stage();
+           Gestion_Stockbrut gestionstockbrut= new Gestion_Stockbrut();
+           gestionstockbrutStage.setTitle ("Gestion du stock des matériaux/ éléments bruts ");
+           gestionstockbrutStage.setScene(gestionstockbrut.getFenêtre_Gestion_Stockbrut());
+           gestionstockbrutStage.show();
             });
-        // Gestionnaire pour le bouton "Equipement"
+             
+           // Gestionnaire pour le bouton "Equipement"
         gérerAtelier.getBtnEquipement().setOnAction(e -> {
-            System.out.println("Affichage des équipements");
-            });
-        
+           stage.close();
+           
+           Stage gestionequiStage = new Stage();
+           Gestion_Equi gestionequi= new Gestion_Equi();
+           gestionequiStage.setTitle ("Gestion des équipements de l'atelier ");
+           gestionequiStage.setScene(gestionequi.getFenêtre_Gestion_Equi());
+           gestionequiStage.show();
+            });   
         // Gestionnaire pour le bouton "HOME"
         gérerAtelier.getBtnHome().setOnAction(e -> {
              stage.close();
