@@ -12,44 +12,63 @@ import javafx.stage.Stage;
  * @author lisaa
  */
 public class Fenêtre_Gérer {
-    private Gérer_Atelier gérer;
+    private Gérer_Atelier gérerAtelier;
     
     public Fenêtre_Gérer (Stage stage){
-        gérer= new Gérer_Atelier();
+        gérerAtelier= new Gérer_Atelier();
         
         stage.setTitle("Fenêtre gérer atelier");
-        stage.setScene(gérer.getFenêtre_Gérer_Atelier()); //Appelle la méthode d'instance de la fenêtre accueil
+        stage.setScene(gérerAtelier.getFenêtre_Gérer_Atelier()); //Appelle la méthode d'instance de la fenêtre accueil
         stage.show();
         
-        gérer.getBtnModifier().setOnAction(e -> { //quand on clique sur le bouton
-            // Ferme la fenêtre d'
-            stage.close();
-            // Crée une nouvelle fenêtre pour la maintenance
-            Stage modifierStage = new Stage();
-            Gérer_Atelier modifierAtelier = new Gérer_Atelier();
-            modifierStage.setTitle("Gérer l'Atelier");
-            modifierStage.setScene(modifierAtelier.getFenêtre_Modifier_Atelier());
-            modifierStage.show();
+        // Gestionnaire pour le bouton "Machines"
+        gérerAtelier.getBtnMachine().setOnAction(e -> {
+            System.out.println("Affichage des machines");
+            });
+        
+        // Gestionnaire pour le bouton "Postes"
+        gérerAtelier.getBtnPoste().setOnAction(e -> {
+            System.out.println("Affichage des postes");
+           });
+        
+        // Gestionnaire pour le bouton "Gammes"
+        gérerAtelier.getBtnGamme().setOnAction(e -> {
+            System.out.println("Affichage des gammes");
+          });
+        
+        // Gestionnaire pour le bouton "Personnel"
+        gérerAtelier.getBtnPersonnel().setOnAction(e -> {
+            System.out.println("Affichage du personnel");
+            // À compléter selon vos besoins
         });
-                
-        gérer.getBtnSupprimer().setOnAction(e -> {
-            // Code pour afficher la fiabilité des machines
+        // Gestionnaire pour le bouton "Equipement"
+        gérerAtelier.getBtnEquipement().setOnAction(e -> {
+            System.out.println("Affichage des équipements");
+            // À compléter selon vos besoins
         });
         
-        gérer.getBtnModifier().setOnAction(e -> {
-            // Code pour afficher la fiabilité des machines
-        });
+        // Gestionnaire pour le bouton "Stock des produits finis"
+        gérerAtelier.getBtnStock_produits_finis().setOnAction(e -> {
+            System.out.println("Affichage du stock des produits finis");
+            });
         
-        gérer.getBtnHome().setOnAction(e -> {
-            // Ferme la fenêtre de maintenance
-            stage.close();
+        // Gestionnaire pour le bouton "Stock brut"
+        gérerAtelier.getBtnStock_brut().setOnAction(e -> {
+            System.out.println("Affichage du stock brut");
+            });
+        // Gestionnaire pour le bouton "Equipement"
+        gérerAtelier.getBtnEquipement().setOnAction(e -> {
+            System.out.println("Affichage des équipements");
+            });
+        
+        // Gestionnaire pour le bouton "HOME"
+        gérerAtelier.getBtnHome().setOnAction(e -> {
+             stage.close();
             
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage);
         });
-        
-       
     }
 
 }
