@@ -34,7 +34,8 @@ public class Fenêtre_Maintenance {
                 
         maintenance.getBtnFiabilite().setOnAction(e -> {
             // Code pour afficher la fiabilité des machines
-        });
+                });
+        
         
         maintenance.getBtnHome().setOnAction(e -> {
             // Ferme la fenêtre de maintenance

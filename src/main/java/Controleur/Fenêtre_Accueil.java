@@ -42,5 +42,12 @@ public class Fenêtre_Accueil {
             affichage_atelier.setScene(vueAffichage_Atelier.getFenêtre_Affichage_Atelier());
             affichage_atelier.show();
         });
+        accueil.getBtnChefAtelier().setOnAction(e -> { //quand on clique sur le bouton
+            // Ferme la fenêtre d'accueil
+            stage.close();
+            // Crée une nouvelle fenêtre pour la maintenance
+            Stage chef_AtelierStage = new Stage();
+            new Fenêtre_ChefAtelier(chef_AtelierStage); // Utilise le contrôleur
+        });
     }
 }

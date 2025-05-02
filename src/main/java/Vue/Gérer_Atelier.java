@@ -37,6 +37,9 @@ public class Gérer_Atelier extends BorderPane {
     public Button getBtnCréer() {
         return créer;
     }
+    public Button getBtnHome() {
+        return home;
+    }
 
     public Button getBtnModifier() {
         return modifier;
@@ -49,5 +52,8 @@ public class Gérer_Atelier extends BorderPane {
     public Scene getFenêtre_Gérer_Atelier(){
          return new Scene(this, 600, 400);
     }  
+
+    public Scene getFenêtre_Modifier_Atelier() {
+        return new Scene (this, 600, 400)  ;  }
 }
 
