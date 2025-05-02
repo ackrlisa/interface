@@ -44,7 +44,7 @@ public class Calculer extends BorderPane {
         return home;
     }
  
-    public Scene getFenêtre_Calculer(){
+    public Scene getFenêtre_Calculer_Atelier(){
          return new Scene(this, 600, 400);
     }  
 }

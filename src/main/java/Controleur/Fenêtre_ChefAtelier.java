@@ -5,6 +5,7 @@
 package Controleur;
 import Vue.Chef_Atelier;
 import Vue.Affichage_Atelier;
+import Vue.Calculer;
 import Vue.Gérer_Atelier;
 import javafx.stage.Stage;
 /**
@@ -38,7 +39,7 @@ public class Fenêtre_ChefAtelier {
             // Crée une nouvelle fenêtre pour operateur
             Stage gérerStage = new Stage();
            Gérer_Atelier gérerAtelier = new Gérer_Atelier();
-            gérerStage.setTitle("Affichage de l'Atelier");
+            gérerStage.setTitle("Gérer l'Atelier");
             gérerStage.setScene(gérerAtelier.getFenêtre_Gérer_Atelier());
             gérerStage.show();
         });
@@ -46,11 +47,11 @@ public class Fenêtre_ChefAtelier {
             // Ferme la fenêtre 
             stage.close();
             // Crée une nouvelle fenêtre pour operateur
-            Stage affichageStage = new Stage();
-            Affichage_Atelier affichageAtelier = new Affichage_Atelier();
-            affichageStage.setTitle("Affichage de l'Atelier");
-            affichageStage.setScene(affichageAtelier.getFenêtre_Affichage_Atelier());
-            affichageStage.show();
+            Stage calculerStage = new Stage();
+            Calculer calculerAtelier = new Calculer();
+            calculerStage.setTitle("Calculer dans l'Atelier");
+            calculerStage.setScene(calculerAtelier.getFenêtre_Calculer_Atelier());
+            calculerStage.show();
         });
       
         
