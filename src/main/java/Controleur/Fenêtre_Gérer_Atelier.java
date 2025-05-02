@@ -12,10 +12,10 @@ import javafx.stage.Stage;
  *
  * @author lisaa
  */
-public class Fenêtre_Gérer {
+public class Fenêtre_Gérer_Atelier {
     private Gérer_Atelier gérerAtelier;
     
-    public Fenêtre_Gérer (Stage stage){
+    public Fenêtre_Gérer_Atelier (Stage stage){
         gérerAtelier= new Gérer_Atelier();
         
         stage.setTitle("Fenêtre gérer atelier");
