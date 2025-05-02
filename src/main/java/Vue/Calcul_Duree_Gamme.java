@@ -42,11 +42,11 @@ public class Calcul_Duree_Gamme extends BorderPane {
         
         
     }
-    public Button getHome() {
+    public Button getBtnHome() {
         return home;
     }
 
-    public Button getCalculer() {
+    public Button getBtnCalculer() {
         return calculer;
     }
 
@@ -59,6 +59,7 @@ public class Calcul_Duree_Gamme extends BorderPane {
     }
     
     public Scene getFenetre_calcul_duree_gamme(){
-         return new Scene(this, 600, 400);
-    }
+    return new Scene(this, 600, 400);
+}
+
 }

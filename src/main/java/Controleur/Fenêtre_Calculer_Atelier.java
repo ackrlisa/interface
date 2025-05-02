@@ -26,14 +26,18 @@ public class Fenêtre_Calculer_Atelier {
             stage.close();
             // Crée une nouvelle fenêtre pour la maintenance
             Stage calculCoutGammeStage = new Stage();
-            new Fenetre_Calcul_Cout_Gamme(calculCoutGammeStage); // Utilise le contrôleur
+            Calcul_Cout_Gamme calculCout = new Calcul_Cout_Gamme(); 
+            calculCoutGammeStage.setTitle("Calcul du cout de la gamme");
+            calculCoutGammeStage.setScene(calculCout.getFenetre_calcul_cout_gamme());
+            calculCoutGammeStage.show();// Utilise le contrôleur
         });
         
         calculer.getBtnDureegamme().setOnAction(e->{
-           stage.close();
-           Stage calculDureeGammeStage = new Stage();
-           new Fenêtre_Calcul_Duree_Gamme(calculDureeGammeStage);
+            stage.close();
+            Stage calculDureeGammeStage = new Stage();
+            new Fenêtre_Calcul_Duree_Gamme(calculDureeGammeStage);
         });
+        
         calculer.getBtnHome().setOnAction(e -> {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil

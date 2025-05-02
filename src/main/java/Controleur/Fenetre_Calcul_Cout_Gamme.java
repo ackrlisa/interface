@@ -24,7 +24,7 @@ public class Fenetre_Calcul_Cout_Gamme {
         stage.setScene(Calcul_Cout_Gamme.getFenetre_calcul_cout_gamme()); // Appelle la méthode pour obtenir la scène de la vue
         stage.show();
         
-        Calcul_Cout_Gamme.getCalculer().setOnAction(e -> {
+        Calcul_Cout_Gamme.getBtnCalculer().setOnAction(e -> {
             Gamme gammeChoisie = Calcul_Cout_Gamme.getComboGamme().getValue();
             if (gammeChoisie != null) {
                 // Calcul du coût et affichage du résultat
@@ -35,7 +35,7 @@ public class Fenetre_Calcul_Cout_Gamme {
             }
         });
         
-        Calcul_Cout_Gamme.getHome().setOnAction(e -> {
+        Calcul_Cout_Gamme.getBtnHome().setOnAction(e -> {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();

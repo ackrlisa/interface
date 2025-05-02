@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import Controleur.Fenêtre_Accueil;
+import Controleur.Fenêtre_Calculer_Atelier ;
 
 /**
  * JavaFX App
@@ -22,6 +23,7 @@ public class App extends Application {
         //stage.show();
         
         new Fenêtre_Accueil(stage); //Lance le controleur
+        
     }
 
     public static void main(String[] args) {

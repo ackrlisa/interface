@@ -42,11 +42,11 @@ public class Calcul_Cout_Gamme extends BorderPane {
         
         
     }
-    public Button getHome() {
+    public Button getBtnHome() {
         return home;
     }
 
-    public Button getCalculer() {
+    public Button getBtnCalculer() {
         return calculer;
     }
 

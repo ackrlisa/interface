@@ -17,13 +17,14 @@ public class Fenêtre_Calcul_Duree_Gamme {
     private Calcul_Duree_Gamme Calcul_Duree_Gamme ;
     
     public Fenêtre_Calcul_Duree_Gamme(Stage stage){
+        System.out.println("Ouverture fenêtre durée");
         Calcul_Duree_Gamme = new Calcul_Duree_Gamme();
 
         stage.setTitle("Calcul de la durée de la gamme");
         stage.setScene(Calcul_Duree_Gamme.getFenetre_calcul_duree_gamme()); // Appelle la méthode pour obtenir la scène de la vue
         stage.show();
         
-        Calcul_Duree_Gamme.getCalculer().setOnAction(e -> {
+        Calcul_Duree_Gamme.getBtnCalculer().setOnAction(e -> {
             Gamme gammeChoisie = Calcul_Duree_Gamme.getComboGamme().getValue();
             if (gammeChoisie != null) {
                 // Calcul du coût et affichage du résultat
@@ -34,7 +35,7 @@ public class Fenêtre_Calcul_Duree_Gamme {
             }
         });
         
-        Calcul_Duree_Gamme.getHome().setOnAction(e -> {
+        Calcul_Duree_Gamme.getBtnHome().setOnAction(e -> {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
