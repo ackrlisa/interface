@@ -49,7 +49,9 @@ public class Fenêtre_Affichage_Atelier {
         // Gestionnaire pour le bouton "Personnel"
         affichageAtelier.getBtnPersonnel().setOnAction(e -> {
             stage.close();
-             // ICI METTRE POUR OUVRIR FENETRE AFFICHAGE CHOIX PERSONNE, j'ai essayé mais ça bueg
+            
+            Stage afficherChoixPersonne = new Stage ();
+            new Fenêtre_Affichage_Choix_Personne(afficherChoixPersonne);
         });
         // Gestionnaire pour le bouton "Equipement"
         affichageAtelier.getBtnEquipement().setOnAction(e -> {
