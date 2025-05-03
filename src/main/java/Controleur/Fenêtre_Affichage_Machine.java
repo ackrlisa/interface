@@ -74,6 +74,12 @@ public class Fenêtre_Affichage_Machine {
             }
         });
         
+      Affichage_Machine.getBtnHome().setOnAction(e -> {
+            stage.close();
+            // Crée une nouvelle fenêtre d'accueil
+            Stage accueilStage = new Stage();
+            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+        });
         
 }
 }

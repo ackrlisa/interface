@@ -99,6 +99,8 @@ public class Poste extends Equipement {
         listePostes.remove(this);
         // Après la suppression des machines, le poste peut être supprimé de l'application (pas d'autre action ici)
         System.out.println("Le poste " + refPoste + " a été supprimé.");
+            listePostes.remove(this);  // Supprime cette instance de la liste
+
     }
    
     //@Override

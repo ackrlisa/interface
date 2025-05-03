@@ -42,5 +42,12 @@ public class Fenetre_Affichage_Operateur {
             }
         
         });
+        
+        Affichage_Operateur.getBtnHome().setOnAction(e -> {
+            stage.close();
+            // Crée une nouvelle fenêtre d'accueil
+            Stage accueilStage = new Stage();
+            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+        });
     }
 }

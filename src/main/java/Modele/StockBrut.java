@@ -13,18 +13,25 @@ import java.util.ArrayList;
  */
 public class StockBrut {
     
-    private final ArrayList<String> listeStock=new ArrayList<>();
+    private static ArrayList<String> listeStock = new ArrayList<>();
 
-      // Ajouter un élément au stock
-    public void ajouterAuStock(String element) {
+    // Ajouter un élément au stock
+    public static void ajouterAuStock(String element) {
         listeStock.add(element);
     }
-    public void supprimerAuStock(String element) {
+
+    // Supprimer un élément du stock
+    public static void supprimerAuStock(String element) {
         listeStock.remove(element);
     }
 
+    // Récupérer la liste complète
+    public static ArrayList<String> getListeStock() {
+        return listeStock;
+    }
+
     // Afficher le contenu du stock
-    public void afficheStock() {
+    public static void afficheStock() {
         if (listeStock.isEmpty()) {
             System.out.println("Le stock BRUT est vide.");
         } else {

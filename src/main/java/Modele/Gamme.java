@@ -100,6 +100,8 @@ public class Gamme {
     } else {
         System.out.println("Cte équipement n'est pas utilisé pour cette gamme");
     }
+    listeGammes.remove(this);  // Supprime cette instance de la liste
+
 }
  
     

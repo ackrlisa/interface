@@ -40,6 +40,13 @@ public class Fenêtre_Affichage_Choix_Personne {
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
         });
+        
+        affichageChoixPersonne.getBtnHome().setOnAction(e -> {
+            stage.close();
+            // Crée une nouvelle fenêtre d'accueil
+            Stage accueilStage = new Stage();
+            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+        });
 
     }
 }

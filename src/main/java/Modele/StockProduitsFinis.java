@@ -37,4 +37,9 @@ public class StockProduitsFinis {
             }
         }
 }
+
+    public ArrayList<ProduitsFinis> getListeStockProduitsFinis() {
+        return listeStockProduitsFinis;
+    }
+    
 }

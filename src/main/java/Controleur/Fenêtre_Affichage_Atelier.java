@@ -53,25 +53,23 @@ public class Fenêtre_Affichage_Atelier {
             Stage afficherChoixPersonne = new Stage ();
             new Fenêtre_Affichage_Choix_Personne(afficherChoixPersonne);
         });
-        // Gestionnaire pour le bouton "Equipement"
-        affichageAtelier.getBtnEquipement().setOnAction(e -> {
-            System.out.println("Affichage des équipements");
-            // À compléter selon vos besoins
-        });
         
-        // Gestionnaire pour le bouton "Stock des produits finis"
-        affichageAtelier.getBtnStock_produits_finis().setOnAction(e -> {
-            System.out.println("Affichage du stock des produits finis");
+      
+        affichageAtelier.getBtnProduits_finis().setOnAction(e -> {
+            stage.close();
+            
+            Stage afficherProduitsFinis = new Stage ();
+            new Fenêtre_Affichage_Produits_Finis(afficherProduitsFinis);
             });
         
         // Gestionnaire pour le bouton "Stock brut"
         affichageAtelier.getBtnStock_brut().setOnAction(e -> {
-            System.out.println("Affichage du stock brut");
-            });
-        // Gestionnaire pour le bouton "Equipement"
-        affichageAtelier.getBtnEquipement().setOnAction(e -> {
-            System.out.println("Affichage des équipements");
-            });
+            stage.close();
+            
+            Stage afficherStockBrut = new Stage ();
+            new Fenêtre_Affichage_Stock_Brut(afficherStockBrut);           
+        });
+        
         
         // Gestionnaire pour le bouton "HOME"
         affichageAtelier.getBtnHome().setOnAction(e -> {
