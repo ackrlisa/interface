@@ -27,10 +27,7 @@ public class Fenêtre_ChefAtelier {
             stage.close();
             // Crée une nouvelle fenêtre 
             Stage affichageStage = new Stage();
-            Affichage_Atelier affichageAtelier = new Affichage_Atelier();
-            affichageStage.setTitle("Affichage de l'Atelier");
-            affichageStage.setScene(affichageAtelier.getFenêtre_Affichage_Atelier());
-            affichageStage.show();
+            new Fenêtre_Affichage_Atelier(affichageStage);
         });
                 
         chef_atelier.getBtnGérer_atelier().setOnAction(e -> { //quand on clique sur le bouton
@@ -38,20 +35,14 @@ public class Fenêtre_ChefAtelier {
             stage.close();
             // Crée une nouvelle fenêtre pour operateur
             Stage gérerStage = new Stage();
-           Gérer_Atelier gérerAtelier = new Gérer_Atelier();
-            gérerStage.setTitle("Gérer l'Atelier");
-            gérerStage.setScene(gérerAtelier.getFenêtre_Gérer_Atelier());
-            gérerStage.show();
+            new Fenêtre_Gérer_Atelier(gérerStage);
         });
         chef_atelier.getBtnCalculer().setOnAction(e -> { //quand on clique sur le bouton
             // Ferme la fenêtre 
             stage.close();
             // Crée une nouvelle fenêtre pour operateur
             Stage calculerStage = new Stage();
-            Calculer calculerAtelier = new Calculer();
-            calculerStage.setTitle("Calculer dans l'Atelier");
-            calculerStage.setScene(calculerAtelier.getFenêtre_Calculer_Atelier());
-            calculerStage.show();
+            new Fenêtre_Calculer_Atelier(calculerStage);
         });
       
         

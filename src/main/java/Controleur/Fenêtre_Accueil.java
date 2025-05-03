@@ -36,11 +36,7 @@ public class Fenêtre_Accueil {
             stage.close();
             // Crée une nouvelle fenêtre pour la maintenance
             Stage affichage_atelier = new Stage();
-            Affichage_Atelier vueAffichage_Atelier = new Affichage_Atelier();
-
-            affichage_atelier.setTitle("Fenêtre Affichage Atelier");
-            affichage_atelier.setScene(vueAffichage_Atelier.getFenêtre_Affichage_Atelier());
-            affichage_atelier.show();
+            new Fenêtre_Affichage_Atelier(affichage_atelier);
         });
         accueil.getBtnChefAtelier().setOnAction(e -> { //quand on clique sur le bouton
             // Ferme la fenêtre d'accueil

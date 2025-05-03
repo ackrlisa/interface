@@ -78,15 +78,12 @@ public class Fenêtre_Gérer_Atelier {
             });
         
         // Gestionnaire pour le bouton "Stock brut"
-        gérerAtelier.getBtnStock_brut().setOnAction(e -> {
-            stage.close();
+        //gérerAtelier.getBtnStock_brut().setOnAction(e -> {
+          //  stage.close();
            
-           Stage gestionstockbrutStage = new Stage();
-           Gestion_Stockbrut gestionstockbrut= new Gestion_Stockbrut();
-           gestionstockbrutStage.setTitle ("Gestion du stock des matériaux/ éléments bruts ");
-           gestionstockbrutStage.setScene(gestionstockbrut.getFenêtre_Gestion_Stockbrut());
-           gestionstockbrutStage.show();
-            });
+           //Stage gestionstockbrutStage = new Stage();
+           //new Fenêtre_Gestion_Stockbrut(gestionstockbrutStage);
+        //});
              
            // Gestionnaire pour le bouton "Equipement"
         gérerAtelier.getBtnEquipement().setOnAction(e -> {

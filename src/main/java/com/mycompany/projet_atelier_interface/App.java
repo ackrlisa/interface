@@ -23,7 +23,7 @@ public class App extends Application {
         //stage.setScene(scene);
         //stage.show();
         
-        new Fenêtre_Affichage_Poste(stage); //Lance le controleur
+        new Fenêtre_Accueil(stage); //Lance le controleur
         
     }
 

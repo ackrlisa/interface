@@ -12,6 +12,8 @@ import javafx.scene.layout.VBox;
  *
  * @author lisaa
  */
+
+//INUTILE !!!
 public class Operateur extends BorderPane {
     private Button home;
     private Button affichage;

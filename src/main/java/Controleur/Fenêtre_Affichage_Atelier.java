@@ -6,6 +6,7 @@ package Controleur;
 import Vue.Accueil;
 import Vue.Maintenance;
 import Vue.Affichage_Atelier;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 /**
  *
@@ -16,7 +17,9 @@ public class Fenêtre_Affichage_Atelier {
     
     public Fenêtre_Affichage_Atelier(Stage stage) {
         affichageAtelier = new Affichage_Atelier();
-        
+        //System.out.println("Initialisation...");
+        //System.out.println("getBtnMachine() = " + affichageAtelier.getBtnMachine());
+
         stage.setTitle("Affichage de l'Atelier");
         stage.setScene(affichageAtelier.getFenêtre_Affichage_Atelier());
         stage.show();
@@ -73,11 +76,12 @@ public class Fenêtre_Affichage_Atelier {
         
         // Gestionnaire pour le bouton "HOME"
         affichageAtelier.getBtnHome().setOnAction(e -> {
+            System.out.println(affichageAtelier.getBtnMachine());
              stage.close();
-            
+             
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage);
+            new Fenêtre_Accueil(accueilStage); // <-- Et pas new Accueil()
         });
     }
 

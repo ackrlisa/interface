@@ -24,12 +24,8 @@ public class Fenêtre_Maintenance {
         maintenance.getBtnAffichage().setOnAction(e -> { //quand on clique sur le bouton
             // Ferme la fenêtre d'
             stage.close();
-            // Crée une nouvelle fenêtre pour la maintenance
             Stage affichageStage = new Stage();
-            Affichage_Atelier affichageAtelier = new Affichage_Atelier();
-            affichageStage.setTitle("Affichage de l'Atelier");
-            affichageStage.setScene(affichageAtelier.getFenêtre_Affichage_Atelier());
-            affichageStage.show();
+            new Fenêtre_Affichage_Atelier(affichageStage); // <-- C’est lui qui attache les actions !
         });
                 
         maintenance.getBtnFiabilite().setOnAction(e -> {
@@ -44,6 +40,11 @@ public class Fenêtre_Maintenance {
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage);
+            //Stage accueilStage = new Stage();
+            //Accueil affichageAccueil = new Accueil();
+            //accueilStage.setTitle("Affichage de l'Atelier");
+            //accueilStage.setScene(affichageAccueil.getFenêtre_accueil());
+            //accueilStage.show();
         });
         
        
