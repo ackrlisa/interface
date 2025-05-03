@@ -24,41 +24,7 @@ public class Fenêtre_Calcul_Duree_Gamme {
     private Calcul_Duree_Gamme Calcul_Duree_Gamme ;
     
     public Fenêtre_Calcul_Duree_Gamme(Stage stage){
-        // Création des opérations
-//Operation op1 = new Operation("OP01", "Découpe", "M01", 2.0f);
-//Operation op2 = new Operation("OP02", "Assemblage", "M01", 1.5f);
-//ArrayList<Operation> operationsPourMachine = new ArrayList<>();
-//operationsPourMachine.add(op1);
-//operationsPourMachine.add(op2);
-
-// Création d'une machine
-//ArrayList<Operateur> operateurs = new ArrayList<>();
-//Machine machine1 = new Machine(
- //       "M01",                      // refMachine
- //       "Machine découpe",         // dMachine
- //       50.0f,                      // coût horaire
-   //     operationsPourMachine,     // liste des opérations
-     //   "Type A",                  // type
-       // null,                      // poste (on le mettra juste après)
-       // operateurs                 // opérateurs
-//);
-
-// Création du poste contenant cette machine
-//ArrayList<Machine> machinesDuPoste = new ArrayList<>();
-//machinesDuPoste.add(machine1);
-//Poste poste = new Poste(machinesDuPoste, "Poste découpe", "P01");
-//machine1.setPoste(poste); // on lie la machine au poste (rétro-lien)
-
-// Création de la gamme
-//ArrayList<Operation> operationsGamme = new ArrayList<>();
-//operationsGamme.add(op1);
-//operationsGamme.add(op2);
-
-//ArrayList<Equipement> equipementsGamme = new ArrayList<>();
-//equipementsGamme.add(machine1); // ou poste si tu veux que la gamme fonctionne par poste
-
-//Gamme gamme = new Gamme("G01", operationsGamme, equipementsGamme);
-
+        
         Calcul_Duree_Gamme = new Calcul_Duree_Gamme();
 
         stage.setTitle("Calcul de la durée de la gamme");

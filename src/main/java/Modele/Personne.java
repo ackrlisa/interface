@@ -5,6 +5,7 @@
 package Modele;
 
 import com.mycompany.projet_atelier_interface.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,6 +15,7 @@ public abstract class Personne {
     private float code ;
     private String nom ;
     private String prenom ;
+
     
     public float getCode() {
         return code;
@@ -26,6 +28,7 @@ public abstract class Personne {
     public String getPrenom() {
         return prenom;
     }
+    
     public void setCode(float code) {
         this.code = code;
     }
@@ -42,7 +45,10 @@ public abstract class Personne {
         this.code = code;
         this.nom = nom;
         this.prenom = prenom;
+        
     }
+    
+   
 
     public void afficher(){
         System.out.println(this.prenom+", "+ this.nom+"code d'identification:"+this.code);

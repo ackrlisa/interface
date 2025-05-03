@@ -5,6 +5,7 @@
 package Modele;
 
 import com.mycompany.projet_atelier_interface.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,10 +15,15 @@ public class Operateur extends Personne{
     
     private String competance ;
     private boolean disponible ; 
-    
+    private static ArrayList<Operateur> listeOperateurs = new ArrayList<>(); 
+
     
     public String getCompetance() {
         return competance;
+    }
+    
+    public static ArrayList<Operateur> getListeOperateurs() {
+        return listeOperateurs;
     }
 
     public boolean isDisponible() {
@@ -37,7 +43,15 @@ public class Operateur extends Personne{
         super(code, nom, prenom);
         this.competance = competance;
         this.disponible = disponible;
+        listeOperateurs.add(this);
     }
+    
+    
+    @Override
+    public String toString() {
+        return "Operateur [Nom: " + super.getNom() + ", Prénom " + super.getPrenom() + ", Code " + super.getCode() +"]";
+    }
+    
     @Override
     public void afficher() {
         System.out.print("Operateur: "+this.getPrenom()+" "+this.getNom()+",code: "+this.getCode()+",competence "+this.competance);

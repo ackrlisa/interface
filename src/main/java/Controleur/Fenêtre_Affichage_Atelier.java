@@ -48,8 +48,8 @@ public class Fenêtre_Affichage_Atelier {
         
         // Gestionnaire pour le bouton "Personnel"
         affichageAtelier.getBtnPersonnel().setOnAction(e -> {
-            System.out.println("Affichage du personnel");
-            // À compléter selon vos besoins
+            stage.close();
+             // ICI METTRE POUR OUVRIR FENETRE AFFICHAGE CHOIX PERSONNE, j'ai essayé mais ça bueg
         });
         // Gestionnaire pour le bouton "Equipement"
         affichageAtelier.getBtnEquipement().setOnAction(e -> {

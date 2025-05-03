@@ -5,15 +5,28 @@
 package Modele;
 
 import com.mycompany.projet_atelier_interface.*;
+import java.util.ArrayList;
 
 /**
  *
  * @author alicedeboever
  */
 public class ChefAtelier extends Personne {
+    private static ArrayList<ChefAtelier> listeChefsAtelier = new ArrayList<>(); 
+    public static ArrayList<ChefAtelier> getListeChefsAtelier() {
+        return listeChefsAtelier;
+    }
+
     public ChefAtelier(float code, String nom, String prenom) {
         super(code, nom, prenom);
+        listeChefsAtelier.add(this);
     }
+    
+    @Override
+    public String toString() {
+        return "Chef Atelier [Nom: " + super.getNom() + ", Prénom " + super.getPrenom() + ", Code " + super.getCode() + "]";
+    }
+    
     @Override
     public void afficher() {
         System.out.println("Chef d'atelier: "+this.getPrenom()+", "+this.getNom()+",code: "+this.getCode());  
