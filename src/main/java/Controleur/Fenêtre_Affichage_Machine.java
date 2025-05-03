@@ -30,28 +30,18 @@ public class Fenêtre_Affichage_Machine {
 
 //Création d'une machine
 //ArrayList<Operateur> operateurs = new ArrayList<>();
-//Machine machine1 = new Machine(
-  //    "M01",                      // refMachine
-  //    "Machine découpe", 
-//10.0f,                     // x
-  //  20.0f,        // dMachine
-  //      50.0f,                      // coût horaire
-    //   operationsPourMachine,     // liste des opérations
-     // "Type A",                  // type
-    //   null,                      // poste (on le mettra juste après)
-     //   operateurs                 // opérateurs
-//);
+//Machine machine1 = new Machine("M01","Machine découpe",10.0f,20.0f,50.0f,operationsPourMachine,"Type A",null,operateurs);
 
 // Création du poste contenant cette machine
 //ArrayList<Machine> machinesDuPoste = new ArrayList<>();
 //machinesDuPoste.add(machine1);
 //Poste poste = new Poste(machinesDuPoste, "Poste découpe", "P01");
-//machine1.setPoste(poste); // on lie la machine au poste (rétro-lien)
+//machine1.setPoste(poste);
 
 
-  //      stage.setTitle("Affiche d'une machine");
-    //    stage.setScene(Affichage_Machine.getFenêtre_affichage_machine()); // Appelle la méthode pour obtenir la scène de la vue
-     //   stage.show();
+  stage.setTitle("Affiche d'une machine");
+        stage.setScene(Affichage_Machine.getFenêtre_affichage_machine()); // Appelle la méthode pour obtenir la scène de la vue
+        stage.show();
         
      //  Affichage_Machine.getComboMachine().getItems().clear();
       //  Affichage_Machine.getComboMachine().getItems().add(machine1);

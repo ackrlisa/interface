@@ -7,7 +7,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import Controleur.Fenêtre_Accueil;
 import Controleur.Fenêtre_Calcul_Duree_Gamme ;
-import Controleur.Fenêtre_Affichage_Machine ; 
+import Controleur.Fenêtre_Affichage_Poste ; 
 
 /**
  * JavaFX App
@@ -23,7 +23,7 @@ public class App extends Application {
         //stage.setScene(scene);
         //stage.show();
         
-        new Fenêtre_Affichage_Machine(stage); //Lance le controleur
+        new Fenêtre_Affichage_Poste(stage); //Lance le controleur
         
     }
 

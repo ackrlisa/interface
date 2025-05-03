@@ -15,6 +15,7 @@ public class Poste extends Equipement {
     private ArrayList<Machine> listeMachine=new ArrayList<>();
     private String dPoste;
     private String refPoste;
+    private static ArrayList<Poste> listePostes = new ArrayList<>(); 
 
     public ArrayList<Machine> getListeMachine() {
         return listeMachine;
@@ -28,6 +29,9 @@ public class Poste extends Equipement {
         return refPoste;
     }
     
+    public static ArrayList<Poste> getListePostes() {
+        return listePostes;
+    }
     
       public void setListeMachine(ArrayList<Machine> listeMachine) {
         this.listeMachine = listeMachine;
@@ -46,12 +50,18 @@ public class Poste extends Equipement {
         this.dPoste = dPoste;
         this.refPoste = refPoste;
         this.listeMachine = listeMachine;
+        listePostes.add(this);
 
         float n = 0;
         for (Machine i : this.listeMachine){
             n += i.getCout();
         }
         super.setCout(n);
+    }
+     // Méthode toString redéfinie
+    @Override
+    public String toString() {
+        return "Poste [Référence: " + refPoste + ", Nombre de machines: " + listeMachine.size() + "]";
     }
     
     public void affichePoste(){
@@ -86,7 +96,7 @@ public class Poste extends Equipement {
         
         // Maintenant, on vide la liste des machines associées à ce poste
         listeMachine.clear();
-
+        listePostes.remove(this);
         // Après la suppression des machines, le poste peut être supprimé de l'application (pas d'autre action ici)
         System.out.println("Le poste " + refPoste + " a été supprimé.");
     }
