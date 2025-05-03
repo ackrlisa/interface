@@ -32,12 +32,18 @@ public class Fenêtre_Affichage_Atelier {
         
         // Gestionnaire pour le bouton "Postes"
         affichageAtelier.getBtnPoste().setOnAction(e -> {
-            System.out.println("Affichage des postes");
+            stage.close();
+            
+            Stage afficherPosteStage = new Stage();
+            new Fenêtre_Affichage_Poste(afficherPosteStage);
            });
         
         // Gestionnaire pour le bouton "Gammes"
         affichageAtelier.getBtnGamme().setOnAction(e -> {
-            System.out.println("Affichage des gammes");
+            stage.close();
+            
+            Stage afficherGammeStage = new Stage();
+            new Fenêtre_Affichage_Gamme(afficherGammeStage);
           });
         
         // Gestionnaire pour le bouton "Personnel"

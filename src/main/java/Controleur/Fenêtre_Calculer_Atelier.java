@@ -27,9 +27,7 @@ public class Fenêtre_Calculer_Atelier {
             // Crée une nouvelle fenêtre pour la maintenance
             Stage calculCoutGammeStage = new Stage();
             Calcul_Cout_Gamme calculCout = new Calcul_Cout_Gamme(); 
-            calculCoutGammeStage.setTitle("Calcul du cout de la gamme");
-            calculCoutGammeStage.setScene(calculCout.getFenetre_calcul_cout_gamme());
-            calculCoutGammeStage.show();// Utilise le contrôleur
+           
         });
         
         calculer.getBtnDureegamme().setOnAction(e->{

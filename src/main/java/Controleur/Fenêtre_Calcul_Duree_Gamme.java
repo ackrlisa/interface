@@ -63,10 +63,8 @@ public class Fenêtre_Calcul_Duree_Gamme {
 
         stage.setTitle("Calcul de la durée de la gamme");
         stage.setScene(Calcul_Duree_Gamme.getFenetre_calcul_duree_gamme()); // Appelle la méthode pour obtenir la scène de la vue
+        Calcul_Duree_Gamme.getComboGamme().getItems().setAll(Gamme.getListeGammes());
         stage.show();
-        
-        //Calcul_Duree_Gamme.getComboGamme().getItems().clear();
-        //Calcul_Duree_Gamme.getComboGamme().getItems().add(gamme);
         
         Calcul_Duree_Gamme.getBtnCalculer().setOnAction(e -> {
             Gamme gammeChoisie = Calcul_Duree_Gamme.getComboGamme().getValue();

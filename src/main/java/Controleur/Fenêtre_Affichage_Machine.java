@@ -39,12 +39,10 @@ public class Fenêtre_Affichage_Machine {
 //machine1.setPoste(poste);
 
 
-  stage.setTitle("Affiche d'une machine");
+        stage.setTitle("Affichage d'une machine");
         stage.setScene(Affichage_Machine.getFenêtre_affichage_machine()); // Appelle la méthode pour obtenir la scène de la vue
+        Affichage_Machine.getComboMachine().getItems().setAll(Machine.getListeMachines());
         stage.show();
-        
-     //  Affichage_Machine.getComboMachine().getItems().clear();
-      //  Affichage_Machine.getComboMachine().getItems().add(machine1);
         
       Affichage_Machine.getBtnAfficher().setOnAction(e -> {
             Machine machineChoisie = Affichage_Machine.getComboMachine().getValue();
@@ -72,7 +70,7 @@ public class Fenêtre_Affichage_Machine {
                 Affichage_Machine.getAffichageMachine().setText(details.toString());
     
             } else {
-                Affichage_Machine.getAffichageMachine().setText("Veuillez sélectionner une gamme.");
+                Affichage_Machine.getAffichageMachine().setText("Veuillez sélectionner une machine.");
             }
         });
         

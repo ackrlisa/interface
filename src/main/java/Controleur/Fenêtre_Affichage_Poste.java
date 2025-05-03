@@ -20,7 +20,7 @@ public class Fenêtre_Affichage_Poste {
     private Affichage_Poste Affichage_Poste ;
     
     public Fenêtre_Affichage_Poste (Stage stage) {
-    Affichage_Poste = new Affichage_Poste();
+        Affichage_Poste = new Affichage_Poste();
     Operation op1 = new Operation("OP01", "Découpe", "M01", 2.0f);
 Operation op2 = new Operation("OP02", "Assemblage", "M01", 1.5f);
 ArrayList<Operation> operationsPourMachine = new ArrayList<>();
@@ -34,6 +34,13 @@ ArrayList<Machine> machinesDuPoste = new ArrayList<>();
 machinesDuPoste.add(machine1);
 Poste poste = new Poste(machinesDuPoste, "Poste découpe", "P01");
 machine1.setPoste(poste);
+
+        stage.setTitle("Affichage d'un poste");
+        stage.setScene(Affichage_Poste.getFenêtre_affichage_poste()); // Appelle la méthode pour obtenir la scène de la vue
+        Affichage_Poste.getComboPoste().getItems().setAll(Poste.getListePostes());
+        stage.show();
+        
+
     Affichage_Poste.getBtnAfficher().setOnAction(e -> {
             Poste posteChoisi = Affichage_Poste.getComboPoste().getValue();
             if (posteChoisi != null) {
@@ -49,7 +56,7 @@ machine1.setPoste(poste);
                 Affichage_Poste.getAffichagePoste().setText(details.toString());
     
             } else {
-                Affichage_Poste.getAffichagePoste().setText("Veuillez sélectionner une gamme.");
+                Affichage_Poste.getAffichagePoste().setText("Veuillez sélectionner un poste.");
             }
         });
         
