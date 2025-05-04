@@ -72,20 +72,20 @@ public class Fenêtre_Gérer_Atelier {
            
            Stage gestionstockfiniStage = new Stage();
            Gestion_Stockfini gestionstockfini= new Gestion_Stockfini();
-           gestionstockfiniStage.setTitle ("Gestion ddu stock des produits finis ");
+           gestionstockfiniStage.setTitle ("Gestion du stock des produits finis ");
            gestionstockfiniStage.setScene(gestionstockfini.getFenêtre_Gestion_Stockfini());
            gestionstockfiniStage.show();
             });
         
         // Gestionnaire pour le bouton "Stock brut"
-        //gérerAtelier.getBtnStock_brut().setOnAction(e -> {
-          //  stage.close();
+        gérerAtelier.getBtnStock_brut().setOnAction(e -> {
+            stage.close();
            
-           //Stage gestionstockbrutStage = new Stage();
-           //new Fenêtre_Gestion_Stockbrut(gestionstockbrutStage);
-        //});
+           Stage gestionstockbrutStage = new Stage();
+           new Fenêtre_Gestion_Stockbrut(gestionstockbrutStage);
+        });
              
-           // Gestionnaire pour le bouton "Equipement"
+           //Gestionnaire pour le bouton "Equipement"
         gérerAtelier.getBtnEquipement().setOnAction(e -> {
            stage.close();
            

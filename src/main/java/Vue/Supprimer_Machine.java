@@ -14,46 +14,39 @@ import javafx.scene.layout.HBox;
  *
  * @author lisaa
  */
-public class Gestion_Gamme extends BorderPane {
-    private Button ajouter;
+public class Supprimer_Machine extends BorderPane{
+        private Button supprimer;
     private Button home;
-    private Button supprimer;
-    private Button modifier;
     
-    public Gestion_Gamme (){
-        ajouter = new Button("Ajouter une nouvelle gamme");
+    public Supprimer_Machine (){
+        
+        supprimer = new Button("Supprimer machine");
         home = new Button("HOME");
-        supprimer = new Button("Supprimer une gamme");
-        modifier= new Button ("Modifier une gamme existante");
         Label qui = new Label("Que voulez-vous faire?");
     
         this.setTop(qui);
         
         HBox bas = new HBox(10); // 10 = espacement entre les boutons
-        bas.getChildren().addAll(ajouter, supprimer, modifier);
+        bas.getChildren().addAll(supprimer);
         this.setCenter(bas);
     }
     
-    public BorderPane getGestion_Gamme() {
+    public BorderPane getSupprimer_Machine() {
         return this;
     }
     
+      
     public Button getBtnSupprimer(){
         return supprimer;
     }
     
-    public Button getBtnModifier(){
-        return modifier;
-    }
-    
-    public Button getBtnAjouter(){
-        return ajouter;
-    }
-   public Button getBtnHome(){
+    public Button getBtnHome(){
         return home;
     }
-    public Scene getFenêtre_Gestion_Gamme(){
+   
+    public Scene getFenêtre_Supprimer_Machine(){
          return new Scene(this, 600, 400);
     }
+
 }
 
