@@ -23,7 +23,7 @@ public class Modification_Gamme extends BorderPane{
         ajoutéquiop = new Button("Ajouter un équipement donc opération à la gamme");
         supprimeréquiop = new Button("Supprimer un équipement donc opération de la gamme");
         home= new Button ("HOME");
-        Label qui = new Label("Bonjour, qui êtes vous?");
+        Label qui = new Label("Que voulez-vous modifier");
     
         this.setTop(qui);
         

@@ -27,7 +27,7 @@ public class Modification_Machine extends BorderPane{
         ajoutopération = new Button("Ajouter une opération à la machine");
         suppressionopération = new Button("Supprimer une opération de la machine");
         home= new Button ("HOME");
-        Label qui = new Label("Bonjour, qui êtes vous?");
+        Label qui = new Label("Que voulez-vous modifier?");
     
         this.setTop(qui);
         

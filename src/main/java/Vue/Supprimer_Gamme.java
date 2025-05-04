@@ -20,9 +20,9 @@ public class Supprimer_Gamme extends BorderPane{
     
     public Supprimer_Gamme (){
         
-        supprimer = new Button("Supprimer machine");
+        supprimer = new Button("Supprimer gamme");
         home = new Button("HOME");
-        Label qui = new Label("Quelle machine voulez-vous supprimer?");
+        Label qui = new Label("Quelle gamme voulez-vous supprimer?");
     
         this.setTop(qui);
         
