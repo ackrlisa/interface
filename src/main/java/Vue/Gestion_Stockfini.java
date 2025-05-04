@@ -30,11 +30,10 @@ public class Gestion_Stockfini extends BorderPane {
         HBox bas = new HBox(10); // 10 = espacement entre les boutons
         bas.getChildren().addAll(supprimer,ajouter);
         this.setCenter(bas);
+        this.setRight(home);
     }
     
-    public BorderPane getGestion_Stockfini() {
-        return this;
-    }
+    
     
     public Button getBtnAjouter(){
         return ajouter;

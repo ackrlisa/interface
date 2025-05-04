@@ -32,6 +32,7 @@ public class Gestion_Gamme extends BorderPane {
         HBox bas = new HBox(10); // 10 = espacement entre les boutons
         bas.getChildren().addAll(ajouter, supprimer, modifier);
         this.setCenter(bas);
+        this.setRight(home);
     }
     
     public BorderPane getGestion_Gamme() {

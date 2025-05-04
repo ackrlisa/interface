@@ -14,44 +14,35 @@ import javafx.scene.layout.HBox;
  *
  * @author lisaa
  */
-public class Gestion_Stockbrut extends BorderPane{
-    private Button ajouter;
-    private Button supprimer;
-    private Button home;
+public class Créer_Gamme extends BorderPane {
+         private Button home;
     
-    public Gestion_Stockbrut (){
-        ajouter = new Button("Ajouter un produit brut au stock");
-        supprimer = new Button("Supprimer produit brut du stock");
+    
+    public Créer_Gamme(){
+        
+        
         home = new Button("HOME");
-        Label qui = new Label("Bonjour, que voulez-vous faire");
+        Label qui = new Label("Quelle machine voulez-vous supprimer?");
     
         this.setTop(qui);
         
         HBox bas = new HBox(10); // 10 = espacement entre les boutons
-        bas.getChildren().addAll(supprimer,ajouter);
+        bas.getChildren().addAll();
         this.setCenter(bas);
         this.setRight(home);
     }
     
-    public BorderPane getGestion_Stockbrut() {
-        return this;
-    }
+   
     
-    public Button getBtnAjouter(){
-        return ajouter;
-    }
-    
-    public Button getBtnSupprimer(){
-        return supprimer;
-    }
+      
+   
     
     public Button getBtnHome(){
         return home;
     }
    
-    public Scene getFenêtre_Gestion_Stockbrut(){
+    public Scene getFenêtre_Créer_Gamme(){
          return new Scene(this, 600, 400);
     }
 
 }
-

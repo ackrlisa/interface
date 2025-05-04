@@ -6,6 +6,7 @@ package Controleur;
 
 
 import Vue.Gestion_Machine;
+import Vue.Modification_Machine;
 import Vue.Supprimer_Machine;
 import javafx.stage.Stage;
 
@@ -28,10 +29,8 @@ public class Fenêtre_Gérer_Machine {
             stage.close();
             // Crée une nouvelle fenêtre pour operateur
             Stage créermachineStage = new Stage();
-           //Créer_Machine créermachine = new Créer_Machine();
-            créermachineStage.setTitle("Création Machine");
-           //créermachineStage.setScene(créermachine.getFenêtre_Créer_Machine());
-            créermachineStage.show();
+           new Fenêtre_Creation_Machine (créermachineStage);
+           
         });
            
         gérermachine.getBtnHome().setOnAction(e -> {
@@ -46,16 +45,17 @@ public class Fenêtre_Gérer_Machine {
             stage.close();
             // Crée une nouvelle fenêtre pour operateur
             Stage supprimerStage = new Stage();
-            //Supprimer_Machine supprimer=new Supprimer_Machine();
-           supprimerStage.setTitle ("Supprimer machine ");
-           //supprimerStage.setScene(supprimer.getFenêtre_Supprimer_Machine());
-           supprimerStage.show();
+            new Fenêtre_Supprimer_Machine (supprimerStage);
+           
                       });
                 
         
         gérermachine.getBtnModifier().setOnAction(e -> {
-            
-           });
+            stage.close();
+            // Crée une nouvelle fenêtre pour la maintenance
+            Stage modifiermachineStage = new Stage();
+            new Fenêtre_Modification_Machine (modifiermachineStage);
+                       });
                 
 }
 }
