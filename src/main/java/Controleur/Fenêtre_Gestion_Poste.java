@@ -25,12 +25,11 @@ public class Fenêtre_Gestion_Poste {
             // Ferme la fenêtre 
             stage.close();
             // Crée une nouvelle fenêtre pour operateur
-            Stage ajouterposteStage = new Stage();
-           // Ajouter_Poste ajouterposte = new Ajouter_Poste();
-            ajouterposteStage.setTitle("Affichage de l'Atelier");
-           // ajouterposteStage.setScene(gestionposte.getFenêtre_Ajouter_Poste());
-            ajouterposteStage.show();
+           
+            Stage creationPoste = new Stage();
+            new Fenêtre_Creation_Poste(creationPoste);
         });
+        
                 
       
         //inutile car dans fenêTRE Atelier on inicie pas de nvelle fenêtre, on ouvre la fenetre affichage donc le bouton Home correspond déjà à celui de affichage
