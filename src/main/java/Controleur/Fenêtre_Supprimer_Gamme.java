@@ -21,4 +21,4 @@ public class Fenêtre_Supprimer_Gamme {
         stage.setTitle("Fenêtre supprimer gamme");
         stage.setScene(supprimergamme.getFenêtre_Supprimer_Gamme()); //Appelle la méthode d'instance de la fenêtre accueil
         stage.show(); 
-}
+    }}

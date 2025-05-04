@@ -21,3 +21,4 @@ public class Fenêtre_Créer_Gamme {
         stage.setScene(créergamme.getFenêtre_Créer_Gamme()); //Appelle la méthode d'instance de la fenêtre accueil
         stage.show();
 }
+}
