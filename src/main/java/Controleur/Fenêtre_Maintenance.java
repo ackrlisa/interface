@@ -29,22 +29,18 @@ public class Fenêtre_Maintenance {
         });
                 
         maintenance.getBtnFiabilite().setOnAction(e -> {
-            // Code pour afficher la fiabilité des machines
+            stage.close();
+            Stage affichageStage = new Stage();
+            new Fenêtre_Fiabilité(affichageStage);
                 });
         
         
         maintenance.getBtnHome().setOnAction(e -> {
             // Ferme la fenêtre de maintenance
             stage.close();
-            
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage);
-            //Stage accueilStage = new Stage();
-            //Accueil affichageAccueil = new Accueil();
-            //accueilStage.setTitle("Affichage de l'Atelier");
-            //accueilStage.setScene(affichageAccueil.getFenêtre_accueil());
-            //accueilStage.show();
         });
         
        

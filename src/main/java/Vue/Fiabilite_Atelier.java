@@ -7,6 +7,7 @@ package Vue;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
@@ -18,19 +19,27 @@ public class Fiabilite_Atelier extends BorderPane{
     private Button fiabilite_par_machine;
     private Button ordrefiabilite;
     private Button home;
+    private Button inserer;
+    TextField chemin_acces = new TextField();
+    Label ok = new Label("");
+    Label reponse = new Label("");
     
     public Fiabilite_Atelier (){
         home = new Button("HOME");
         fiabilite_par_machine = new Button("Fiabilité des machines");
         ordrefiabilite = new Button("Ordre de fiabilité");
-    
-    Label question = new Label("Que voulez-vous afficher ?");
-    
-        this.setTop(question);
+        inserer = new Button("Inserer");
+   
+        VBox haut = new VBox(3);
+        Label indication = new Label("veuillez entrez le chemin d'accès au fichier de maintenance à analyser");
+        
+        haut.getChildren().addAll(indication, chemin_acces, inserer, ok);
+        this.setTop(haut);
         VBox milieu = new VBox(5); 
-        milieu.getChildren().addAll(ordrefiabilite, fiabilite_par_machine);
+        milieu.getChildren().addAll(fiabilite_par_machine, ordrefiabilite);
         this.setCenter(milieu);
         this.setRight(home);
+        this.setBottom(reponse);
     
     }
     public Button getBtnOrdrefiabilite() {
@@ -48,4 +57,19 @@ public Scene getFenêtre_Fiabilite_Atelier(){
          return new Scene(this, 600, 400);
     } 
 
+    public Button getBtnInserer() {
+        return inserer;
+    }
+    
+    public TextField getChemin_acces() {
+        return chemin_acces;
+    }
+
+    public Label getOk (){
+        return ok;
+    }
+    
+    public Label getReponse (){
+        return reponse;
+    }
 }
