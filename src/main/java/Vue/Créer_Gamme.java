@@ -17,7 +17,7 @@ import javafx.scene.layout.VBox;
  * @author lisaa
  */
 public class Créer_Gamme extends BorderPane {
-       private TextField refGamme, listeOperation, listeEquipement, listeGammes;
+    private TextField refGamme, listeOperation, listeEquipement, listeGammes;
     private Button creer, home;
     private Label resultat;
 
