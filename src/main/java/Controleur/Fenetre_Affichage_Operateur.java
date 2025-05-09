@@ -7,6 +7,7 @@ package Controleur;
 import Modele.Operateur;
 import Vue.Affichage_Operateur;
 import javafx.stage.Stage;
+import Modele.ModèleCarte;
 
 /**
  *
@@ -14,9 +15,10 @@ import javafx.stage.Stage;
  */
 public class Fenetre_Affichage_Operateur {
     private Affichage_Operateur Affichage_Operateur ;
+    private ModèleCarte modeleCarte;
     
-    public Fenetre_Affichage_Operateur(Stage stage){
-        
+    public Fenetre_Affichage_Operateur(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         Affichage_Operateur = new Affichage_Operateur();
 
         stage.setTitle("Affichage d'un operateur");
@@ -47,7 +49,7 @@ public class Fenetre_Affichage_Operateur {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
     }
 }

@@ -4,6 +4,7 @@
  */
 package Controleur;
 
+import Modele.ModèleCarte;
 import Vue.Modification_Gamme;
 import Vue.Modification_Machine;
 import javafx.stage.Stage;
@@ -14,8 +15,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Modification_Gamme {
      private Modification_Gamme modifiergamme;
+      private ModèleCarte modeleCarte;
     
-    public Fenêtre_Modification_Gamme (Stage stage){
+    public Fenêtre_Modification_Gamme (Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         modifiergamme= new Modification_Gamme();
         
         stage.setTitle("Fenêtre modification de gamme");
@@ -34,7 +37,7 @@ public class Fenêtre_Modification_Gamme {
        stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
      });
 }
 }

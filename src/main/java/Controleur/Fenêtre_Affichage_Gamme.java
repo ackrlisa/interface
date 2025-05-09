@@ -5,6 +5,7 @@
 package Controleur;
 
 import Modele.Gamme;
+import Modele.ModèleCarte;
 import Vue.Affichage_Gamme;
 import javafx.stage.Stage;
 
@@ -14,8 +15,9 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Affichage_Gamme {
     private Affichage_Gamme Affichage_Gamme ;
-    
-    public Fenêtre_Affichage_Gamme(Stage stage){
+     private ModèleCarte modeleCarte;
+    public Fenêtre_Affichage_Gamme(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         
         Affichage_Gamme = new Affichage_Gamme();
 
@@ -52,7 +54,7 @@ public class Fenêtre_Affichage_Gamme {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
     }
 }

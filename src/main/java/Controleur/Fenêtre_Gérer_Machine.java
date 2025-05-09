@@ -5,6 +5,7 @@
 package Controleur;
 
 
+import Modele.ModèleCarte;
 import Vue.Gestion_Machine;
 import Vue.Modification_Machine;
 import Vue.Supprimer_Machine;
@@ -16,8 +17,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Gérer_Machine {
     private Gestion_Machine gérermachine;
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Gérer_Machine (Stage stage){
+    public Fenêtre_Gérer_Machine (Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         gérermachine= new Gestion_Machine();
         
         stage.setTitle("Fenêtre gestion machine");
@@ -29,7 +32,7 @@ public class Fenêtre_Gérer_Machine {
             stage.close();
             // Crée une nouvelle fenêtre pour operateur
             Stage créermachineStage = new Stage();
-           new Fenêtre_Creation_Machine (créermachineStage);
+           new Fenêtre_Creation_Machine (créermachineStage,modeleCarte);
            
         });
            
@@ -37,7 +40,7 @@ public class Fenêtre_Gérer_Machine {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
            });
         
         gérermachine.getBtnSupprimer().setOnAction(e -> {
@@ -45,7 +48,7 @@ public class Fenêtre_Gérer_Machine {
             stage.close();
             // Crée une nouvelle fenêtre pour operateur
             Stage supprimerStage = new Stage();
-            new Fenêtre_Supprimer_Machine (supprimerStage);
+            new Fenêtre_Supprimer_Machine (supprimerStage,modeleCarte);
            
                       });
                 
@@ -54,7 +57,7 @@ public class Fenêtre_Gérer_Machine {
             stage.close();
             // Crée une nouvelle fenêtre pour la maintenance
             Stage modifiermachineStage = new Stage();
-            new Fenêtre_Modification_Machine (modifiermachineStage);
+            new Fenêtre_Modification_Machine (modifiermachineStage,modeleCarte);
                        });
                 
 }

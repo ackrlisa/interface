@@ -18,7 +18,7 @@ import javafx.scene.layout.VBox;
  */
 public class Creation_Machine extends BorderPane {
     private TextField refMachine, dMachine, x, y, cout, type;
-    private Button creer, home;
+    private Button creer, home, carte;
     private Label resultat;
 
     public Creation_Machine() {
@@ -50,7 +50,9 @@ public class Creation_Machine extends BorderPane {
 
         creer = new Button("Créer la machine");
         home = new Button("HOME");
+        carte=new Button ("Carte");
         this.setRight(home);
+        this.setLeft(carte);
         this.setBottom(creer);
     }
 
@@ -89,7 +91,9 @@ public class Creation_Machine extends BorderPane {
     public Button getHome() {
         return home;
     }
-    
+    public Button getCarte() {
+        return carte;
+    }
     public Scene getFenêtre_creation_machine(){
          return new Scene(this, 700, 500);
     }

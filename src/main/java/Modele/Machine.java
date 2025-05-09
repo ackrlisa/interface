@@ -9,12 +9,12 @@ package Modele;
  * @author lisaa
  */
 
-import com.mycompany.projet_atelier_interface.*;
+
 import java.util.ArrayList;
 public class Machine extends Equipement {
     private String type;
     private float x;
-      private String refMachine;
+    private String refMachine;
     private float y;
     private boolean dispo;
     private EtatMachine etatMachine;
@@ -39,7 +39,8 @@ public class Machine extends Equipement {
         Equipement.getListeEquipements().add(this);
     }
 public String getRefMachine() {
-        return refMachine;
+      
+    return refMachine;
        
 }
     public ArrayList<Operateur> getOperateursMachine() {

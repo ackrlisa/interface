@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controleur;
+import Modele.ModèleCarte;
 import Vue.Accueil;
 import Vue.Operateur;
 import Vue.Affichage_Atelier;
@@ -16,8 +17,10 @@ import javafx.stage.Stage;
 //INUTILE !!!
 public class Fenêtre_operateur {
     private Operateur operateur;
+    private ModèleCarte modeleCarte;
     
-    public Fenêtre_operateur (Stage stage){
+    public Fenêtre_operateur (Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte =modeleCarte;
         operateur= new Operateur();
         
         stage.setTitle("Fenêtre opérateur");
@@ -29,7 +32,7 @@ public class Fenêtre_operateur {
             stage.close();
             // Crée une nouvelle fenêtre pour operateur
             Stage affichageStage = new Stage();
-            new Fenêtre_Affichage_Atelier(affichageStage);
+            new Fenêtre_Affichage_Atelier(affichageStage,modeleCarte);
         });
                  
         

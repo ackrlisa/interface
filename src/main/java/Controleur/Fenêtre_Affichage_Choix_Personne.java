@@ -4,6 +4,7 @@
  */
 package Controleur;
 
+import Modele.ModèleCarte;
 import Vue.Affichage_Choix_Personne;
 import javafx.stage.Stage;
 /**
@@ -12,8 +13,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Affichage_Choix_Personne {
     private Affichage_Choix_Personne affichageChoixPersonne;  // Vue pour le calcul (fenêtre principale)
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Affichage_Choix_Personne(Stage stage) {
+    public Fenêtre_Affichage_Choix_Personne(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         affichageChoixPersonne = new Affichage_Choix_Personne();
 
         stage.setTitle("Choix personne");
@@ -24,28 +27,28 @@ public class Fenêtre_Affichage_Choix_Personne {
             stage.close();
             
             Stage afficherOperateurStage = new Stage();
-            new Fenetre_Affichage_Operateur(afficherOperateurStage);
+            new Fenetre_Affichage_Operateur(afficherOperateurStage,modeleCarte);
         });
         
         affichageChoixPersonne.getBtnChefAtelier().setOnAction(e->{
             stage.close();
             
             Stage afficherChefAtelierStage = new Stage();
-            new Fenêtre_Affichage_Chef_Atelier(afficherChefAtelierStage);
+            new Fenêtre_Affichage_Chef_Atelier(afficherChefAtelierStage,modeleCarte);
         });
         
         affichageChoixPersonne.getBtnHome().setOnAction(e -> {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
         
         affichageChoixPersonne.getBtnHome().setOnAction(e -> {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
 
     }

@@ -4,6 +4,7 @@
  */
 package Controleur;
 
+import Modele.ModèleCarte;
 import Vue.Modification_Machine;
 import javafx.stage.Stage;
 
@@ -13,8 +14,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Modification_Machine {
     private Modification_Machine modifiermachine;
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Modification_Machine (Stage stage){
+    public Fenêtre_Modification_Machine (Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         modifiermachine= new Modification_Machine();
         
         stage.setTitle("Fenêtre modification machine");
@@ -39,7 +42,7 @@ public class Fenêtre_Modification_Machine {
        stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
      });
 }
 }

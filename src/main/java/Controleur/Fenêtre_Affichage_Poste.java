@@ -7,6 +7,7 @@ import Vue.Affichage_Poste ;
 import Modele.Operation;
 import Modele.Poste ;
 import Modele.Machine;
+import Modele.ModèleCarte;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -18,8 +19,10 @@ import Modele.Operateur ;
  */
 public class Fenêtre_Affichage_Poste {
     private Affichage_Poste Affichage_Poste ;
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Affichage_Poste (Stage stage) {
+    public Fenêtre_Affichage_Poste (Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         Affichage_Poste = new Affichage_Poste();
     //Operation op1 = new Operation("OP01", "Découpe", "M01", 2.0f);
 //Operation op2 = new Operation("OP02", "Assemblage", "M01", 1.5f);
@@ -64,7 +67,7 @@ public class Fenêtre_Affichage_Poste {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
     }
 }

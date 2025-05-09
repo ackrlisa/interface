@@ -4,6 +4,7 @@
  */
 package Controleur;
 
+import Modele.ModèleCarte;
 import Vue.Gestion_Machine;
 import Vue.Supprimer_Machine;
 import javafx.stage.Stage;
@@ -14,8 +15,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Supprimer_Machine {
     private Supprimer_Machine supprimermachine;
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Supprimer_Machine (Stage stage){
+    public Fenêtre_Supprimer_Machine (Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         supprimermachine= new Supprimer_Machine();
         
         stage.setTitle("Fenêtre suppression machines");
@@ -26,7 +29,7 @@ public class Fenêtre_Supprimer_Machine {
          stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
            });
 
             

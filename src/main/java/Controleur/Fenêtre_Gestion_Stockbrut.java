@@ -4,6 +4,7 @@
  */
 package Controleur;
 
+import Modele.ModèleCarte;
 import Vue.Gestion_Stockbrut;
 import javafx.stage.Stage;
 
@@ -13,8 +14,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Gestion_Stockbrut {
     private Gestion_Stockbrut gérerstockbrut;
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Gestion_Stockbrut (Stage stage){
+    public Fenêtre_Gestion_Stockbrut (Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         gérerstockbrut= new Gestion_Stockbrut();
         
         stage.setTitle("Fenêtre gestion stock brut");
@@ -25,7 +28,7 @@ public class Fenêtre_Gestion_Stockbrut {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage créationstockbrutStage = new Stage();
-            new Fenêtre_Création_Stock_Brut(créationstockbrutStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Création_Stock_Brut(créationstockbrutStage,modeleCarte); // Redirige vers la fenêtre d'accueil
            });
         
         gérerstockbrut.getBtnSupprimer().setOnAction(e -> {
@@ -35,7 +38,7 @@ public class Fenêtre_Gestion_Stockbrut {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
            
                 

@@ -4,6 +4,7 @@
  */
 package Controleur;
 
+import Modele.ModèleCarte;
 import Modele.TestFichier;
 import Vue.Fiabilite_Atelier;
 import java.util.Arrays;
@@ -16,9 +17,11 @@ import javafx.scene.control.Label;
  */
 public class Fenêtre_Fiabilité {
     private Fiabilite_Atelier fiabilite;
+     private ModèleCarte modeleCarte;
     String c;
     
-    public Fenêtre_Fiabilité (Stage stage){
+    public Fenêtre_Fiabilité (Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         fiabilite= new Fiabilite_Atelier();
         
         stage.setTitle("Fenêtre fiabilité");
@@ -30,7 +33,7 @@ public class Fenêtre_Fiabilité {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage);
+            new Fenêtre_Accueil(accueilStage,modeleCarte);
         });
         
         fiabilite.getBtnInserer().setOnAction(e -> {
