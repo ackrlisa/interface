@@ -51,11 +51,7 @@ public class Fenêtre_Gérer_Atelier {
            new Fenêtre_Gestion_Gamme (gestiongammeStage);
             });
         
-        // Gestionnaire pour le bouton "Personnel"
-        gérerAtelier.getBtnPersonnel().setOnAction(e -> {
-          
-        });
-               
+                      
         // Gestionnaire pour le bouton "Stock des produits finis"
         gérerAtelier.getBtnStock_produits_finis().setOnAction(e -> {
             stage.close();
