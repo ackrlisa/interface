@@ -19,74 +19,63 @@ import javafx.scene.layout.VBox;
  * @author lisaa
  */
 public class Création_Stock_Produitfini extends BorderPane {
-     private TextField designation, quantite;
-    private ComboBox<ProduitsFinis> comboProduitsfinis;
+    private TextField nom, quantite, prix;
     private Button ajouter, home;
-     private TextArea produitsfinisAjoutees;
     private Label resultat;
 
     public Création_Stock_Produitfini() {
-        Label titre = new Label("Ajouter un élément au stock des produits finis de l'atelier");
+        Label titre = new Label("Ajouter un élément au stock de produits finis de l'atelier");
         this.setTop(titre);
         resultat = new Label();
-
-
+        
         VBox champs = new VBox(10);
 
-        designation = new TextField();
+        nom = new TextField();
         quantite = new TextField();
-        
-        comboProduitsfinis= new ComboBox<>();
-        produitsfinisAjoutees = new TextArea();
-        produitsfinisAjoutees.setEditable(false);
-        
+        prix = new TextField();
+
         champs.getChildren().addAll(
-            new Label("Désignation du nouvel élément du stock :"), designation,
+            new Label("Désignation du produit fini :"), nom,
             new Label("Quantité :"), quantite,
-            comboProduitsfinis, ajouter,
-            new Label("Element ajouté:"), produitsfinisAjoutees,
-                        resultat
+            new Label ("Prix"), prix,
+            resultat
         );
 
         this.setCenter(champs);
 
-        ajouter = new Button("Ajouter élément au stock produits finis");
+        ajouter = new Button("Ajouter élément au stock de produits finis");
         home = new Button("HOME");
         this.setRight(home);
         this.setBottom(ajouter);
     }
 
-    public TextField getDesignation() {
-        return designation;
+    public TextField getNom() {
+        return nom;
     }
-
+    
     public TextField getQuantite() {
         return quantite;
     }
 
-   public ComboBox<ProduitsFinis> getComboProduitsFinis(){
-   return comboProduitsfinis;
-   }
+    public TextField getPrix() {
+        return prix;
+    }
+    
     public Button getAjouter() {
         return ajouter;
     }
     
     public Label getResultat() {
         return resultat;
-}
-public TextArea getStockbrutAjoutees(){
-    return produitsfinisAjoutees;
-    
-}
+    }
     public Button getHome() {
         return home;
     }
     
     
-    public Scene getFenêtre_Création_Stock_Brut() {
+    public Scene getFenêtre_Création_Stock_Produitfini() {
         return new Scene(this, 600, 400);
     }
-
     
     }
 

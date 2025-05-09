@@ -37,7 +37,7 @@ public class Fenêtre_Création_Stock_Brut {
                 creationstockbrut.getDesignation().clear();
                 
             } catch (NumberFormatException ex) {
-                creationstockbrut.getResultat().setText("Veuillez entrer des valeurs numériques valides pour X, Y et coût.");
+                creationstockbrut.getResultat().setText("Veuillez entrer une valeur numérique valide pour la quantité");
                 creationstockbrut.getDesignation().clear();
                 creationstockbrut.getQuantite().clear();
                 
@@ -55,5 +55,6 @@ public class Fenêtre_Création_Stock_Brut {
             new Fenêtre_Accueil(accueilStage);
         });
     
-    }}
+    }
+}
 

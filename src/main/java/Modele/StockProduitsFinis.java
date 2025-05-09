@@ -33,7 +33,7 @@ public class StockProduitsFinis {
             System.out.println("PRODUITS FINIS DE L'ATELIER :");
             for(ProduitsFinis produitsFinis : listeStockProduitsFinis) {
                 System.out.print(" - ");
-                produitsFinis.afficheProduitFini();
+                
             }
         }
 }
