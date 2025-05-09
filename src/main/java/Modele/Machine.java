@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Machine extends Equipement {
     private String type;
     private float x;
+      private String refMachine;
     private float y;
     private boolean dispo;
     private EtatMachine etatMachine;
@@ -37,7 +38,10 @@ public class Machine extends Equipement {
         this.operateursMachine = new ArrayList<>(operateurMachine);
         Equipement.getListeEquipements().add(this);
     }
-
+public String getRefMachine() {
+        return refMachine;
+       
+}
     public ArrayList<Operateur> getOperateursMachine() {
         return operateursMachine;
     }
