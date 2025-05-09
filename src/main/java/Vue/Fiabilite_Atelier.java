@@ -30,16 +30,15 @@ public class Fiabilite_Atelier extends BorderPane{
         ordrefiabilite = new Button("Ordre de fiabilité");
         inserer = new Button("Inserer");
    
-        VBox haut = new VBox(3);
-        Label indication = new Label("veuillez entrez le chemin d'accès au fichier de maintenance à analyser");
+        //VBox haut = new VBox(3);
+        //Label indication = new Label("veuillez entrez le chemin d'accès au fichier de maintenance à analyser");
         
-        haut.getChildren().addAll(indication, chemin_acces, inserer, ok);
-        this.setTop(haut);
+        //haut.getChildren().addAll(indication, chemin_acces, inserer, ok);
+        //this.setTop(haut);
         VBox milieu = new VBox(5); 
-        milieu.getChildren().addAll(fiabilite_par_machine, ordrefiabilite);
+        milieu.getChildren().addAll(fiabilite_par_machine, ordrefiabilite, reponse);
         this.setCenter(milieu);
         this.setRight(home);
-        this.setBottom(reponse);
     
     }
     public Button getBtnOrdrefiabilite() {
