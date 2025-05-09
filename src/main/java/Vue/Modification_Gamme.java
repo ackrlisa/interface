@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 /**
  *
@@ -27,9 +28,9 @@ public class Modification_Gamme extends BorderPane{
     
         this.setTop(qui);
         
-        HBox bas = new HBox(10); // 10 = espacement entre les boutons
-        bas.getChildren().addAll(ajoutéquiop, supprimeréquiop);
-        this.setCenter(bas);
+        VBox milieu = new VBox(10); // 10 = espacement entre les boutons
+        milieu.getChildren().addAll(ajoutéquiop, supprimeréquiop);
+        this.setCenter(milieu);
         this.setRight(home);
     }
 

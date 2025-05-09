@@ -91,6 +91,6 @@ public class Creation_Machine extends BorderPane {
     }
     
     public Scene getFenêtre_creation_machine(){
-         return new Scene(this, 600, 400);
+         return new Scene(this, 700, 500);
     }
 }
