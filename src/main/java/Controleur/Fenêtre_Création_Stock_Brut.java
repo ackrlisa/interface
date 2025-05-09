@@ -27,10 +27,7 @@ public class Fenêtre_Création_Stock_Brut {
                 String designation = creationstockbrut.getDesignation().getText();
                 String quantite = creationstockbrut.getQuantite().getText();
                 
-                // Tu peux modifier ces deux listes si tu veux permettre leur saisie dans l'UI
-                ArrayList<Modele.Operation> operations = new ArrayList<>();
-                Modele.Poste poste = null;
-                ArrayList<Modele.Operateur> operateurs = new ArrayList<>();
+               
 
                 StockBrut stockbrut = new StockBrut(quantite, designation);
                 creationstockbrut.getResultat().setText("Machine créée avec succès !");

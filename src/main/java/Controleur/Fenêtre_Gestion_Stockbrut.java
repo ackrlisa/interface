@@ -22,7 +22,10 @@ public class Fenêtre_Gestion_Stockbrut {
         stage.show();
         
         gérerstockbrut.getBtnAjouter().setOnAction(e -> {
-            
+            stage.close();
+            // Crée une nouvelle fenêtre d'accueil
+            Stage créationstockbrutStage = new Stage();
+            new Fenêtre_Création_Stock_Brut(créationstockbrutStage); // Redirige vers la fenêtre d'accueil
            });
         
         gérerstockbrut.getBtnSupprimer().setOnAction(e -> {
