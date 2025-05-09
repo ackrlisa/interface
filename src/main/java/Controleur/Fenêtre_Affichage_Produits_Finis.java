@@ -21,7 +21,7 @@ public class Fenêtre_Affichage_Produits_Finis {
 
         stage.setTitle("Affichage d'un produit fini");
         stage.setScene(Affichage_Produits_Finis.getFenêtre_affichage_produits_finis()); // Appelle la méthode pour obtenir la scène de la vue
-        Affichage_Produits_Finis.getComboProduitsFinis().getItems().setAll(ProduitsFinis.getListeProduitsFinis());
+        Affichage_Produits_Finis.getComboProduitsFinis().getItems().setAll(ProduitsFinis.getListeStockProduitsFinis());
         stage.show();
         
         Affichage_Produits_Finis.getBtnAfficher().setOnAction(e -> {
@@ -30,7 +30,7 @@ public class Fenêtre_Affichage_Produits_Finis {
                 StringBuilder details = new StringBuilder(); // créer l'espace ou on va tout mettre
                 details.append("Nom : ").append(produitChoisi.getNom()).append("\n");
                 details.append("Prix : ").append(produitChoisi.getPrix()).append("\n");
-                details.append("Quantité de stock : ").append(produitChoisi.getQuantiteStock()).append("\n");
+                details.append("Quantité de stock : ").append(produitChoisi.getQuantité()).append("\n");
                 
                 Affichage_Produits_Finis.getAffichageProduitsFinis().setText(details.toString());
     

@@ -28,7 +28,7 @@ public class Affichage_Produits_Finis extends BorderPane {
         afficher = new Button ("Afficher");
         affichageProduitsFinis = new Label();
         comboProduitsFinis = new ComboBox<>();
-        comboProduitsFinis.getItems().addAll(ProduitsFinis.getListeProduitsFinis());
+        comboProduitsFinis.getItems().addAll(ProduitsFinis.getListeStockProduitsFinis());
         
         Label question = new Label("Quel produit fini voulez vous afficher ?");
         this.setTop(question);

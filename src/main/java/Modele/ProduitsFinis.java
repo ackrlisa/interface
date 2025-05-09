@@ -14,8 +14,9 @@ import java.util.ArrayList;
 public class ProduitsFinis {
    private String nom;
    private float prix;
-   private float quantiteStock;
-   private static ArrayList<ProduitsFinis> listeProduitsFinis = new ArrayList<>(); 
+   private int quantité;
+   private static ArrayList<ProduitsFinis> listeStockProduitsFinis = new ArrayList<>();
+
 
 
     public String getNom() {
@@ -26,12 +27,12 @@ public class ProduitsFinis {
         return prix;
     }
 
-    public float getQuantiteStock() {
-        return quantiteStock;
+    public int getQuantité() {
+        return quantité;
     }
 
-    public static ArrayList<ProduitsFinis> getListeProduitsFinis() {
-        return listeProduitsFinis;
+    public static ArrayList<ProduitsFinis> getListeStockProduitsFinis() {
+        return listeStockProduitsFinis;
     }
     
     public void setNom(String nom) {
@@ -42,34 +43,46 @@ public class ProduitsFinis {
         this.prix = prix;
     }
 
-    public void setQuantiteStock(float quantiteStock) {
-        this.quantiteStock = quantiteStock;
+    public void setQuantité(int quantité) {
+        this.quantité = quantité;
     }
 
-    public ProduitsFinis(String nom, float prix, float quantiteStock) {
+    public ProduitsFinis(String nom, float prix, int quantité) {
         this.nom = nom;
         this.prix = prix;
-        this.quantiteStock = quantiteStock;
-        listeProduitsFinis.add(this);
-    }
-   
-   
-      public void afficheProduitFini(){
-    System.out.println("Le produit"+this.nom+" est fabriqué et disponible en"+ this.quantiteStock+" exemplaires.");
-    System.out.println("Prix à l'unité:"+ this.prix+" euros.");
+        this.quantité = quantité;
     }
     
-    public static void ajouterProduitFini(String nom, float prix, float quantiteStock) {
-        ProduitsFinis nouveau = new ProduitsFinis(nom, prix, quantiteStock);
-        System.out.println("Produit ajouté : " + nouveau.nom);
+    public static void ajouterAuStockProduitsFinis(ProduitsFinis produitfini) {
+        for (ProduitsFinis pf : listeStockProduitsFinis) {
+            if (pf.getNom().equalsIgnoreCase(produitfini.getNom())) {
+                pf.setQuantité(pf.getQuantité() + produitfini.getQuantité());
+                return;
+            }
+        }
+        listeStockProduitsFinis.add(produitfini);
     }
 
-    
-    public static void supprimerProduitFini(ProduitsFinis produit) {
-        if (listeProduitsFinis.remove(produit)) {
-            System.out.println("Produit supprimé : " + produit.getNom());
-        } else {
-            System.out.println("Le produit n'existe pas dans la liste.");
+    public static void supprimerDuStockProduitsFinis(ProduitsFinis produitfini) {
+        for (ProduitsFinis pf : listeStockProduitsFinis) {
+            if (pf.getNom().equalsIgnoreCase(produitfini.getNom())) {
+                int nouvelleQuantite = (pf.getQuantité() - produitfini.getQuantité());
+                if (nouvelleQuantite <= 0) {
+                    listeStockProduitsFinis.remove(pf); // Retire complètement si la quantité est 0 ou négative
+                } else {
+                    pf.setQuantité(nouvelleQuantite);
+                }
+                return;
+            }
         }
+        // Sinon, on ne fait rien car l'élément n'existe pas dans le stock
     }
+   
+   @Override
+    public String toString() {
+        return nom + " - Quantité : " + quantité + " - Prix : "+prix;
+    }
+    
+    
+    
 }

@@ -21,6 +21,16 @@ public class Fenêtre_Gestion_Stockfini {
         stage.setScene(gestionstockfini.getFenêtre_Gestion_Stockfini()); //Appelle la méthode d'instance de la fenêtre accueil
         stage.show();
         
+        gestionstockfini.getBtnAjouter().setOnAction(e -> {
+            stage.close();
+            // Crée une nouvelle fenêtre d'accueil
+            Stage créationstockfiniStage = new Stage();
+            new Fenêtre_Création_Stock_Produitfini(créationstockfiniStage); // Redirige vers la fenêtre d'accueil
+           });
+        
+        gestionstockfini.getBtnSupprimer().setOnAction(e -> {
+           
+           });
         gestionstockfini.getBtnHome().setOnAction(e->{  
        stage.close();
             // Crée une nouvelle fenêtre d'accueil
