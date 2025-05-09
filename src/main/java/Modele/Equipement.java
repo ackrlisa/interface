@@ -5,6 +5,8 @@
 package Modele;
 
 import com.mycompany.projet_atelier_interface.*;
+import java.util.ArrayList;
+
 
 /**
  *
@@ -14,7 +16,11 @@ public abstract class Equipement {
   private String dEquipement;
    private String refEquipement ;
    float cout;
+   protected static ArrayList<Equipement> listeEquipements = new ArrayList<>();
 
+    public static ArrayList<Equipement> getListeEquipements() {
+        return listeEquipements;
+    }
     public float getCout() {
         return cout;
     }

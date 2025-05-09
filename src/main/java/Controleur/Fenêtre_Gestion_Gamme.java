@@ -45,5 +45,13 @@ public class Fenêtre_Gestion_Gamme {
             Stage créergammeStage = new Stage();
             new Fenêtre_Créer_Gamme(créergammeStage); // Redirige vers la fenêtre d'accueil
      });
+    gestiongamme.getCreerOperation().setOnAction(e->{  
+       
+     });
+    gestiongamme.getSupprimerOperation().setOnAction(e->{  
+       
+     });
+    
+    
 }
 }

@@ -39,8 +39,7 @@ public class Fenêtre_Creation_Poste {
             if (refPoste.isEmpty() || dPoste.isEmpty()) {
                 creationPoste.getResultat().setText("Veuillez remplir tous les champs.");
             } else {
-                Poste nouveauPoste = new Poste(machinesAjoutees, dPoste, refPoste);
-                nouveauPoste.setListeMachine(machinesAjoutees);
+                Poste nouveauPoste = new Poste(new ArrayList<>(machinesAjoutees), dPoste, refPoste);
                 
                 creationPoste.getResultat().setText("Poste créé avec succès !");
                 creationPoste.getRefPoste().clear();

@@ -30,7 +30,13 @@ public class Poste extends Equipement {
     }
     
     public static ArrayList<Poste> getListePostes() {
-        return listePostes;
+        ArrayList<Poste> postes = new ArrayList<>();
+    for (Equipement e : listeEquipements) {
+        if (e instanceof Poste) {
+            postes.add((Poste) e);
+        }
+    }
+    return postes;
     }
     
       public void setListeMachine(ArrayList<Machine> listeMachine) {
@@ -50,7 +56,8 @@ public class Poste extends Equipement {
         this.dPoste = dPoste;
         this.refPoste = refPoste;
         this.listeMachine = listeMachine;
-        listePostes.add(this);
+        Equipement.getListeEquipements().add(this);
+
 
         float n = 0;
         for (Machine i : this.listeMachine){

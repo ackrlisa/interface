@@ -5,6 +5,7 @@
 package Modele;
 
 import com.mycompany.projet_atelier_interface.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,6 +16,8 @@ public class Operation {
     private String dOperation ;
     private String refEquipement ;
     private float dureeOperation ;
+    private static ArrayList<Operation> listeOperations = new ArrayList<>(); 
+
 
     public String getRefOperation() {
         return refOperation;
@@ -31,7 +34,9 @@ public class Operation {
     public float getDureeOperation() {
         return dureeOperation;
     }
-
+    public static ArrayList<Operation> getListeOperations() {
+        return listeOperations;
+    }
     public void setRefOperation(String refOperation) {
         this.refOperation = refOperation;
     }
@@ -53,8 +58,14 @@ public class Operation {
         this.dOperation = dOperation;
         this.refEquipement = refEquipement; //mettre le meme refEquipement que celui de l'équipement faisant l'opération (ex: scieuse, ponceuse...)
         this.dureeOperation = dureeOperation;
+        listeOperations.add(this);
+
     }
     
+    @Override
+    public String toString() {
+        return "Operatoin [Réf: " + getRefOperation() + ", Déscription: " + getdOperation() + ", Durée: " + getDureeOperation();
+    }
    // Méthode pour calculer le coût d'une opération en fonction de l'équipement utilisé
     public float calculerCout(Equipement equipement) {
         if (equipement != null && equipement.getRefEquipement().equals(refEquipement)) {

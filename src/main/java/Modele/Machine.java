@@ -35,7 +35,7 @@ public class Machine extends Equipement {
         this.type = type;
         this.poste=poste;
         this.operateursMachine = new ArrayList<>(operateurMachine);
-        listeMachines.add(this);
+        Equipement.getListeEquipements().add(this);
     }
 
     public ArrayList<Operateur> getOperateursMachine() {
@@ -71,7 +71,13 @@ public class Machine extends Equipement {
     }
     
     public static ArrayList<Machine> getListeMachines() {
-        return listeMachines;
+        ArrayList<Machine> machines = new ArrayList<>();
+    for (Equipement e : listeEquipements) {
+        if (e instanceof Machine) {
+            machines.add((Machine) e);
+        }
+    }
+    return machines;
     }
 
        public void setX(float x) {
