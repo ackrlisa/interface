@@ -4,6 +4,7 @@
  */
 package Controleur;
 
+import Modele.Element;
 import Modele.StockBrut;
 import Vue.Affichage_Stock_Brut;
 import javafx.stage.Stage;
@@ -24,10 +25,10 @@ public class Fenêtre_Affichage_Stock_Brut {
         stage.show();
         
         StringBuilder details = new StringBuilder();
-        if (StockBrut.getListeStock().isEmpty()) {
+        if (Element.getListeStockBrut().isEmpty()) {
             details.append("Le stock brut est vide.");
         } else {
-            for (String element : StockBrut.getListeStock()) {
+            for (Element element : Element.getListeStockBrut()) {
                 details.append(" - ").append(element).append("\n");
             }
         }

@@ -5,6 +5,7 @@
 package Controleur;
 
 import Modele.StockBrut;
+import Modele.Element;
 import Vue.Création_Stock_Brut;
 import java.util.ArrayList;
 import javafx.stage.Stage;
@@ -25,12 +26,12 @@ public class Fenêtre_Création_Stock_Brut {
         creationstockbrut.getAjouter().setOnAction(e -> {
             try{
                 String designation = creationstockbrut.getDesignation().getText();
-                String quantite = creationstockbrut.getQuantite().getText();
-                
+                int quantite = (int) Float.parseFloat(creationstockbrut.getQuantite().getText());
+                Element element = new Element(designation,quantite);
+                Element.ajouterAuStockBrut(element);
                
 
-                StockBrut stockbrut = new StockBrut(quantite, designation);
-                creationstockbrut.getResultat().setText("Machine créée avec succès !");
+                creationstockbrut.getResultat().setText("Element ajouté avec succès");
                 // Optionnel : Réinitialiser les champs de la vue après la création
                 creationstockbrut.getQuantite().clear();
                 creationstockbrut.getDesignation().clear();

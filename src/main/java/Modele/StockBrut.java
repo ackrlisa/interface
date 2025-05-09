@@ -12,49 +12,27 @@ import java.util.ArrayList;
  * @author lisaa
  */
 public class StockBrut {
-    private String designation;
-    private String quantite;
-    private static ArrayList<String> listeStock = new ArrayList<>();
+    private static ArrayList<Element> listeStock = new ArrayList<>();
 
-    public StockBrut(String designation, String quantite) {
-        this.designation = designation;
-        this.quantite = quantite;
+
+    public static void setListeStock(ArrayList<Element> listeStock) {
+        StockBrut.listeStock = listeStock;
     }
 
     
 
-    public String getDesignation() {
-        return designation;
-    }
-
-    public void setDesignation(String designation) {
-        this.designation = designation;
-    }
-
-    public void setQuantite(String quantite) {
-        this.quantite = quantite;
-    }
-
-    public static void setListeStock(ArrayList<String> listeStock) {
-        StockBrut.listeStock = listeStock;
-    }
-
-    public String getQuantite() {
-        return quantite;
-    }
-
     // Ajouter un élément au stock
-    public static void ajouterAuStock(String element) {
+    public static void ajouterAuStock(Element element) {
         listeStock.add(element);
     }
 
     // Supprimer un élément du stock
-    public static void supprimerAuStock(String element) {
+    public static void supprimerAuStock(Element element) {
         listeStock.remove(element);
     }
 
     // Récupérer la liste complète
-    public static ArrayList<String> getListeStock() {
+    public static ArrayList<Element> getListeStock() {
         return listeStock;
     }
 
@@ -64,7 +42,7 @@ public class StockBrut {
             System.out.println("Le stock BRUT est vide.");
         } else {
             System.out.println("Stock BRUT :");
-            for (String element : listeStock) {
+            for (Element element : listeStock) {
                 System.out.println("- " + element);
             }
         }
