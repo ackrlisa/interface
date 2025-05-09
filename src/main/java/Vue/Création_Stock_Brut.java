@@ -18,18 +18,16 @@ import javafx.scene.layout.VBox;
  *
  * @author lisaa
  */
-public class Création_Stock_Brut {
 
-    
  
-public class Creation_Stock_Brut extends BorderPane {
-    private TextField designation, quantité;
+public class Création_Stock_Brut extends BorderPane {
+    private TextField designation, quantite;
     private ComboBox<StockBrut> comboStockBrut;
     private Button ajouter, home;
      private TextArea stockbrutAjoutees;
     private Label resultat;
 
-    public Creation_Stock_Brut() {
+    public Création_Stock_Brut() {
         Label titre = new Label("Ajouter un élément au stock brut de l'atelier");
         this.setTop(titre);
         resultat = new Label();
@@ -38,7 +36,7 @@ public class Creation_Stock_Brut extends BorderPane {
         VBox champs = new VBox(10);
 
         designation = new TextField();
-        quantité = new TextField();
+        quantite = new TextField();
         
         comboStockBrut= new ComboBox<>();
         stockbrutAjoutees = new TextArea();
@@ -46,7 +44,7 @@ public class Creation_Stock_Brut extends BorderPane {
         
         champs.getChildren().addAll(
             new Label("Désignation du nouvel élément du stock :"), designation,
-            new Label("Quantité :"), quantité,
+            new Label("Quantité :"), quantite,
             comboStockBrut, ajouter,
             new Label("Element ajouté:"), stockbrutAjoutees,
                         resultat
@@ -64,8 +62,8 @@ public class Creation_Stock_Brut extends BorderPane {
         return designation;
     }
 
-    public TextField getdQuantité() {
-        return quantité;
+    public TextField getQuantite() {
+        return quantite;
     }
 
    public ComboBox<StockBrut> getComboStockBrut(){
@@ -93,6 +91,5 @@ public TextArea getStockbrutAjoutees(){
 
     
     }
-}
-   
+
 

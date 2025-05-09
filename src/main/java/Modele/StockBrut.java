@@ -12,8 +12,36 @@ import java.util.ArrayList;
  * @author lisaa
  */
 public class StockBrut {
-    
+    private String designation;
+    private String quantite;
     private static ArrayList<String> listeStock = new ArrayList<>();
+
+    public StockBrut(String designation, String quantite) {
+        this.designation = designation;
+        this.quantite = quantite;
+    }
+
+    
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public void setQuantite(String quantite) {
+        this.quantite = quantite;
+    }
+
+    public static void setListeStock(ArrayList<String> listeStock) {
+        StockBrut.listeStock = listeStock;
+    }
+
+    public String getQuantite() {
+        return quantite;
+    }
 
     // Ajouter un élément au stock
     public static void ajouterAuStock(String element) {
