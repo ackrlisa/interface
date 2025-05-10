@@ -32,6 +32,10 @@ public class Fenêtre_Gestion_Stockfini {
            });
         
         gestionstockfini.getBtnSupprimer().setOnAction(e -> {
+           stage.close();
+            // Crée une nouvelle fenêtre d'accueil
+            Stage suppressionstockfiniStage = new Stage();
+            new Fenêtre_Supprimer_Stock_Porduitfini(suppressionstockfiniStage,modeleCarte); // Redirige vers la fenêtre d'accueil
            
            });
         gestionstockfini.getBtnHome().setOnAction(e->{  
