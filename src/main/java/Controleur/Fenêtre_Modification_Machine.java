@@ -26,7 +26,9 @@ public class Fenêtre_Modification_Machine {
         
         // Gestionnaire pour le bouton "Machines"
      modifiermachine.getBtnEtat().setOnAction(e->{
-         
+         stage.close();
+         Stage modificationStage = new Stage();
+         new Fenêtre_Modification_Etat_Machine(modificationStage,modeleCarte);
      });
         // Gestionnaire pour le bouton "Machines"
      modifiermachine.getBtnIdentité().setOnAction(e->{ 

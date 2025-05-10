@@ -3,9 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Vue;
-
 import Modele.Machine;
-import Modele.Poste;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -17,28 +15,25 @@ import javafx.scene.layout.VBox;
  *
  * @author PC
  */
-public class Modification_Poste extends BorderPane{
+public class Modification_Etat_Machine extends BorderPane {
     private Button home ; 
-    private Button ajouter, supprimer ;
+    private Button operationnel, panne, maintenance ;
+    private Label choixEtat, choixMachine, erreur ;
     private ComboBox<Machine> comboMachine;
-    private ComboBox<Poste> comboPoste;
-    private Label choixMachine, choixPoste, erreur ;
     
-    public Modification_Poste() {
+    public Modification_Etat_Machine() {
         home = new Button ("HOME");
-        ajouter = new Button ("AJOUTER");
-        supprimer = new Button("SUPPRIMER");
-        choixPoste = new Label("Quel poste voulez-vous modifier");
-        choixMachine = new Label("Quelle machine voulez-vous ajouter/supprimer?");
+        operationnel = new Button ("opérationnel");
+        panne = new Button("en panne");
+        maintenance = new Button("en maintenance");
+        choixEtat = new Label("quel est le nouvel état de la machine?");
+        choixMachine = new Label("sélectionnez une machine");
         erreur = new Label(" ");       
         comboMachine = new ComboBox<>();
         comboMachine.getItems().addAll(Machine.getListeMachines());
-        comboPoste = new ComboBox<>();
-        comboPoste.getItems().addAll(Poste.getListePostes());
         
-        VBox champs = new VBox(15);
-        champs.getChildren().addAll(
-            choixPoste, comboPoste, choixMachine, comboMachine, ajouter, supprimer, erreur);      
+        VBox champs = new VBox(10);
+        champs.getChildren().addAll(choixMachine, comboMachine, choixEtat, operationnel, panne, maintenance, erreur);      
          this.setCenter(champs);
    
                 
@@ -50,31 +45,28 @@ public class Modification_Poste extends BorderPane{
         return home;
     }
 
-    public Button getBtnAjouter() {
-        return ajouter;
+    public Button getBtnOperationnel() {
+        return operationnel;
     }
 
-    public Button getBtnSupprimer() {
-        return supprimer;
+    public Button getBtnPanne() {
+        return panne;
     }
 
-    public Label getChoixMachine() {
-        return choixMachine;
+    public Button getBtnMaintenance() {
+        return maintenance;
     }
 
     public Label getErreur() {
         return erreur;
     }
-    
+
     public ComboBox<Machine> getComboMachine() {
         return comboMachine;
     }
     
-    public ComboBox<Poste> getComboPoste() {
-        return comboPoste;
-    }
-
-    public Scene getFenêtre_Modification_Poste(){
+    public Scene getFenêtre_Modification_Etat_Machine(){
          return new Scene(this, 600, 400);
     }
+    
 }
