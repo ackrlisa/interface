@@ -51,7 +51,7 @@ public class Fenêtre_Gestion_Gamme {
     gestiongamme.getCreerOperation().setOnAction(e->{  
        stage.close();
        Stage créerspérationStage = new Stage();
-       new Fenêtre_Creation_Opération(créerspérationStage);
+       new Fenêtre_Creation_Opération(créerspérationStage,modeleCarte);
      });
     gestiongamme.getSupprimerOperation().setOnAction(e->{  
        

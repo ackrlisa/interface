@@ -9,6 +9,8 @@ import Modele.Operation;
 import Vue.Creation_Opération;
 import java.util.ArrayList;
 import javafx.stage.Stage;
+import Modele.ModèleCarte;
+
 
 /**
  *
@@ -17,9 +19,11 @@ import javafx.stage.Stage;
 public class Fenêtre_Creation_Opération {
     private Creation_Opération creationOperation;
     private String refEquipement; // <- variable accessible dans toute la classe
+    private ModèleCarte modeleCarte;
 
 
-    public Fenêtre_Creation_Opération(Stage stage) {
+    public Fenêtre_Creation_Opération(Stage stage, ModèleCarte modeleCarte) {
+       this.modeleCarte=modeleCarte;
         creationOperation = new Creation_Opération();
         stage.setTitle("Création d’une opération");
         stage.setScene(creationOperation.getFenetreCreationOperation());
@@ -64,7 +68,7 @@ public class Fenêtre_Creation_Opération {
         creationOperation.getHome().setOnAction(e -> {
             stage.close();
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage);
+            new Fenêtre_Accueil(accueilStage,modeleCarte);
         });
     }
 

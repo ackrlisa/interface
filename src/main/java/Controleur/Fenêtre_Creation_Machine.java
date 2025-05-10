@@ -43,7 +43,6 @@ public class Fenêtre_Creation_Machine {
                 Modele.Poste poste = null;
                 ArrayList<Modele.Operateur> operateurs = new ArrayList<>();
 
-                Machine machine = new Machine(ref, description, x, y, cout, operations, type, poste, operateurs);
                 
                //ajout machine au modèle pour récupérer pour la carte
                modeleCarte.ajoutMachine(ref, description, x, y, cout, operations, type, poste, operateurs);
