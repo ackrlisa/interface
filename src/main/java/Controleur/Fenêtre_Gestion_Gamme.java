@@ -46,7 +46,9 @@ public class Fenêtre_Gestion_Gamme {
             new Fenêtre_Créer_Gamme(créergammeStage); // Redirige vers la fenêtre d'accueil
      });
     gestiongamme.getCreerOperation().setOnAction(e->{  
-       
+       stage.close();
+       Stage créerspérationStage = new Stage();
+       new Fenêtre_Creation_Opération(créerspérationStage);
      });
     gestiongamme.getSupprimerOperation().setOnAction(e->{  
        

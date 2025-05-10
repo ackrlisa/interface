@@ -20,21 +20,22 @@ import javafx.scene.layout.VBox;
  * @author alicedeboever
  */
 public class Creation_Opération extends BorderPane{
-    private TextField refOperation, dOperation;
+    private TextField refOperation, dOperation, duréeOpération;
     private ComboBox<Equipement> comboEquipement;
     private Button ajouterEquipement, creerOperation, home;
     private TextArea equipementsAjoutes;
     private Label resultat;
 
     public Creation_Opération() {
-        Label titre = new Label("Création d’un nouveau poste");
+        Label titre = new Label("Création d’une nouvelle opération");
         this.setTop(titre);
 
         VBox champs = new VBox(10);
 
         refOperation = new TextField();
         dOperation = new TextField();
-
+        duréeOpération = new TextField();
+        
         comboEquipement = new ComboBox<>();
         ajouterEquipement = new Button("Ajouter à l'opération");
 
@@ -43,14 +44,15 @@ public class Creation_Opération extends BorderPane{
 
         resultat = new Label();
 
-        creerOperation = new Button("Créer le poste");
+        creerOperation = new Button("Créer l'opération");
         home = new Button("HOME");
 
         champs.getChildren().addAll(
             new Label("Référence de l'opération :"), refOperation,
             new Label("Description de l'opératon :"), dOperation,
-            new Label("Ajouter un équipement à l'opération :"),
+            new Label("Ajouter un équipement à l'opération (maximum 1) :"),
             comboEquipement, ajouterEquipement,
+            new Label ("Durée de l'opération :"), duréeOpération,
             new Label("Équipement ajoutées :"), equipementsAjoutes,
             resultat
         );
@@ -87,6 +89,11 @@ public class Creation_Opération extends BorderPane{
     public TextArea getEquipementsAjoutes() {
         return equipementsAjoutes;
     }
+
+    public TextField getDuréeOpération() {
+        return duréeOpération;
+    }
+    
 
     public Label getResultat() {
         return resultat;
