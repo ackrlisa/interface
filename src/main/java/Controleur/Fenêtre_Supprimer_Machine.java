@@ -10,6 +10,7 @@ import Vue.Carte;
 import Vue.Gestion_Machine;
 import Vue.Supprimer_Machine;
 import javafx.stage.Stage;
+import Vue.Affichage_Machine ;
 
 /**
  *
@@ -19,10 +20,12 @@ public class Fenêtre_Supprimer_Machine {
     private Supprimer_Machine supprimermachine;
      private ModèleCarte modeleCarte;
      private Carte vueCarte;
+
     
     public Fenêtre_Supprimer_Machine (Stage stage, ModèleCarte modeleCarte,Carte vueCarte){
        this.modeleCarte=modeleCarte;
-       this.vueCarte = vueCarte; // Initialiser la référence à la carte
+       this.vueCarte = vueCarte;
+        
         supprimermachine= new Supprimer_Machine();
         // Initialiser la liste des machines dans la ComboBox
 supprimermachine.getComboMachine().getItems().clear();
@@ -45,13 +48,16 @@ supprimermachine.getBtnSupprimer().setOnAction(e -> {
     Machine machine = supprimermachine.getComboMachine().getValue(); // Récupérer la machine sélectionnée
     
     if (machine != null) {
-        machine.supprimerMachine(modeleCarte); // Supprime la machine (inclut la suppression du modèle et du poste)
+        machine.supprimerMachine(modeleCarte, machine); // Supprime la machine (inclut la suppression du modèle et du poste)
         supprimermachine.getComboMachine().getItems().remove(machine); // Mise à jour du menu déroulant
-        supprimermachine.getSuppressionMachine().setText("Machine " + machine.getRefEquipement() + " supprimée.");
+        supprimermachine.getResultat().setText("Machine " + machine.getRefEquipement() + " supprimée.");
+        machine.supprimerMachineStatique(machine);
+    
     } else {
-        supprimermachine.getSuppressionMachine().setText("Veuillez sélectionner une machine à supprimer.");
+        supprimermachine.getResultat().setText("Veuillez sélectionner une machine à supprimer.");
     }
 });
+
 
     }
 }       

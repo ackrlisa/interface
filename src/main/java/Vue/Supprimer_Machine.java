@@ -18,27 +18,25 @@ import javafx.scene.layout.VBox;
  * @author lisaa
  */
 public class Supprimer_Machine extends BorderPane{
-     private Button supprimer;
+    private Button supprimer;
     private Button home;
-private ComboBox<Machine> comboMachine;
-   private Label suppressionMachine ;
+    private ComboBox<Machine> comboMachine;
+    private Label resultat ;
     
     public Supprimer_Machine (){
-        
-        supprimer = new Button("Supprimer machine");
-        home = new Button("HOME");
-        Label qui = new Label("Quelle machine voulez-vous supprimer?");
-        suppressionMachine = new Label();
+        home = new Button ("HOME");
+        supprimer = new Button ("Supprimer");
+        resultat = new Label();
         comboMachine = new ComboBox<>();
-        comboMachine.getItems().addAll(Machine.getListeMachines());    
-
-        this.setTop(qui);
-         VBox centre = new VBox(10);
-        centre.getChildren().addAll(comboMachine, supprimer, suppressionMachine);
+        comboMachine.getItems().addAll(Machine.getListeMachines());
+        
+        Label question = new Label("Quelle est  la machine que vous souahitez supprimer ?");
+        this.setTop(question);
+        
+        VBox centre = new VBox(10);
+        centre.getChildren().addAll(comboMachine, supprimer, resultat);
         this.setCenter(centre);
-        HBox bas = new HBox(10); // 10 = espacement entre les boutons
-        bas.getChildren().addAll(supprimer);
-        this.setCenter(bas);
+
         this.setRight(home);
     }
         public Button getBtnHome() {
@@ -53,8 +51,8 @@ private ComboBox<Machine> comboMachine;
         return comboMachine;
     }
 
-    public Label getSuppressionMachine() {
-        return suppressionMachine;
+    public Label getResultat() {
+        return resultat;
     }
     
     public Scene getFenêtre_Supprimer_Machine(){

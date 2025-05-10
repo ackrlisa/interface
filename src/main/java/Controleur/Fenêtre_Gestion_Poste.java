@@ -33,6 +33,13 @@ public class Fenêtre_Gestion_Poste {
             new Fenêtre_Creation_Poste(creationPoste,modeleCarte);
         });
         
+        gestionposte.getBtnSupprimer().setOnAction(e -> { //quand on clique sur le bouton
+            stage.close();
+           
+            Stage suppressionPoste = new Stage();
+            new Fenêtre_Supprimer_Poste(suppressionPoste,modeleCarte);
+        });
+        
         gestionposte.getBtnModifier().setOnAction(e -> { //quand on clique sur le bouton
             // Ferme la fenêtre 
             stage.close();     

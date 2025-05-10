@@ -8,6 +8,7 @@ import Modele.ModèleCarte;
 import Vue.Modification_Gamme;
 import Vue.Supprimer_Gamme;
 import javafx.stage.Stage;
+import Modele.Gamme;
 
 /**
  *
@@ -22,10 +23,21 @@ public class Fenêtre_Supprimer_Gamme {
         supprimergamme= new Supprimer_Gamme();
         
         stage.setTitle("Fenêtre supprimer gamme");
-        stage.setScene(supprimergamme.getFenêtre_Supprimer_Gamme()); //Appelle la méthode d'instance de la fenêtre accueil
+        stage.setScene(supprimergamme.getFenetre_supprimer_gamme()); //Appelle la méthode d'instance de la fenêtre accueil
         stage.show(); 
         
-        
+        supprimergamme.getBtnSupprimer().setOnAction(e->{
+            Gamme gamme = supprimergamme.getComboGamme().getValue(); // Récupérer la machine sélectionnée
+    
+            if (gamme != null) {
+                Gamme.getListeGammes().remove(gamme);
+                supprimergamme.getComboGamme().getItems().remove(gamme); // Mise à jour du menu déroulant
+                supprimergamme.getResultat().setText("Gamme supprimée.");
+    
+            } else {
+                supprimergamme.getResultat().setText("Veuillez sélectionner une gamme à supprimer.");
+            }
+        });
         supprimergamme.getBtnHome().setOnAction(e -> {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
@@ -33,4 +45,5 @@ public class Fenêtre_Supprimer_Gamme {
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
            });
         
-    }}
+    }
+}

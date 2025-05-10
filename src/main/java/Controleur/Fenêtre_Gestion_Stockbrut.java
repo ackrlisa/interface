@@ -32,7 +32,9 @@ public class Fenêtre_Gestion_Stockbrut {
            });
         
         gérerstockbrut.getBtnSupprimer().setOnAction(e -> {
-           
+           stage.close();
+            Stage suppressionstockbrutStage = new Stage();
+            new Fenêtre_Supprimer_Stockbrut(suppressionstockbrutStage,modeleCarte);
            });
         gérerstockbrut.getBtnHome().setOnAction(e -> {
             stage.close();

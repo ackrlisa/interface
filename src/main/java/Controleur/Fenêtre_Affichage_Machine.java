@@ -24,23 +24,7 @@ public class Fenêtre_Affichage_Machine {
     public Fenêtre_Affichage_Machine (Stage stage, ModèleCarte modeleCarte){
        this.modeleCarte=modeleCarte;
     Affichage_Machine = new Affichage_Machine();
-       //Création des opérations
-       //Operation op1 = new Operation("OP01", "Découpe", "M01", 2.0f);
-//Operation op2 = new Operation("OP02", "Assemblage", "M01", 1.5f);
-//ArrayList<Operation> operationsPourMachine = new ArrayList<>();
-//operationsPourMachine.add(op1);
-//operationsPourMachine.add(op2);
-
-//Création d'une machine
-//ArrayList<Operateur> operateurs = new ArrayList<>();
-//Machine machine1 = new Machine("M01","Machine découpe",10.0f,20.0f,50.0f,operationsPourMachine,"Type A",null,operateurs);
-
-// Création du poste contenant cette machine
-//ArrayList<Machine> machinesDuPoste = new ArrayList<>();
-//machinesDuPoste.add(machine1);
-//Poste poste = new Poste(machinesDuPoste, "Poste découpe", "P01");
-//machine1.setPoste(poste);
-
+   
 
         stage.setTitle("Affichage d'une machine");
         stage.setScene(Affichage_Machine.getFenêtre_affichage_machine()); // Appelle la méthode pour obtenir la scène de la vue
@@ -76,6 +60,8 @@ public class Fenêtre_Affichage_Machine {
                 Affichage_Machine.getAffichageMachine().setText("Veuillez sélectionner une machine.");
             }
         });
+      Affichage_Machine.getComboMachine().getItems().setAll(Machine.getListeMachines());
+
         
       Affichage_Machine.getBtnHome().setOnAction(e -> {
             stage.close();
@@ -85,4 +71,5 @@ public class Fenêtre_Affichage_Machine {
         });
         
 }
+    
 }

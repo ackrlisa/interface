@@ -163,16 +163,36 @@ public String getRefMachine() {
     public boolean estOperationnel(){
         return this.etatMachine==EtatMachine.OPERATIONNEL; // vérifie si machine opérationnelle, on a une classe spéciale EtatMachine pour donner juste els différents types
     }
-   public void supprimerMachine(ModèleCarte modeleCarte){
-       if (poste!= null){
-           poste.modifierPoste(poste,this,false);
-           System.out.println("Machine " + super.getRefEquipement() + " supprimée du poste.");
-        } else {
-            System.out.println("Erreur : La machine n'est pas associée à un poste.");
-       }
-// Supprime la machine du modèle
-    modeleCarte.supprimerMachine(this);
+   
+   
+   public void supprimerMachine(ModèleCarte modeleCarte, Machine machine) {
+    for (Poste poste : Poste.getListePostes()) {
+        if (poste.getListeMachine().contains(machine)) {
+            poste.getListeMachine().remove(machine);
+        }
     }
+
+    for (Gamme gamme : Gamme.getListeGammes()) {
+        for (Operation op : gamme.getListeOperation()) {
+            if (op.getRefEquipement().equals(machine.getRefEquipement())) {
+                gamme.enleverEquipementOperation(machine, op);
+            }
+        }
+    }
+
+    ArrayList<Operation> operationsASupprimer = new ArrayList<>();
+    for (Operation op : Operation.getListeOperations()) {
+        if (op.getRefEquipement().equals(machine.getRefEquipement())) {
+            operationsASupprimer.add(op);
+        }
+    }
+    for (Operation op : operationsASupprimer) {
+        Operation.getListeOperations().remove(op);
+        System.out.println("Opération " + op.getRefOperation() + " supprimée.");
+    }
+    modeleCarte.supprimerMachine(this);
+
+}
    
    public void ajouterOperationRealisable(Operation operation){
        if (!operations.contains(operation)) {
@@ -213,6 +233,11 @@ public String getRefMachine() {
            System.out.println("l'opérateur"+ operateur.getPrenom()+" "+ operateur.getNom()+"ne pouvait déjà pas utiliser cette machine");
        }
    }
+   
+   public static void supprimerMachineStatique(Machine machine) {
+        Equipement.getListeEquipements().remove(machine);
+}
+
    
 }
     

@@ -20,7 +20,7 @@ public class Gestion_Gamme extends BorderPane {
     private Button home;
     private Button supprimer;
     private Button modifier;
-    private Button creerOperation, supprimerOperation ;
+    private Button creerOperation ;
     
     public Gestion_Gamme (){
         ajouter = new Button("Ajouter une nouvelle gamme");
@@ -28,14 +28,13 @@ public class Gestion_Gamme extends BorderPane {
         supprimer = new Button("Supprimer une gamme");
         modifier= new Button ("Modifier une gamme existante");
         creerOperation = new Button("Creer une operation");
-        supprimerOperation = new Button ("Supprimer une operation");  
         Label operation = new Label ("En lien avec les gammes");
         Label qui = new Label("Que voulez-vous faire?");
     
         this.setTop(qui);
         
         VBox milieu = new VBox(10); // 10 = espacement entre les boutons
-        milieu.getChildren().addAll(ajouter, supprimer, modifier,operation, creerOperation, supprimerOperation);
+        milieu.getChildren().addAll(ajouter, supprimer, modifier,operation, creerOperation);
         this.setCenter(milieu);
         this.setRight(home);
     }
@@ -63,9 +62,6 @@ public class Gestion_Gamme extends BorderPane {
         return creerOperation;
     }
 
-    public Button getSupprimerOperation() {
-        return supprimerOperation;
-    }
    
    
     public Scene getFenêtre_Gestion_Gamme(){
