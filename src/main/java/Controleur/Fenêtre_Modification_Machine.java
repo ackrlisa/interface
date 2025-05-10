@@ -24,20 +24,20 @@ public class Fenêtre_Modification_Machine {
         stage.setScene(modifiermachine.getFenêtre_Modification_Machine()); //Appelle la méthode d'instance de la fenêtre accueil
         stage.show();
         
-        // Gestionnaire pour le bouton "Machines"
      modifiermachine.getBtnEtat().setOnAction(e->{
          stage.close();
          Stage modificationStage = new Stage();
          new Fenêtre_Modification_Etat_Machine(modificationStage,modeleCarte);
      });
-        // Gestionnaire pour le bouton "Machines"
+       
      modifiermachine.getBtnIdentité().setOnAction(e->{ 
          stage.close();
          Stage modificationStage = new Stage();
          new Fenêtre_Modification_Identite_Machine(modificationStage,modeleCarte); // Utilise le contrôleur
      });     
       
-     modifiermachine.getBtnAjoutopération().setOnAction(e->{      
+     modifiermachine.getBtnAjoutopération().setOnAction(e->{
+         
      });
                
     modifiermachine.getBtnSuppressionopération().setOnAction(e->{      
