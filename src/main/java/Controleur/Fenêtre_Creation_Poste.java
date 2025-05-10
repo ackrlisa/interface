@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class Fenêtre_Creation_Poste {
     private Creation_Poste creationPoste;
     private ArrayList<Machine> machinesAjoutees = new ArrayList<>();
-     private ModèleCarte modeleCarte;
+    private ModèleCarte modeleCarte;
 
     public Fenêtre_Creation_Poste(Stage stage, ModèleCarte modeleCarte){
        this.modeleCarte=modeleCarte;

@@ -49,7 +49,7 @@ public class Creation_Opération extends BorderPane{
 
         champs.getChildren().addAll(
             new Label("Référence de l'opération :"), refOperation,
-            new Label("Description de l'opératon :"), dOperation,
+            new Label("Description de l'opération :"), dOperation,
             new Label("Ajouter un équipement à l'opération (maximum 1) :"),
             comboEquipement, ajouterEquipement,
             new Label ("Durée de l'opération :"), duréeOpération,
