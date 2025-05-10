@@ -163,6 +163,7 @@ public String getRefMachine() {
     public boolean estOperationnel(){
         return this.etatMachine==EtatMachine.OPERATIONNEL; // vérifie si machine opérationnelle, on a une classe spéciale EtatMachine pour donner juste els différents types
     }
+    
    public void supprimerMachine(){
        if (poste!= null){
            poste.modifierPoste(this,false);
