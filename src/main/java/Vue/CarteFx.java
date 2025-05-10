@@ -21,7 +21,7 @@ public class CarteFx  {
         stage.setTitle("Carte de l'atelier");
 
         vueCarte = new Carte(modeleCarte);
-        Scene scene = new Scene(vueCarte, 800, 600);
+        Scene scene = new Scene(vueCarte, 900, 900);
         stage.setScene(scene);
     }
 

@@ -6,9 +6,11 @@ package Vue;
 import Modele.Machine;
 import Modele.ModèleCarte;
 import java.util.ArrayList;
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -28,7 +30,12 @@ public class Carte extends BorderPane {
 
         // Titre
         Label titre = new Label("Carte de l'atelier de fabrication");
-        setTop(titre);
+       titre.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
+
+        // Conteneur pour centrer le titre
+        StackPane titrePane = new StackPane(titre);
+        titrePane.setPadding(new Insets(10, 0, 10, 0)); // Marges pour espacer le titre
+        setTop(titrePane);
 
         // Pane pour les machines
         cartePane = new Pane();
@@ -53,11 +60,21 @@ public class Carte extends BorderPane {
         rectMachine.setFill(Color.PINK);
         rectMachine.setStroke(Color.BLACK);
 
-        Text textRef = new Text(x + 5, y + 20, machine.getRefMachine());
-        textRef.setFill(Color.BLACK);
-        textRef.setStyle("-fx-font-weight: bold; -fx-font-size: 12px;");
+        // Créer le texte pour la référence de la machine
+    Text textRef = new Text(machine.getRefMachine());
+    textRef.setFill(Color.BLACK);
+    textRef.setStyle("-fx-font-size: 12px;"); // Enlève le gras en supprimant `font-weight: bold`
 
-        cartePane.getChildren().addAll(rectMachine, textRef);
+   // Positionner le texte au-dessus du rectangle
+    textRef.setX(x + 15 - textRef.getBoundsInLocal().getWidth() / 2); // Centrer horizontalement
+    textRef.setY(y - 5); // Placer juste au-dessus du rectangle
+
+    // Positionner le rectangle
+    rectMachine.setX(x);
+    rectMachine.setY(y);
+
+    // Ajouter le rectangle et le texte à la carte
+    cartePane.getChildren().addAll(rectMachine, textRef);
     }
 
     public void setEchelle(int echelle) {
