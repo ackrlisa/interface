@@ -77,11 +77,12 @@ public class Fenêtre_Creation_Machine {
                 creationMachine.getType().clear();
             }
         });
-creationMachine.getCarte().setOnAction(e-> {
+        creationMachine.getCarte().setOnAction(e-> {
             stage.close();
             Stage carteStage= new Stage();
             new Fenêtre_CarteFx (carteStage, modeleCarte);
            });
+        
         creationMachine.getHome().setOnAction(e -> {
             stage.close();
             Stage accueilStage = new Stage();

@@ -23,13 +23,18 @@ public class Modification_Identite_Machine extends BorderPane{
     private ComboBox<Machine> comboMachine;
     private Label choixMachine, erreur ;
     private TextField refMachine, dMachine, x, y, cout, type;
+    private Label texterefMachine, textedMachine, textex, textey, textecout, textetype;
 
     public Modification_Identite_Machine() {
         home = new Button ("HOME");
         ok = new Button ("OK");
         choixMachine = new Label("sélectionnez la machine dont vous voulez modifier l'identite");
+        erreur = new Label(" ");
+        texterefMachine = new Label("Référence de la machine :"); textedMachine = new Label("Description :");
+        textex = new Label("Coordonnée X"); textey = new Label("Coordonnée Y :");
+        textecout = new Label("Coordonnée Y :"); textetype = new Label("Coordonnée Y :");
         
-        VBox champs = new VBox(10);
+        VBox champs = new VBox(15);
         refMachine = new TextField();
         dMachine = new TextField();
         x = new TextField();
@@ -38,13 +43,12 @@ public class Modification_Identite_Machine extends BorderPane{
         type = new TextField();
         
         champs.getChildren().addAll(
-            new Label("Référence de la machine :"), refMachine,
-            new Label("Description :"), dMachine,
-            new Label("Coordonnée X :"), x,
-            new Label("Coordonnée Y :"), y,
-            new Label("Coût horaire :"), cout,
-            new Label("Type de machine :"), type, ok, erreur);
-        
+            texterefMachine, refMachine,
+            textedMachine, dMachine,
+            textex, x,
+            textey, y,
+            textecout, cout,
+            textetype, type, ok, erreur);      
          this.setCenter(champs);
         
         comboMachine = new ComboBox<>();
@@ -101,9 +105,57 @@ public class Modification_Identite_Machine extends BorderPane{
     public TextField getType() {
         return type;
     }
+
+    public Label getTexterefMachine() {
+        return texterefMachine;
+    }
+
+    public Label getTextedMachine() {
+        return textedMachine;
+    }
+
+    public Label getTextex() {
+        return textex;
+    }
+
+    public Label getTextey() {
+        return textey;
+    }
+
+    public Label getTextecout() {
+        return textecout;
+    }
+
+    public Label getTextetype() {
+        return textetype;
+    }
+
+    public void setTexterefMachine(Label texterefMachine) {
+        this.texterefMachine = texterefMachine;
+    }
+
+    public void setTextedMachine(Label textedMachine) {
+        this.textedMachine = textedMachine;
+    }
+
+    public void setTextex(Label textex) {
+        this.textex = textex;
+    }
+
+    public void setTextey(Label textey) {
+        this.textey = textey;
+    }
+
+    public void setTextecout(Label textecout) {
+        this.textecout = textecout;
+    }
+
+    public void setTextetype(Label textetype) {
+        this.textetype = textetype;
+    }
    
     public Scene getFenêtre_modification_identite_machine(){
-         return new Scene(this, 600, 400);
+         return new Scene(this, 600, 600);
     }
     
 }
