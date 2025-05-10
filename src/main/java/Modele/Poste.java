@@ -52,6 +52,11 @@ public class Poste extends Equipement {
     public void setRefPoste(String refPoste) {
         this.refPoste = refPoste;
     }
+
+    public void setN(String n) {
+        this.n = n;
+    }
+    
    
     public Poste(ArrayList<Machine> listeMachine, String dPoste, String refPoste) {
         super(dPoste, refPoste, 0); // Initialisation --> coût sera recalculé
@@ -80,23 +85,23 @@ public class Poste extends Equipement {
             i.afficheMachine();
         }
 }
-    public void modifierPoste(Poste poste, Machine machine, boolean ajouter){
+    public void modifierPoste(Machine machine, boolean ajouter){
        if (ajouter){
-           if (poste.getListeMachine().contains(machine)){
-               //Modification_Poste.getErreur().setText("cette machine est déjà contenu dans ce poste, vous ne pouvez pas l'ajouter");
-               System.out.println("cette machine est déjà contenu dans ce poste, vous ne pouvez pas l'ajouter");
+           if (this.getListeMachine().contains(machine)){
+               this.setN("cette machine est déjà contenue dans ce poste, vous ne pouvez pas l'ajouter");
+               System.out.println(n);
            }else{
-           poste.getListeMachine().add(machine); 
-           n = "Machine"+ machine.getRefEquipement() + " ajoutée au poste ";
-           System.out.println(n);
+                this.getListeMachine().add(machine); 
+                this.setN("machine: "+ machine.getdEquipement() + " ajoutée au poste ");
+                System.out.println(n);
             }
        }else{
-           if (poste.getListeMachine().contains(machine)){
-               poste.getListeMachine().remove(machine);
-               n = "Machine"+ machine.getRefEquipement() + " supprimée du poste ";
+           if (this.getListeMachine().contains(machine)){
+               this.getListeMachine().remove(machine);
+               this.setN("machine: "+ machine.getdEquipement() + " supprimée du poste ");
                System.out.println(n);
         }else{
-               n = "La machine n'existe pas dans ce poste, vous ne pouvez donc pas l'enlever";
+               this.setN("La machine n'existe pas dans ce poste, vous ne pouvez donc pas l'enlever");
                System.out.println(n);
         }
       }      

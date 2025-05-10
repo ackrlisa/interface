@@ -65,6 +65,11 @@ public class Créer_Gamme extends BorderPane {
         );
 
         this.setCenter(champs);
+
+        creer = new Button("Créer la gamme");
+        
+        home = new Button("HOME");
+        this.setRight(home);
         this.setBottom(creer);
         this.setRight(home);
         

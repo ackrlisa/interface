@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Modification_Gamme {
      private Modification_Gamme modifiergamme;
-      private ModèleCarte modeleCarte;
+     private ModèleCarte modeleCarte;
     
     public Fenêtre_Modification_Gamme (Stage stage, ModèleCarte modeleCarte){
        this.modeleCarte=modeleCarte;

@@ -170,7 +170,17 @@ public String getRefMachine() {
         if (poste.getListeMachine().contains(machine)) {
             poste.getListeMachine().remove(machine);
         }
+    
+   
+       if (poste!= null){
+           poste.modifierPoste(this,false);
+           System.out.println("Machine " + super.getRefEquipement() + " supprimée du poste.");
+        } else {
+            System.out.println("Erreur : La machine n'est pas associée à un poste.");
+       }
     }
+
+    
 
     for (Gamme gamme : Gamme.getListeGammes()) {
         for (Operation op : gamme.getListeOperation()) {
@@ -242,4 +252,5 @@ public String getRefMachine() {
 }
     
     
+
 
