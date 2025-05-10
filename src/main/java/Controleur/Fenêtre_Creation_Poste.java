@@ -5,6 +5,7 @@
 package Controleur;
 import Vue.Creation_Poste;
 import Modele.Machine;
+import Modele.ModèleCarte;
 import Modele.Poste;
 import javafx.stage.Stage;
 import java.util.ArrayList;
@@ -15,8 +16,10 @@ import java.util.ArrayList;
 public class Fenêtre_Creation_Poste {
     private Creation_Poste creationPoste;
     private ArrayList<Machine> machinesAjoutees = new ArrayList<>();
+     private ModèleCarte modeleCarte;
 
-    public Fenêtre_Creation_Poste(Stage stage) {
+    public Fenêtre_Creation_Poste(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         creationPoste = new Creation_Poste();
         stage.setTitle("Création d’un poste");
         stage.setScene(creationPoste.getFenetreCreationPoste());
@@ -52,7 +55,7 @@ public class Fenêtre_Creation_Poste {
         creationPoste.getHome().setOnAction(e -> {
             stage.close();
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage);
+            new Fenêtre_Accueil(accueilStage,modeleCarte);
         });
     }
 

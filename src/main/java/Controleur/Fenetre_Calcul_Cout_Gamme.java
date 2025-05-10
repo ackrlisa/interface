@@ -9,6 +9,8 @@ import Modele.Gamme;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
+import Modele.ModèleCarte;
+
 
 /**
  *
@@ -16,8 +18,10 @@ import javafx.stage.Stage;
  */
 public class Fenetre_Calcul_Cout_Gamme {
     private Calcul_Cout_Gamme Calcul_Cout_Gamme ;
+     private ModèleCarte modeleCarte;
     
-    public Fenetre_Calcul_Cout_Gamme(Stage stage){
+    public Fenetre_Calcul_Cout_Gamme(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte =modeleCarte;
         Calcul_Cout_Gamme = new Calcul_Cout_Gamme();
 
         stage.setTitle("Calcul du coût de la gamme");
@@ -39,7 +43,7 @@ public class Fenetre_Calcul_Cout_Gamme {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
         
     }

@@ -4,8 +4,10 @@
  */
 package Controleur;
 
+import Modele.ModèleCarte;
 import Modele.TestFichier;
 import Vue.Fiabilite_Atelier;
+import java.util.Arrays;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 
@@ -15,9 +17,11 @@ import javafx.scene.control.Label;
  */
 public class Fenêtre_Fiabilité {
     private Fiabilite_Atelier fiabilite;
+     private ModèleCarte modeleCarte;
     String c;
     
-    public Fenêtre_Fiabilité (Stage stage){
+    public Fenêtre_Fiabilité (Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         fiabilite= new Fiabilite_Atelier();
         
         stage.setTitle("Fenêtre fiabilité");
@@ -29,7 +33,7 @@ public class Fenêtre_Fiabilité {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage);
+            new Fenêtre_Accueil(accueilStage,modeleCarte);
         });
         
         fiabilite.getBtnInserer().setOnAction(e -> {
@@ -39,8 +43,17 @@ public class Fenêtre_Fiabilité {
         
         fiabilite.getBtnFiabilite_par_machine().setOnAction(e -> {
             TestFichier test = new TestFichier();
-            test.Test(c);
-            fiabilite.getReponse().setText("Fiabilite des machines: "+ test.getListe_fiabilité().toString());        
+            test.Test();
+            String texte = "Fiabilite des machines:\n" + String.join("\n", test.getListe_fiabilité());
+            fiabilite.getReponse().setText(texte);
+            //fiabilite.getReponse().setText("Fiabilite des machines: "+ test.getListe_fiabilité().toString());        
+        });
+        
+        fiabilite.getBtnOrdrefiabilite().setOnAction(e -> {
+            TestFichier test = new TestFichier();
+            test.Test();
+            String texte = "Machines par ordres decroissants de fiabilite:\n" + String.join("\n", test.fiabilite_decroissant ());
+            fiabilite.getReponse().setText(texte);
         });
     }
     

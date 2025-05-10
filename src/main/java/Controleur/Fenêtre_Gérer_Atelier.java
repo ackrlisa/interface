@@ -5,6 +5,7 @@
 package Controleur;
 
 
+import Modele.ModèleCarte;
 import Vue.Gestion_Gamme;
 import Vue.Gestion_Machine;
 import Vue.Gestion_Poste;
@@ -19,8 +20,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Gérer_Atelier {
     private Gérer_Atelier gérerAtelier;
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Gérer_Atelier (Stage stage){
+    public Fenêtre_Gérer_Atelier (Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         gérerAtelier= new Gérer_Atelier();
         
         stage.setTitle("Fenêtre gérer atelier");
@@ -32,7 +35,7 @@ public class Fenêtre_Gérer_Atelier {
              stage.close();
             
             Stage gestionmachineStage = new Stage();
-            new Fenêtre_Gérer_Machine (gestionmachineStage);
+            new Fenêtre_Gérer_Machine (gestionmachineStage,modeleCarte);
                     });
         
         // Gestionnaire pour le bouton "Postes"
@@ -40,7 +43,7 @@ public class Fenêtre_Gérer_Atelier {
             stage.close();
             // Crée une nouvelle fenêtre pour la maintenance
             Stage gestionposteStage = new Stage();
-            new Fenêtre_Gestion_Poste (gestionposteStage);
+            new Fenêtre_Gestion_Poste (gestionposteStage,modeleCarte);
             });
         
         // Gestionnaire pour le bouton "Gammes"
@@ -48,7 +51,7 @@ public class Fenêtre_Gérer_Atelier {
            stage.close();
            
            Stage gestiongammeStage = new Stage();
-           new Fenêtre_Gestion_Gamme (gestiongammeStage);
+           new Fenêtre_Gestion_Gamme (gestiongammeStage,modeleCarte);
             });
         
                       
@@ -57,7 +60,7 @@ public class Fenêtre_Gérer_Atelier {
             stage.close();
            
            Stage gestionstockfiniStage = new Stage();
-           new Fenêtre_Gestion_Stockfini (gestionstockfiniStage);
+           new Fenêtre_Gestion_Stockfini (gestionstockfiniStage,modeleCarte);
           });
         
         // Gestionnaire pour le bouton "Stock brut"
@@ -65,7 +68,7 @@ public class Fenêtre_Gérer_Atelier {
             stage.close();
            
            Stage gestionstockbrutStage = new Stage();
-           new Fenêtre_Gestion_Stockbrut(gestionstockbrutStage);
+           new Fenêtre_Gestion_Stockbrut(gestionstockbrutStage,modeleCarte);
         });
              
                   // Gestionnaire pour le bouton "HOME"
@@ -74,7 +77,7 @@ public class Fenêtre_Gérer_Atelier {
             
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage);
+            new Fenêtre_Accueil(accueilStage,modeleCarte);
         });
     }
 

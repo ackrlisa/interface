@@ -26,12 +26,12 @@ public class TestFichier {
     String c;
     ArrayList<String> liste_fiabilité = new ArrayList<>();
     
-    public void Test(String c){
+    public void Test(){
     System.out.println("fiabilite MACHINE");
       //établis liste des machines étudiées dans la fichier suiviMaintenance"
         ArrayList<String> machines = new ArrayList<>();
         try {
-            BufferedReader in = new BufferedReader(new FileReader(c)); // "C:\\\\Users\\\\PC\\\\OneDrive - INSA Strasbourg\\\\Projet info\\\\interface\\\\Projet_Atelier_Interface\\\\suiviMaintenance2.txt" ));
+            BufferedReader in = new BufferedReader(new FileReader("C:\\\\Users\\\\PC\\\\OneDrive - INSA Strasbourg\\\\Projet info\\\\interface\\\\Projet_Atelier_Interface\\\\suiviMaintenance2.txt" ));
             String ligne;
 
             while ((ligne = in.readLine()) != null) {
@@ -62,7 +62,7 @@ public class TestFichier {
         List<String> evenements = new ArrayList<>();
 
         try {
-            BufferedReader in = new BufferedReader(new FileReader( c)); //"C:\\Users\\PC\\OneDrive - INSA Strasbourg\\Projet info\\interface\\Projet_Atelier_Interface\\suiviMaintenance2.txt" ));
+            BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\PC\\OneDrive - INSA Strasbourg\\Projet info\\interface\\Projet_Atelier_Interface\\suiviMaintenance2.txt" ));
             String ligne;
             while ((ligne = in.readLine()) != null) {
                 String[] parts = ligne.split(" "); //sépare chaque ligne en tableau, un mot=une case
@@ -145,7 +145,7 @@ public class TestFichier {
 
     public static void main(String[] args) {
         TestFichier test = new TestFichier();
-        //test.Test(); // exécution de ta méthode
+        test.Test(); // exécution de ta méthode
         System.out.println("Machines par ordre decroissant de fiabilite");
         for (String i:fiabilite_decroissant()){
             System.out.println(i);

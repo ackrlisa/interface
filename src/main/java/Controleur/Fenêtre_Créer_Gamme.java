@@ -6,6 +6,7 @@ package Controleur;
 
 import Modele.Gamme;
 import Modele.Machine;
+import Modele.ModèleCarte;
 import Vue.Créer_Gamme;
 import Vue.Gestion_Gamme;
 import java.util.ArrayList;
@@ -17,7 +18,9 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Créer_Gamme {
     private Créer_Gamme créergamme;
-    public Fenêtre_Créer_Gamme(Stage stage){
+     private ModèleCarte modeleCarte;
+    public Fenêtre_Créer_Gamme(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         créergamme= new Créer_Gamme();
         
         stage.setTitle("Fenêtre création de gammes");
@@ -28,7 +31,7 @@ public class Fenêtre_Créer_Gamme {
        stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
      });
         
         

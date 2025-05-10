@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controleur;
+import Modele.ModèleCarte;
 import Vue.Accueil;
 import Vue.Maintenance;
 import Vue.Affichage_Atelier;
@@ -13,8 +14,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Maintenance {
        private Maintenance maintenance;
+        private ModèleCarte modeleCarte;
     
-    public Fenêtre_Maintenance (Stage stage){
+    public Fenêtre_Maintenance (Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         maintenance= new Maintenance();
         
         stage.setTitle("Fenêtre maintenance");
@@ -25,13 +28,13 @@ public class Fenêtre_Maintenance {
             // Ferme la fenêtre d'
             stage.close();
             Stage affichageStage = new Stage();
-            new Fenêtre_Affichage_Atelier(affichageStage); // <-- C’est lui qui attache les actions !
+            new Fenêtre_Affichage_Atelier(affichageStage,modeleCarte); // <-- C’est lui qui attache les actions !
         });
                 
         maintenance.getBtnFiabilite().setOnAction(e -> {
             stage.close();
             Stage affichageStage = new Stage();
-            new Fenêtre_Fiabilité(affichageStage);
+            new Fenêtre_Fiabilité(affichageStage,modeleCarte);
                 });
         
         
@@ -40,7 +43,7 @@ public class Fenêtre_Maintenance {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage);
+            new Fenêtre_Accueil(accueilStage,modeleCarte);
         });
         
        

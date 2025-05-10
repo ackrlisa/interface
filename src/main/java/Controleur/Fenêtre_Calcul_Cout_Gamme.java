@@ -5,6 +5,7 @@
 package Controleur;
 
 import Modele.Gamme;
+import Modele.ModèleCarte;
 import Vue.Calcul_Cout_Gamme;
 import javafx.stage.Stage;
 
@@ -14,8 +15,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Calcul_Cout_Gamme {
     private Calcul_Cout_Gamme Calcul_Cout_Gamme ;
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Calcul_Cout_Gamme(Stage stage){
+    public Fenêtre_Calcul_Cout_Gamme(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         
         Calcul_Cout_Gamme = new Calcul_Cout_Gamme();
 
@@ -39,7 +42,7 @@ public class Fenêtre_Calcul_Cout_Gamme {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
         
     }

@@ -4,6 +4,7 @@
  */
 package Controleur;
 
+import Modele.ModèleCarte;
 import Vue.Gestion_Gamme;
 import Vue.Gestion_Stockfini;
 import javafx.stage.Stage;
@@ -14,7 +15,9 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Gestion_Stockfini {
     private Gestion_Stockfini gestionstockfini;
-    public Fenêtre_Gestion_Stockfini(Stage stage){
+     private ModèleCarte modeleCarte;
+    public Fenêtre_Gestion_Stockfini(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         gestionstockfini= new Gestion_Stockfini();
         
         stage.setTitle("Fenêtre gestion des produits finis, du stock de l'atelier");
@@ -25,7 +28,7 @@ public class Fenêtre_Gestion_Stockfini {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage créationstockfiniStage = new Stage();
-            new Fenêtre_Création_Stock_Produitfini(créationstockfiniStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Création_Stock_Produitfini(créationstockfiniStage,modeleCarte); // Redirige vers la fenêtre d'accueil
            });
         
         gestionstockfini.getBtnSupprimer().setOnAction(e -> {
@@ -35,7 +38,7 @@ public class Fenêtre_Gestion_Stockfini {
        stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
      });
 }
 }

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controleur;
+import Modele.ModèleCarte;
 import Vue.Calculer;
 import Vue.Calcul_Cout_Gamme;
 import Vue.Calcul_Duree_Gamme;
@@ -13,8 +14,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Calculer_Atelier {
     private Calculer calculer;  // Vue pour le calcul (fenêtre principale)
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Calculer_Atelier(Stage stage) {
+    public Fenêtre_Calculer_Atelier(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         calculer = new Calculer();
 
         stage.setTitle("Calculer");
@@ -26,21 +29,21 @@ public class Fenêtre_Calculer_Atelier {
             stage.close();
             // Crée une nouvelle fenêtre pour la maintenance
             Stage calculCoutGammeStage = new Stage();
-            new Fenêtre_Calcul_Cout_Gamme(calculCoutGammeStage); 
+            new Fenêtre_Calcul_Cout_Gamme(calculCoutGammeStage,modeleCarte); 
            
         });
         
         calculer.getBtnDureegamme().setOnAction(e->{
             stage.close();
             Stage calculDureeGammeStage = new Stage();
-            new Fenêtre_Calcul_Duree_Gamme(calculDureeGammeStage);
+            new Fenêtre_Calcul_Duree_Gamme(calculDureeGammeStage,modeleCarte);
         });
         
         calculer.getBtnHome().setOnAction(e -> {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
 
     }

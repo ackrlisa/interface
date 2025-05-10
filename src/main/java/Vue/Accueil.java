@@ -19,11 +19,13 @@ public class Accueil extends BorderPane {
     private Button maintenance;
     private Button chefAtelier;
     private Button operateur;
+    private Button carte;
     
     public Accueil (){
         maintenance = new Button("Maintenance");
         chefAtelier = new Button("Chef d'atelier");
         operateur = new Button("Operateur");
+        carte= new Button("Carte");
         Label qui = new Label("Bonjour, qui êtes vous?");
     
         this.setTop(qui);
@@ -31,6 +33,7 @@ public class Accueil extends BorderPane {
         HBox bas = new HBox(10); // 10 = espacement entre les boutons
         bas.getChildren().addAll(maintenance, chefAtelier, operateur);
         this.setCenter(bas);
+        this.setRight(carte);
     }
     
     public BorderPane getAccueil() {
@@ -39,6 +42,9 @@ public class Accueil extends BorderPane {
     
     public Button getBtnMaintenance(){
         return maintenance;
+    }
+     public Button getBtnCarte(){
+        return carte;
     }
     
     public Button getBtnOperateur(){

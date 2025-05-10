@@ -4,6 +4,7 @@
  */
 package Controleur;
 
+import Modele.ModèleCarte;
 import Vue.Gestion_Poste;
 import javafx.stage.Stage;
 
@@ -13,8 +14,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Gestion_Poste {
     private Gestion_Poste gestionposte;
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Gestion_Poste (Stage stage){
+    public Fenêtre_Gestion_Poste (Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         gestionposte= new Gestion_Poste();
         
         stage.setTitle("Fenêtre gestion des postes");
@@ -27,7 +30,7 @@ public class Fenêtre_Gestion_Poste {
             // Crée une nouvelle fenêtre pour operateur
            
             Stage creationPoste = new Stage();
-            new Fenêtre_Creation_Poste(creationPoste);
+            new Fenêtre_Creation_Poste(creationPoste,modeleCarte);
         });
         
                 
@@ -39,7 +42,7 @@ public class Fenêtre_Gestion_Poste {
             
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage);
+            new Fenêtre_Accueil(accueilStage,modeleCarte);
         });
         
        

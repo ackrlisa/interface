@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 import Controleur.Fenêtre_Accueil;
 import Controleur.Fenêtre_Calcul_Duree_Gamme ;
 import Controleur.Fenêtre_Affichage_Poste ; 
+import Controleur.Fenêtre_CarteFx;
+import Modele.ModèleCarte;
 
 /**
  * JavaFX App
@@ -22,9 +24,12 @@ public class App extends Application {
         //var scene = new Scene(new StackPane(label), 640, 480);
         //stage.setScene(scene);
         //stage.show();
+        ModèleCarte modeleCarte=new ModèleCarte();
+        new Fenêtre_Accueil(stage,modeleCarte); //Lance le controleur
         
-        new Fenêtre_Accueil(stage); //Lance le controleur
+       
         
+               
     }
 
     public static void main(String[] args) {

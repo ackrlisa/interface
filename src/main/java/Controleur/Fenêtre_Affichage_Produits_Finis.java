@@ -4,6 +4,7 @@
  */
 package Controleur;
 
+import Modele.ModèleCarte;
 import Modele.ProduitsFinis;
 import Vue.Affichage_Produits_Finis;
 import javafx.stage.Stage;
@@ -14,8 +15,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Affichage_Produits_Finis {
     private Affichage_Produits_Finis Affichage_Produits_Finis ;
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Affichage_Produits_Finis(Stage stage){
+    public Fenêtre_Affichage_Produits_Finis(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         
         Affichage_Produits_Finis = new Affichage_Produits_Finis();
 
@@ -44,7 +47,7 @@ public class Fenêtre_Affichage_Produits_Finis {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
     }
 }

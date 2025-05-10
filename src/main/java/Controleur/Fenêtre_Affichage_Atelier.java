@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controleur;
+import Modele.ModèleCarte;
 import Vue.Accueil;
 import Vue.Maintenance;
 import Vue.Affichage_Atelier;
@@ -14,8 +15,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Affichage_Atelier {
     private Affichage_Atelier affichageAtelier;
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Affichage_Atelier(Stage stage) {
+    public Fenêtre_Affichage_Atelier(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         affichageAtelier = new Affichage_Atelier();
         //System.out.println("Initialisation...");
         //System.out.println("getBtnMachine() = " + affichageAtelier.getBtnMachine());
@@ -30,7 +33,7 @@ public class Fenêtre_Affichage_Atelier {
             
             // Ouvrir une fentre pour afficher les machines
             Stage afficherMachineStage = new Stage();
-            new Fenêtre_Affichage_Machine(afficherMachineStage);
+            new Fenêtre_Affichage_Machine(afficherMachineStage,modeleCarte);
             });
         
         // Gestionnaire pour le bouton "Postes"
@@ -38,7 +41,7 @@ public class Fenêtre_Affichage_Atelier {
             stage.close();
             
             Stage afficherPosteStage = new Stage();
-            new Fenêtre_Affichage_Poste(afficherPosteStage);
+            new Fenêtre_Affichage_Poste(afficherPosteStage,modeleCarte);
            });
         
         // Gestionnaire pour le bouton "Gammes"
@@ -46,7 +49,7 @@ public class Fenêtre_Affichage_Atelier {
             stage.close();
             
             Stage afficherGammeStage = new Stage();
-            new Fenêtre_Affichage_Gamme(afficherGammeStage);
+            new Fenêtre_Affichage_Gamme(afficherGammeStage,modeleCarte);
           });
         
         // Gestionnaire pour le bouton "Personnel"
@@ -54,7 +57,7 @@ public class Fenêtre_Affichage_Atelier {
             stage.close();
             
             Stage afficherChoixPersonne = new Stage ();
-            new Fenêtre_Affichage_Choix_Personne(afficherChoixPersonne);
+            new Fenêtre_Affichage_Choix_Personne(afficherChoixPersonne,modeleCarte);
         });
         
       
@@ -62,7 +65,7 @@ public class Fenêtre_Affichage_Atelier {
             stage.close();
             
             Stage afficherProduitsFinis = new Stage ();
-            new Fenêtre_Affichage_Produits_Finis(afficherProduitsFinis);
+            new Fenêtre_Affichage_Produits_Finis(afficherProduitsFinis,modeleCarte);
             });
         
         // Gestionnaire pour le bouton "Stock brut"
@@ -70,7 +73,7 @@ public class Fenêtre_Affichage_Atelier {
             stage.close();
             
             Stage afficherStockBrut = new Stage ();
-            new Fenêtre_Affichage_Stock_Brut(afficherStockBrut);           
+            new Fenêtre_Affichage_Stock_Brut(afficherStockBrut,modeleCarte);           
         });
         
         
@@ -81,7 +84,7 @@ public class Fenêtre_Affichage_Atelier {
              
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // <-- Et pas new Accueil()
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // <-- Et pas new Accueil()
         });
     }
 

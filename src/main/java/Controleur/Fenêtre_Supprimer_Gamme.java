@@ -4,6 +4,7 @@
  */
 package Controleur;
 
+import Modele.ModèleCarte;
 import Vue.Modification_Gamme;
 import Vue.Supprimer_Gamme;
 import javafx.stage.Stage;
@@ -14,8 +15,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Supprimer_Gamme {
    private Supprimer_Gamme supprimergamme;
+    private ModèleCarte modeleCarte;
     
-    public Fenêtre_Supprimer_Gamme (Stage stage){
+    public Fenêtre_Supprimer_Gamme (Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         supprimergamme= new Supprimer_Gamme();
         
         stage.setTitle("Fenêtre supprimer gamme");
@@ -27,7 +30,7 @@ public class Fenêtre_Supprimer_Gamme {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
            });
         
     }}

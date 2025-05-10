@@ -5,6 +5,7 @@
 package Controleur;
 
 import Modele.ChefAtelier;
+import Modele.ModèleCarte;
 import Vue.Affichage_Chef_Atelier;
 import javafx.stage.Stage;
 
@@ -14,8 +15,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Affichage_Chef_Atelier {
     private Affichage_Chef_Atelier Affichage_Chef_Atelier ;
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Affichage_Chef_Atelier(Stage stage){
+    public Fenêtre_Affichage_Chef_Atelier(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         
         Affichage_Chef_Atelier = new Affichage_Chef_Atelier();
 
@@ -44,7 +47,7 @@ public class Fenêtre_Affichage_Chef_Atelier {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
     }
 }

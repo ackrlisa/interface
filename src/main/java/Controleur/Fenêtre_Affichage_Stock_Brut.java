@@ -5,6 +5,7 @@
 package Controleur;
 
 import Modele.Element;
+import Modele.ModèleCarte;
 import Modele.StockBrut;
 import Vue.Affichage_Stock_Brut;
 import javafx.stage.Stage;
@@ -15,8 +16,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Affichage_Stock_Brut {
     private Affichage_Stock_Brut Affichage_Stock_Brut ;
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Affichage_Stock_Brut(Stage stage){
+    public Fenêtre_Affichage_Stock_Brut(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         
         Affichage_Stock_Brut = new Affichage_Stock_Brut();
 
@@ -39,7 +42,7 @@ public class Fenêtre_Affichage_Stock_Brut {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
 
     }

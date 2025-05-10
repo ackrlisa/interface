@@ -7,6 +7,7 @@ import Vue.Affichage_Machine ;
 import Modele.Operation;
 import Modele.Poste ;
 import Modele.Machine;
+import Modele.ModèleCarte;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -18,8 +19,10 @@ import Modele.Operateur ;
  */
 public class Fenêtre_Affichage_Machine {
     private Affichage_Machine Affichage_Machine ;
+     private ModèleCarte modeleCarte;
     
-    public Fenêtre_Affichage_Machine (Stage stage) {
+    public Fenêtre_Affichage_Machine (Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
     Affichage_Machine = new Affichage_Machine();
        //Création des opérations
        //Operation op1 = new Operation("OP01", "Découpe", "M01", 2.0f);
@@ -78,7 +81,7 @@ public class Fenêtre_Affichage_Machine {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
         
 }

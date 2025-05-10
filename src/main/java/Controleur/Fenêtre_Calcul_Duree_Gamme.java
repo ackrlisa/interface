@@ -11,6 +11,7 @@ import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import Modele.Equipement ;
 import Modele.Machine ;
+import Modele.ModèleCarte;
 import Modele.Operation ;
 import Modele.Operateur ;
 import Modele.Poste ;
@@ -22,8 +23,9 @@ import java.util.ArrayList;
  */
 public class Fenêtre_Calcul_Duree_Gamme {
     private Calcul_Duree_Gamme Calcul_Duree_Gamme ;
-    
-    public Fenêtre_Calcul_Duree_Gamme(Stage stage){
+     private ModèleCarte modeleCarte;
+    public Fenêtre_Calcul_Duree_Gamme(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         
         Calcul_Duree_Gamme = new Calcul_Duree_Gamme();
 
@@ -47,7 +49,7 @@ public class Fenêtre_Calcul_Duree_Gamme {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
         
     }

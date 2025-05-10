@@ -4,6 +4,7 @@
  */
 package Controleur;
 
+import Modele.ModèleCarte;
 import Modele.ProduitsFinis;
 import Vue.Création_Stock_Produitfini;
 import javafx.stage.Stage;
@@ -14,8 +15,10 @@ import javafx.stage.Stage;
  */
 public class Fenêtre_Création_Stock_Produitfini {
     private Création_Stock_Produitfini creationstockproduitfini;
+     private ModèleCarte modeleCarte;
 
-    public Fenêtre_Création_Stock_Produitfini(Stage stage) {
+    public Fenêtre_Création_Stock_Produitfini(Stage stage, ModèleCarte modeleCarte){
+       this.modeleCarte=modeleCarte;
         creationstockproduitfini = new Création_Stock_Produitfini();
         stage.setTitle("Ajout stock de produits finis");
         stage.setScene(creationstockproduitfini.getFenêtre_Création_Stock_Produitfini());
@@ -52,7 +55,7 @@ public class Fenêtre_Création_Stock_Produitfini {
         creationstockproduitfini.getHome().setOnAction(e -> {
             stage.close();
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage);
+            new Fenêtre_Accueil(accueilStage,modeleCarte);
         });
     
     }
