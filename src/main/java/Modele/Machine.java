@@ -85,6 +85,10 @@ public String getRefMachine() {
     return machines;
     }
 
+    public void setRefMachine(String refMachine) {
+        this.refMachine = refMachine;
+    }
+
        public void setX(float x) {
         this.x = x;
     }
