@@ -5,6 +5,7 @@
 package Modele;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -30,9 +31,10 @@ public class ModèleCarte {
     public ArrayList<Machine> getMachines() {
         return machines;
     }
-    
-    
-     // Méthode pour chercher une machine par référence
+    public void supprimerMachine(Machine machine) {
+    machines.remove(machine); // Supprimer la machine de la liste
+    }
+         // Méthode pour chercher une machine par référence
     public Machine getMachineParRef(String ref) {
         for (Machine m : machines) {
             if (m.getRefMachine().equals(ref)) {

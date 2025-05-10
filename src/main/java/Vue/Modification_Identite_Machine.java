@@ -32,7 +32,7 @@ public class Modification_Identite_Machine extends BorderPane{
         erreur = new Label(" ");
         texterefMachine = new Label("Référence de la machine :"); textedMachine = new Label("Description :");
         textex = new Label("Coordonnée X"); textey = new Label("Coordonnée Y :");
-        textecout = new Label("Coordonnée Y :"); textetype = new Label("Coordonnée Y :");
+        textecout = new Label("cout"); textetype = new Label("type:");
         
         VBox champs = new VBox(15);
         refMachine = new TextField();
@@ -62,7 +62,7 @@ public class Modification_Identite_Machine extends BorderPane{
         this.setRight(home);      
     }
 
-    public Label getBtnErreur() {
+    public Label getErreur() {
         return erreur;
     }
 

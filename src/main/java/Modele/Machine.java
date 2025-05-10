@@ -163,14 +163,15 @@ public String getRefMachine() {
     public boolean estOperationnel(){
         return this.etatMachine==EtatMachine.OPERATIONNEL; // vérifie si machine opérationnelle, on a une classe spéciale EtatMachine pour donner juste els différents types
     }
-   public void supprimerMachine(){
+   public void supprimerMachine(ModèleCarte modeleCarte){
        if (poste!= null){
            poste.modifierPoste(poste,this,false);
            System.out.println("Machine " + super.getRefEquipement() + " supprimée du poste.");
         } else {
             System.out.println("Erreur : La machine n'est pas associée à un poste.");
        }
-
+// Supprime la machine du modèle
+    modeleCarte.supprimerMachine(this);
     }
    
    public void ajouterOperationRealisable(Operation operation){

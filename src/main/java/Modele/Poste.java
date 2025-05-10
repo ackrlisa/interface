@@ -6,6 +6,7 @@ package Modele;
 
 import com.mycompany.projet_atelier_interface.*;
 import java.util.ArrayList;
+import Vue.Modification_Poste;
 
 /**
  *
@@ -15,7 +16,8 @@ public class Poste extends Equipement {
     private ArrayList<Machine> listeMachine=new ArrayList<>();
     private String dPoste;
     private String refPoste;
-    private static ArrayList<Poste> listePostes = new ArrayList<>(); 
+    private static ArrayList<Poste> listePostes = new ArrayList<>();
+    String n;
 
     public ArrayList<Machine> getListeMachine() {
         return listeMachine;
@@ -81,16 +83,21 @@ public class Poste extends Equipement {
     public void modifierPoste(Poste poste, Machine machine, boolean ajouter){
        if (ajouter){
            if (poste.getListeMachine().contains(machine)){
+               //Modification_Poste.getErreur().setText("cette machine est déjà contenu dans ce poste, vous ne pouvez pas l'ajouter");
                System.out.println("cette machine est déjà contenu dans ce poste, vous ne pouvez pas l'ajouter");
            }else{
            poste.getListeMachine().add(machine); 
-           System.out.println("Machine"+ machine.getRefEquipement() + " ajoutée au poste " );
+           n = "Machine"+ machine.getRefEquipement() + " ajoutée au poste ";
+           System.out.println(n);
             }
        }else{
            if (poste.getListeMachine().contains(machine)){
                poste.getListeMachine().remove(machine);
+               n = "Machine"+ machine.getRefEquipement() + " supprimée du poste ";
+               System.out.println(n);
         }else{
-               System.out.println("La machine n'existe pas dans ce poste, vous ne pouvez donc pas l'enlever");
+               n = "La machine n'existe pas dans ce poste, vous ne pouvez donc pas l'enlever";
+               System.out.println(n);
         }
       }      
     }
@@ -128,7 +135,10 @@ public class Poste extends Equipement {
         }
         return listeOperations;
     }
-    
-    
+
+    public String getN() {
+        return n;
+    }
+
 }
     
