@@ -29,7 +29,10 @@ public class Fenêtre_Modification_Machine {
          
      });
         // Gestionnaire pour le bouton "Machines"
-     modifiermachine.getBtnIdentité().setOnAction(e->{       
+     modifiermachine.getBtnIdentité().setOnAction(e->{ 
+         stage.close();
+         Stage modificationStage = new Stage();
+         new Fenêtre_Modification_Identite_Machine(modificationStage,modeleCarte); // Utilise le contrôleur
      });     
       
      modifiermachine.getBtnAjoutopération().setOnAction(e->{      
