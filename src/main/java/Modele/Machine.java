@@ -26,8 +26,8 @@ public class Machine extends Equipement {
 
    
 
-    public Machine(String refMachine, String dMachine, float x, float y,float cout, ArrayList<Operation> listOperations, String type,Poste poste, ArrayList<Operateur> operateurMachine) {
-       super(refMachine, dMachine, cout);
+    public Machine(String refEquipement,String dMachine, float x, float y,float cout, ArrayList<Operation> listOperations, String type,Poste poste, ArrayList<Operateur> operateurMachine) {
+       super(refEquipement, dMachine, cout);
         this.x = x;
         this.dispo = true;
         this.y = y;
@@ -40,7 +40,7 @@ public class Machine extends Equipement {
     }
 public String getRefMachine() {
       
-    return refMachine;
+    return super.getRefEquipement();
        
 }
     public ArrayList<Operateur> getOperateursMachine() {
