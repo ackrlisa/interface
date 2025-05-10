@@ -33,13 +33,16 @@ public class Fenêtre_Gestion_Poste {
             new Fenêtre_Creation_Poste(creationPoste,modeleCarte);
         });
         
-                
-      
-        //inutile car dans fenêTRE Atelier on inicie pas de nvelle fenêtre, on ouvre la fenetre affichage donc le bouton Home correspond déjà à celui de affichage
+        gestionposte.getBtnModifier().setOnAction(e -> { //quand on clique sur le bouton
+            // Ferme la fenêtre 
+            stage.close();     
+            Stage modificationPoste = new Stage();
+            new Fenêtre_Modification_Poste(modificationPoste,modeleCarte);
+        });
+    
         gestionposte.getBtnHome().setOnAction(e -> {
             // Ferme la fenêtre de maintenance
-            stage.close();
-            
+            stage.close();          
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte);

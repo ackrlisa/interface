@@ -22,7 +22,7 @@ public class Fenêtre_Modification_Identite_Machine {
     Modification_Identite_Machine = new Modification_Identite_Machine();
     this.modeleCarte=modeleCarte;
     
-    stage.setTitle("Affichage d'une machine");
+    stage.setTitle("Modification de l'identité de la machine");
         stage.setScene(Modification_Identite_Machine.getFenêtre_modification_identite_machine()); // Appelle la méthode pour obtenir la scène de la vue
         Modification_Identite_Machine.getComboMachine().getItems().setAll(Machine.getListeMachines());      
         stage.show();
@@ -51,7 +51,7 @@ public class Fenêtre_Modification_Identite_Machine {
                     machineChoisie.setCout(cout);
                     machineChoisie.setType(type);
                 
-                    Modification_Identite_Machine.getBtnOk().setText("Machine modifiée avec succès !");
+                    Modification_Identite_Machine.getErreur().setText("Machine modifiée avec succès !");
                 
                 // Optionnel : Réinitialiser les champs de la vue après la création
                     Modification_Identite_Machine.getRefMachine().clear();
@@ -62,7 +62,7 @@ public class Fenêtre_Modification_Identite_Machine {
                     Modification_Identite_Machine.getType().clear();
 
                 } catch (NumberFormatException ex) {
-                    Modification_Identite_Machine.getBtnOk().setText("Veuillez entrer des valeurs numériques valides pour X, Y et coût.");
+                    Modification_Identite_Machine.getErreur().setText("Veuillez entrer des valeurs numériques valides pour X, Y et coût.");
                     // Optionnel : Réinitialiser les champs de la vue après l'erreur
                     Modification_Identite_Machine.getRefMachine().clear();
                     Modification_Identite_Machine.getdMachine().clear();
@@ -81,7 +81,7 @@ public class Fenêtre_Modification_Identite_Machine {
                     Modification_Identite_Machine.getType().clear();
                 }             
             }else{
-                Modification_Identite_Machine.getBtnErreur().setText("Veuillez sélectionner une machine.");
+                Modification_Identite_Machine.getErreur().setText("Veuillez sélectionner une machine.");
             }
         });
         
