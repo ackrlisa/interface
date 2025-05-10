@@ -30,7 +30,8 @@ public class Fenêtre_Modification_Poste {
             Poste posteChoisie = Modification_Poste.getComboPoste().getValue();
             Machine machineChoisie = Modification_Poste.getComboMachine().getValue();
             if (machineChoisie != null) {
-                posteChoisie.modifierPoste(posteChoisie, machineChoisie, true);
+                posteChoisie.modifierPoste(machineChoisie, true);
+                Modification_Poste.getErreur().setText(posteChoisie.getN());
             }else{
                 Modification_Poste.getErreur().setText("Veuillez sélectionner une machine et/ou un poste.");
             }
@@ -40,7 +41,7 @@ public class Fenêtre_Modification_Poste {
             Poste posteChoisie = Modification_Poste.getComboPoste().getValue();
             Machine machineChoisie = Modification_Poste.getComboMachine().getValue();
             if (machineChoisie != null) {
-                posteChoisie.modifierPoste(posteChoisie, machineChoisie, false);
+                posteChoisie.modifierPoste(machineChoisie, false);
                 Modification_Poste.getErreur().setText(posteChoisie.getN());
             }else{
                 Modification_Poste.getErreur().setText("Veuillez sélectionner une machine et/ou un poste.");

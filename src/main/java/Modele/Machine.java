@@ -165,7 +165,7 @@ public String getRefMachine() {
     }
    public void supprimerMachine(){
        if (poste!= null){
-           poste.modifierPoste(poste,this,false);
+           poste.modifierPoste(this,false);
            System.out.println("Machine " + super.getRefEquipement() + " supprimée du poste.");
         } else {
             System.out.println("Erreur : La machine n'est pas associée à un poste.");
