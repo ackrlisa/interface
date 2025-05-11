@@ -25,15 +25,14 @@ public class Modification_Machine extends BorderPane{
     public Modification_Machine(){
         identité = new Button("Modifier l'identité de la machine");
         état = new Button("Modifier l'état de la machine");
-        ajoutopération = new Button("Ajouter une opération à la machine");
-        suppressionopération = new Button("Supprimer une opération de la machine");
+        ajoutopération = new Button("Ajouter/Supprimer une opération à la machine");
         home= new Button ("HOME");
         Label qui = new Label("Que voulez-vous modifier?");
     
         this.setTop(qui);
         
         VBox milieu = new VBox(10); // 10 = espacement entre les boutons
-        milieu.getChildren().addAll(identité, état, ajoutopération, suppressionopération);
+        milieu.getChildren().addAll(identité, état, ajoutopération);
         this.setCenter(milieu);
         this.setRight(home);
     }
@@ -42,14 +41,10 @@ public class Modification_Machine extends BorderPane{
         return ajoutopération;
     }
 
-    public Button getBtnSuppressionopération() {
-        return suppressionopération;
-    }
-
     public Button getBtnIdentité() {
         return identité;
     }
-public Button getBtnEtat() {
+    public Button getBtnEtat() {
         return état;
     }
     public Button getBtnHome() {

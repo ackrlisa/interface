@@ -12,7 +12,7 @@ package Modele;
 
 import java.util.ArrayList;
 public class Machine extends Equipement {
-    private String type;
+    private String type, n;
     private float x;
     private String refMachine;
     private float y;
@@ -124,6 +124,14 @@ public String getRefMachine() {
     public void setOperateursMachine(ArrayList<Operateur> operateursMachine) {
         this.operateursMachine = operateursMachine;
     }
+
+    public void setN(String n) {
+        this.n = n;
+    }
+
+    public String getN() {
+        return n;
+    }
     
     @Override
     public String toString() {
@@ -207,18 +215,20 @@ public String getRefMachine() {
    public void ajouterOperationRealisable(Operation operation){
        if (!operations.contains(operation)) {
         operations.add(operation);
-        System.out.println("Opération " + operation.getRefOperation() + " ajoutée à la machine.");
+        this.setN("Opération " + operation.getRefOperation() + " ajoutée à la machine.");
     } else {
-        System.out.println("Cette opération est déjà réalisable par cette machine.");
+        this.setN("Cette opération est déjà réalisable par cette machine.");
+        System.out.println(n);
     }
    }
    
    public void supprimerOperationRealisable(Operation operation){
        if(operations.contains(operation)){
            operations.remove(operation);
-           System.out.println("Operation "+ operation.getRefOperation()+" a été retirée de la machine");
+           this.setN("Operation "+ operation.getRefOperation()+" a été retirée de la machine");
        } else {
-           System.out.println("La machine ne pouvais déjà par réaliser l'opération "+operation.getRefOperation() );
+           this.setN("La machine ne pouvais déjà par réaliser l'opération "+operation.getRefOperation() );
+           System.out.println(n);
        }
    }
     

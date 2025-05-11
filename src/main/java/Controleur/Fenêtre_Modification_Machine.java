@@ -37,10 +37,9 @@ public class Fenêtre_Modification_Machine {
      });     
       
      modifiermachine.getBtnAjoutopération().setOnAction(e->{
-         
-     });
-               
-    modifiermachine.getBtnSuppressionopération().setOnAction(e->{      
+         stage.close();
+         Stage modificationStage = new Stage();
+         new Fenêtre_Ajout_Operation_Machine(modificationStage,modeleCarte); 
      });
     
    modifiermachine.getBtnHome().setOnAction(e->{  

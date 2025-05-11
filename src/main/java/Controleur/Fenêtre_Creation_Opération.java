@@ -5,6 +5,7 @@
 package Controleur;
 
 import Modele.Equipement;
+import Modele.Machine;
 import Modele.Operation;
 import Vue.Creation_Opération;
 import java.util.ArrayList;
@@ -46,14 +47,16 @@ public class Fenêtre_Creation_Opération {
             String refOperation = creationOperation.getRefOperation().getText();
             String dOperation = creationOperation.getdOperation().getText();
             String duréeOpérationText = creationOperation.getDuréeOpération().getText();
-
+            Equipement equipementChoisi = creationOperation.getComboEquipement().getValue();
             if (refOperation.isEmpty() || dOperation.isEmpty() || refEquipement == null || duréeOpérationText.isEmpty()) {
                 creationOperation.getResultat().setText("Veuillez remplir tous les champs.");
             } else {
                 try {
                     float duréeOperation = Float.parseFloat(duréeOpérationText);
                     Operation nouvelleOperation = new Operation(refOperation, dOperation, refEquipement, duréeOperation);
-
+                    if (equipementChoisi instanceof Machine) {
+                        ((Machine) equipementChoisi).ajouterOperationRealisable(nouvelleOperation);
+                    }
                     creationOperation.getResultat().setText("Opération créée avec succès !");
                     creationOperation.getRefOperation().clear();
                     creationOperation.getdOperation().clear();
