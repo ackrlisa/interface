@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author alicedeboever
  */
 public class Gamme {
-    private String refGamme ;
+    private String refGamme, n ;
     private ArrayList<Operation> listeOperation=new ArrayList<>();
     private ArrayList<Equipement> listeEquipement=new ArrayList<>() ;
     private static ArrayList<Gamme> listeGammes = new ArrayList<>(); 
@@ -46,8 +46,13 @@ public class Gamme {
         this.listeEquipement = listeEquipement;
     }
 
-    
-    
+    public String getN() {
+        return n;
+    }
+
+    public void setN(String n) {
+        this.n = n;
+    }
 
     public Gamme(String refGamme, ArrayList<Operation> listeOperation, ArrayList<Equipement> listeEquipement) {
         this.refGamme = refGamme;
@@ -83,22 +88,20 @@ public class Gamme {
     
     
    //Modifier gamme en ajoutant ou supprimant une opération ou un équipement
-    public void ajoutEquipementOperation(Equipement equipement,Operation operation){
-        this.listeOperation.add(operation);
-        System.out.println("Opération "+operation.getRefOperation()+" ajoutée!");
-        this.listeEquipement.add(equipement);
-        System.out.println("Equipement "+equipement.getRefEquipement()+" ajouté!");
+    public void ajoutEquipementOperation(Machine machine){
+        if (this.getListeEquipement().contains(machine)){
+            this.setN("la machine est déjà associée à cette gamme");
+        }else{
+        this.listeEquipement.add(machine);
+        this.setN("Equipement "+machine.getRefEquipement()+" ajouté!");
+        }
     }
-    public void enleverEquipementOperation(Equipement equipement,Operation operation){
-       if (listeOperation.remove(operation)) {   //vérifier direct si l'opération est dans la gamme, et si oui elle est alors supprimée
-        System.out.println("Opération " + operation.getRefOperation() + " retirée !");
+    
+    public void enleverEquipementOperation(Machine machine){
+    if (listeEquipement.remove(machine)) {   //vérifier direct si l'opération est dans la gamme, et si oui elle est alors supprimée
+        this.setN("Machine" + machine.getRefEquipement() + " retiré!");
     } else {
-        System.out.println("Cette opération n'est pas utilisée dans cette gamme");
-    }
-    if (listeEquipement.remove(equipement)) {   //vérifier direct si l'opération est dans la gamme, et si oui elle est alors supprimée
-        System.out.println("Equipement " + equipement.getRefEquipement() + " retiré!");
-    } else {
-        System.out.println("Cte équipement n'est pas utilisé pour cette gamme");
+        System.out.println("Cette machine n'est pas utilisée pour cette gamme");
     }
     listeGammes.remove(this);  // Supprime cette instance de la liste
 

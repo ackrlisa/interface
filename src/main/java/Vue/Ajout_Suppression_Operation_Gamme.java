@@ -26,28 +26,23 @@ public class Ajout_Suppression_Operation_Gamme extends BorderPane{
     private Button home ; 
     private Button ajouter, supprimer ;
     private ComboBox<Gamme> comboGamme;
-    List<Equipement> equipements = new ArrayList<>();
-    private ComboBox<Equipement> comboEquipement;
+    private ComboBox<Machine> comboMachines;
     private Label choixGamme, choixEquipement, erreur ;
     
     public Ajout_Suppression_Operation_Gamme() {
         home = new Button ("HOME");
         ajouter = new Button ("AJOUTER");
         supprimer = new Button("SUPPRIMER");
-        choixEquipement = new Label("Quel équipement voulez vous ajouter/supprimer?");
+        choixEquipement = new Label("Quel machine voulez vous ajouter/supprimer?");
         choixGamme = new Label("sélectionnez une Gamme");
         erreur = new Label(" ");  
-        List<Equipement> equipements = new ArrayList<>();
-        equipements.addAll(Machine.getListeMachines());
-        equipements.addAll(Poste.getListePostes());
-
-        comboEquipement.getItems().addAll(equipements);
+        comboMachines.getItems().addAll(Machine.getListeMachines());
         comboGamme = new ComboBox<>();
         comboGamme.getItems().addAll(Gamme.getListeGammes());
         
         VBox champs = new VBox(15);
         champs.getChildren().addAll(
-            choixGamme, comboGamme, choixEquipement, comboEquipement, ajouter, supprimer, erreur);      
+            choixGamme, comboGamme, choixEquipement, comboMachines, ajouter, supprimer, erreur);      
          this.setCenter(champs);
             
         this.setRight(home);      
@@ -65,8 +60,8 @@ public class Ajout_Suppression_Operation_Gamme extends BorderPane{
         return supprimer;
     }
 
-    public ComboBox<Equipement> getComboEquipement() {
-      return comboEquipement;
+    public ComboBox<Machine> getComboMachines() {
+      return comboMachines;
     }
 
     public ComboBox<Gamme> getComboGamme() {
