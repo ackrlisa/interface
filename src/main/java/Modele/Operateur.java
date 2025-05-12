@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Operateur extends Personne{
     
     private String competance ;
-    private boolean disponible ; 
+    private StatutOpé statut ; 
     private static ArrayList<Operateur> listeOperateurs = new ArrayList<>(); 
 
     
@@ -26,23 +26,23 @@ public class Operateur extends Personne{
         return listeOperateurs;
     }
 
-    public boolean isDisponible() {
-        return disponible;
+    public StatutOpé getStatutOpé() {
+        return statut;
     }
 
-
+  
     public void setCompetance(String competance) {
         this.competance = competance;
     }
 
-    public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
+    public void setStatutOpé(StatutOpé statut) {
+        this.statut = statut;
     }
 //constructeur
-    public Operateur(String competance, boolean disponible, float code, String nom, String prenom) {
+    public Operateur(String competance,String code, String nom, String prenom) {
         super(code, nom, prenom);
         this.competance = competance;
-        this.disponible = disponible;
+        this.statut = StatutOpé.LIBRE;
         listeOperateurs.add(this);
     }
     
@@ -54,12 +54,8 @@ public class Operateur extends Personne{
     
     @Override
     public void afficher() {
-        System.out.print("Operateur: "+this.getPrenom()+" "+this.getNom()+",code: "+this.getCode()+",competence "+this.competance);
-        if(disponible){
-            System.out.println(", statut:disponible");
-        }else{
-            System.out.println(", statut: indisponible");
-        }     
+        System.out.print("Operateur: "+this.getPrenom()+" "+this.getNom()+",code: "+this.getCode()+",competence "+this.competance+ " et il est"+this.statut);
+            
     }
    
     

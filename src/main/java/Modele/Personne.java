@@ -12,12 +12,12 @@ import java.util.ArrayList;
  * @author alicedeboever
  */
 public abstract class Personne {
-    private float code ;
+    private String code ;
     private String nom ;
     private String prenom ;
 
     
-    public float getCode() {
+    public String getCode() {
         return code;
     }
 
@@ -29,7 +29,7 @@ public abstract class Personne {
         return prenom;
     }
     
-    public void setCode(float code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
@@ -41,7 +41,7 @@ public abstract class Personne {
         this.prenom = prenom;
     }
 
-    public Personne(float code, String nom, String prenom) {
+    public Personne(String code, String nom, String prenom) {
         this.code = code;
         this.nom = nom;
         this.prenom = prenom;

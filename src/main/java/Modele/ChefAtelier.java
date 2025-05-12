@@ -17,7 +17,7 @@ public class ChefAtelier extends Personne {
         return listeChefsAtelier;
     }
 
-    public ChefAtelier(float code, String nom, String prenom) {
+    public ChefAtelier(String code, String nom, String prenom) {
         super(code, nom, prenom);
         listeChefsAtelier.add(this);
     }

@@ -34,7 +34,7 @@ public class Fenetre_Affichage_Operateur {
                 details.append("Prénom : ").append(operateurChoisi.getPrenom()).append("\n");
                 details.append("Code : ").append(operateurChoisi.getCode()).append("\n");
                 details.append("Compétance : ").append(operateurChoisi.getCompetance()).append("\n");
-                details.append("Disponibilité : ").append(operateurChoisi.isDisponible()).append("\n");
+                details.append("Disponibilité : ").append(operateurChoisi.getStatutOpé()).append("\n");
                 
 
                 Affichage_Operateur.getAffichageOperateur().setText(details.toString());

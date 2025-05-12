@@ -52,6 +52,15 @@ public class Fenêtre_Gérer_Atelier {
             Stage gestionproduitStage = new Stage();
             new Fenêtre_Gestion_Produit (gestionproduitStage,modeleCarte);
             });
+        
+        gérerAtelier.getBtnOpérateur().setOnAction(e -> {
+            stage.close();
+            // Crée une nouvelle fenêtre pour la maintenance
+            Stage gestionopérateurtStage = new Stage();
+            new Fenêtre_Gestion_Opérateur (gestionopérateurtStage,modeleCarte);
+            });
+        
+        
         // Gestionnaire pour le bouton "Gammes"
         gérerAtelier.getBtnGamme().setOnAction(e -> {
            stage.close();

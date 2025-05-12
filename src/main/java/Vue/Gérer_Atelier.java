@@ -20,6 +20,7 @@ public class Gérer_Atelier extends BorderPane {
     private Button stock_brut;
     private Button machine;
     private Button produit;
+    private Button opérateur;
     
     
     public Gérer_Atelier (){
@@ -30,12 +31,13 @@ public class Gérer_Atelier extends BorderPane {
          stock_produits_finis = new Button("Stock des produits finis");
          stock_brut = new Button("Stock brut");
          produit= new Button ("Produit");
+         opérateur=new Button ("Opérateur");
          
         Label question = new Label("Que voulez-vous gérer ?");
     
         this.setTop(question);
         VBox milieu = new VBox(5); 
-        milieu.getChildren().addAll(machine, gamme, poste, stock_produits_finis, stock_brut, produit);
+        milieu.getChildren().addAll(machine, gamme, poste, stock_produits_finis, stock_brut, produit, opérateur);
         this.setCenter(milieu);
         this.setRight(home);
     
@@ -46,6 +48,9 @@ public class Gérer_Atelier extends BorderPane {
     }
 public Button getBtnProduit() {
         return produit;
+    }
+public Button getBtnOpérateur() {
+        return opérateur;
     }
     
 
