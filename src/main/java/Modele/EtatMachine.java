@@ -12,7 +12,8 @@ import com.mycompany.projet_atelier_interface.*;
  */
 
   public enum EtatMachine {
-    OPERATIONNEL,
+    OPERATIONNEL_DISPO,
+    OPERATIONNEL_OCCU,
     ARRET_PANNE,
     ARRET_MAINTENANCE
 }   

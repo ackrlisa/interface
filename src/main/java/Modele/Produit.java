@@ -13,25 +13,34 @@ import java.util.ArrayList;
  * @author lisaa
  */
 public class Produit {
-    private float codeProduit;
+    private String codeProduit;
     private String dproduit;
     private ArrayList<Gamme> listeGamme=new ArrayList<>(); // un produit peut avoir plusieurs gammes
+private static ArrayList<Produit> listeProduits = new ArrayList<>();
 
-    public Produit(float codeProduit, String dproduit,ArrayList<Gamme> listeGamme) {
+    public Produit(String codeProduit, String dproduit,ArrayList<Gamme> listeGamme) {
         this.codeProduit = codeProduit;
         this.dproduit = dproduit;
         this.listeGamme=listeGamme;
+         listeProduits.add(this);
+    }
+    public Produit(String codeProduit, String dproduit) {
+        this.codeProduit = codeProduit;
+        this.dproduit = dproduit;
+                 listeProduits.add(this);
     }
 
     public void setListeGamme(ArrayList<Gamme> listeGamme) {
         this.listeGamme = listeGamme;
     }
-
+public static ArrayList<Produit> getListeProduits() {
+        return listeProduits;
+    }
     public ArrayList<Gamme> getListeGamme() {
         return listeGamme;
     }
 
-    public float getCodeProduit() {
+    public String getCodeProduit() {
         return codeProduit;
     }
 
@@ -39,7 +48,7 @@ public class Produit {
         return dproduit;
     }
 
-    public void setCodeProduit(float codeProduit) {
+    public void setCodeProduit(String codeProduit) {
         this.codeProduit = codeProduit;
     }
 
@@ -48,14 +57,14 @@ public class Produit {
     }
     
 public void afficheProduit(){
-    if((this.codeProduit!=0.0)&&(this.dproduit!=null)){
+    if((this.codeProduit!=null)&&(this.dproduit!=null)){
         System.out.println("Produit: code "+this.codeProduit+", désignation "+this.dproduit);
     }else{
         System.out.println("Le produit n'existe pas");
     }
 }
-public void modifierProduit(float nouveauCodeProduit, String nouveauDProduit) {
-        if (nouveauCodeProduit>0) {
+public void modifierProduit(String nouveauCodeProduit, String nouveauDProduit) {
+        if (nouveauCodeProduit != null && !nouveauCodeProduit.isEmpty()) {
             this.codeProduit = nouveauCodeProduit;
         } else {
         }
@@ -65,7 +74,7 @@ public void modifierProduit(float nouveauCodeProduit, String nouveauDProduit) {
     }
 
 public void supprimerProduit(){
-      this.codeProduit=0;
+      this.codeProduit=null;
         this.listeGamme.clear();
         System.out.println("Produit "+dproduit+" supprimé !");  
         this.dproduit=null;

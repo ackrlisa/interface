@@ -29,9 +29,19 @@ public class Fenêtre_Modification_Etat_Machine {
      Modification_Etat_Machine.getBtnOperationnel().setOnAction(e->{
          Machine machineChoisie = Modification_Etat_Machine.getComboMachine().getValue();
             if (machineChoisie != null) {
-                machineChoisie.setEtatMachine(EtatMachine.OPERATIONNEL);
+                machineChoisie.setEtatMachine(EtatMachine.OPERATIONNEL_DISPO);
                 machineChoisie.setDispo(true);
-                Modification_Etat_Machine.getErreur().setText("La machine est maintenant opérationnel");
+                Modification_Etat_Machine.getErreur().setText("La machine est maintenant opérationnelle et disponible ");
+            }else{
+                Modification_Etat_Machine.getErreur().setText("Veuillez sélectionner une machine");
+            }
+     });
+     Modification_Etat_Machine.getBtnOperationnel2().setOnAction(e->{
+         Machine machineChoisie = Modification_Etat_Machine.getComboMachine().getValue();
+            if (machineChoisie != null) {
+                machineChoisie.setEtatMachine(EtatMachine.OPERATIONNEL_OCCU);
+                machineChoisie.setDispo(true);
+                Modification_Etat_Machine.getErreur().setText("La machine est maintenant opérationnelle et occupée ");
             }else{
                 Modification_Etat_Machine.getErreur().setText("Veuillez sélectionner une machine");
             }

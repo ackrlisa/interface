@@ -22,6 +22,7 @@ public class Affichage_Atelier extends BorderPane{
     private Button produits_finis;
     private Button stock_brut;
     private Button home;
+    private Button produit;
     
     public Affichage_Atelier (){
         home = new Button("HOME");
@@ -31,11 +32,13 @@ public class Affichage_Atelier extends BorderPane{
         personnel = new Button("Personnel");
         produits_finis = new Button("Produits finis");
         stock_brut = new Button("Stock brut");
+        produit= new Button ("Produits");
+        
         Label question = new Label("Que voulez-vous afficher ?");
     
         this.setTop(question);
         VBox milieu = new VBox(5); 
-        milieu.getChildren().addAll(machine, gamme, poste, personnel, produits_finis, stock_brut);
+        milieu.getChildren().addAll(machine, gamme, poste, personnel, produits_finis, stock_brut,produit);
         this.setCenter(milieu);
         this.setRight(home);
     
@@ -44,7 +47,9 @@ public class Affichage_Atelier extends BorderPane{
     public Button getBtnMachine() {
         return machine;
     }
-
+ public Button getBtnProduit() {
+        return produit;
+    }
     
 
     public Button getBtnPoste() {

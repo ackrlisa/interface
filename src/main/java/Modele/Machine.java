@@ -31,7 +31,7 @@ public class Machine extends Equipement {
         this.x = x;
         this.dispo = true;
         this.y = y;
-        this.etatMachine = EtatMachine.OPERATIONNEL;
+        this.etatMachine = EtatMachine.OPERATIONNEL_DISPO;
         this.operations = new ArrayList<>(listOperations);
         this.type = type;
         this.poste=poste;
@@ -169,7 +169,7 @@ public String getRefMachine() {
     }
     
     public boolean estOperationnel(){
-        return this.etatMachine==EtatMachine.OPERATIONNEL; // vérifie si machine opérationnelle, on a une classe spéciale EtatMachine pour donner juste els différents types
+        return this.etatMachine==EtatMachine.OPERATIONNEL_DISPO; // vérifie si machine opérationnelle, on a une classe spéciale EtatMachine pour donner juste els différents types
     }
    
    

@@ -26,7 +26,7 @@ public class Supprimer_Stock_Produitfini extends BorderPane{
 
     public Supprimer_Stock_Produitfini() {
         home = new Button ("HOME");
-        supprimer = new Button ("Afficher");
+        supprimer = new Button ("Supprimer");
         resultat = new Label();
         questionQuantite = new Label("Quel quantité de ce produit voulez vous supprimer");
         comboProduitsFinis = new ComboBox<>();

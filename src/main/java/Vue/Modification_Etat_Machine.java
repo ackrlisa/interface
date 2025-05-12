@@ -17,13 +17,14 @@ import javafx.scene.layout.VBox;
  */
 public class Modification_Etat_Machine extends BorderPane {
     private Button home ; 
-    private Button operationnel, panne, maintenance ;
+    private Button operationnel, panne, maintenance,operationnel2 ;
     private Label choixEtat, choixMachine, erreur ;
     private ComboBox<Machine> comboMachine;
     
     public Modification_Etat_Machine() {
         home = new Button ("HOME");
-        operationnel = new Button ("opérationnel");
+        operationnel = new Button ("opérationnelle disponible");
+        operationnel2 = new Button ("opérationnelle occupée");
         panne = new Button("en panne");
         maintenance = new Button("en maintenance");
         choixEtat = new Label("quel est le nouvel état de la machine?");
@@ -33,7 +34,7 @@ public class Modification_Etat_Machine extends BorderPane {
         comboMachine.getItems().addAll(Machine.getListeMachines());
         
         VBox champs = new VBox(10);
-        champs.getChildren().addAll(choixMachine, comboMachine, choixEtat, operationnel, panne, maintenance, erreur);      
+        champs.getChildren().addAll(choixMachine, comboMachine, choixEtat, operationnel,operationnel2, panne, maintenance, erreur);      
          this.setCenter(champs);
    
                 
@@ -47,6 +48,9 @@ public class Modification_Etat_Machine extends BorderPane {
 
     public Button getBtnOperationnel() {
         return operationnel;
+    }
+    public Button getBtnOperationnel2() {
+        return operationnel2;
     }
 
     public Button getBtnPanne() {

@@ -44,6 +44,13 @@ public class Fenêtre_Affichage_Atelier {
             new Fenêtre_Affichage_Poste(afficherPosteStage,modeleCarte);
            });
         
+        affichageAtelier.getBtnProduit().setOnAction(e -> {
+            stage.close();
+            
+            Stage afficherProduitStage = new Stage();
+            new Fenêtre_Affichage_Produit(afficherProduitStage,modeleCarte);
+           });
+        
         // Gestionnaire pour le bouton "Gammes"
         affichageAtelier.getBtnGamme().setOnAction(e -> {
             stage.close();
