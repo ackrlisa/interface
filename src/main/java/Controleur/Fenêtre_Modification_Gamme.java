@@ -23,16 +23,19 @@ public class Fenêtre_Modification_Gamme {
         
         stage.setTitle("Fenêtre modification de gamme");
         stage.setScene(modifiergamme.getFenêtre_Modification_Gamme()); //Appelle la méthode d'instance de la fenêtre accueil
-        stage.show();
-        
-        
-      
-     modifiergamme.getBtnAjoutéquiop().setOnAction(e->{      
+        try {
+            stage.show();
+        }catch(Exception ex) {
+    ex.printStackTrace();
+}
+
+     modifiergamme.getBtnAjout_supprimer_équiop().setOnAction(e->{  
+         stage.close();
+            // Crée une nouvelle fenêtre d'accueil
+            Stage modificationStage = new Stage();
+            new Fenêtre_Ajout_Suppression_Machine_Gamme(modificationStage,modeleCarte);
      });
-               
-    modifiergamme.getBtnSupprimeréquiop().setOnAction(e->{      
-     });
-    
+
    modifiergamme.getBtnHome().setOnAction(e->{  
        stage.close();
             // Crée une nouvelle fenêtre d'accueil

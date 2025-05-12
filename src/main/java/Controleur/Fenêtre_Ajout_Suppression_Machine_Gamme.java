@@ -31,13 +31,22 @@ public class Fenêtre_Ajout_Suppression_Machine_Gamme {
             Gamme gammeChoisie = Ajout_Suppression_Operation_Gamme.getComboGamme().getValue();
             Machine machineChoisie = Ajout_Suppression_Operation_Gamme.getComboMachines().getValue();
             if (machineChoisie != null) {
-                gammeChoisie.enleverEquipementOperation(machineChoisie);
-                Ajout_Suppression_Operation_Gamme.getErreur().setText(machineChoisie.getN());
+                gammeChoisie.ajoutEquipement(machineChoisie);
+                Ajout_Suppression_Operation_Gamme.getErreur().setText(gammeChoisie.getN());
             }else{
                 Ajout_Suppression_Operation_Gamme.getErreur().setText("Veuillez sélectionner une machine et/ou une gamme.");
             }
         });
-        
+        Ajout_Suppression_Operation_Gamme.getBtnSupprimer().setOnAction(e -> {
+            Gamme gammeChoisie = Ajout_Suppression_Operation_Gamme.getComboGamme().getValue();
+            Machine machineChoisie = Ajout_Suppression_Operation_Gamme.getComboMachines().getValue();
+            if (machineChoisie != null) {
+                gammeChoisie.enleverEquipement(machineChoisie);
+                Ajout_Suppression_Operation_Gamme.getErreur().setText(gammeChoisie.getN());
+            }else{
+                Ajout_Suppression_Operation_Gamme.getErreur().setText("Veuillez sélectionner une machine et/ou une gamme.");
+            }
+        });
         
         Ajout_Suppression_Operation_Gamme.getBtnHome().setOnAction(e -> {
             stage.close();

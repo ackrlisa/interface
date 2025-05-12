@@ -36,6 +36,7 @@ public class Ajout_Suppression_Operation_Gamme extends BorderPane{
         choixEquipement = new Label("Quel machine voulez vous ajouter/supprimer?");
         choixGamme = new Label("sélectionnez une Gamme");
         erreur = new Label(" ");  
+        comboMachines = new ComboBox<>();
         comboMachines.getItems().addAll(Machine.getListeMachines());
         comboGamme = new ComboBox<>();
         comboGamme.getItems().addAll(Gamme.getListeGammes());

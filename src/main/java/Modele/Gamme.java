@@ -88,24 +88,40 @@ public class Gamme {
     
     
    //Modifier gamme en ajoutant ou supprimant une opération ou un équipement
-    public void ajoutEquipementOperation(Machine machine){
+    public void ajoutEquipement(Machine machine){
         if (this.getListeEquipement().contains(machine)){
             this.setN("la machine est déjà associée à cette gamme");
         }else{
         this.listeEquipement.add(machine);
-        this.setN("Equipement "+machine.getRefEquipement()+" ajouté!");
+        this.setN("Equipement "+machine.getRefEquipement()+" ajoutée!");
+        }
+    }
+    public void ajoutOperation(Operation operation){
+        if (this.getListeOperation().contains(operation)){
+            this.setN("l'opération est déjà associée à cette gamme");
+        }else{
+            this.listeOperation.add(operation);
+            this.setN("operation "+operation.getdOperation()+" ajoutée!");
         }
     }
     
-    public void enleverEquipementOperation(Machine machine){
-    if (listeEquipement.remove(machine)) {   //vérifier direct si l'opération est dans la gamme, et si oui elle est alors supprimée
-        this.setN("Machine" + machine.getRefEquipement() + " retiré!");
-    } else {
-        System.out.println("Cette machine n'est pas utilisée pour cette gamme");
+    public void enleverEquipement(Machine machine){
+        if (listeEquipement.contains(machine)) {
+            listeEquipement.remove(machine); 
+            this.setN("Machine" + machine.getRefEquipement() + " retirée!");
+        } else {
+            this.setN("Cette machine n'est pas utilisée pour cette gamme");
+        }
     }
-    listeGammes.remove(this);  // Supprime cette instance de la liste
 
-}
+    public void enleverOperation(Operation operation){
+        if (listeOperation.contains(operation)) { 
+            listeOperation.remove(operation);//vérifier direct si l'opération est dans la gamme, et si oui elle est alors supprimée
+            this.setN("operation" + operation.getdOperation() + " retirée!");
+        } else {
+            this.setN("Cette opération n'est pas utilisée pour cette gamme");
+        }
+    }
  
     
 

@@ -193,7 +193,8 @@ public String getRefMachine() {
     for (Gamme gamme : Gamme.getListeGammes()) {
         for (Operation op : gamme.getListeOperation()) {
             if (op.getRefEquipement().equals(machine.getRefEquipement())) {
-                gamme.enleverEquipementOperation(machine, op);
+                gamme.enleverEquipement(machine);
+                gamme.enleverOperation(op);
             }
         }
     }
