@@ -34,7 +34,7 @@ public class Fenêtre_Modification_Produit {
             if (produitChoisi != null) {
                 try {
                     String nouveauCode = Modification_Produit.getCodeProduit().getText();
-                    String nouvelleDescription = Modification_Produit.getdproduit().getText();
+                    String nouvelleDescription = Modification_Produit.getDproduit().getText();
 
                     if (nouveauCode.isEmpty() || nouvelleDescription.isEmpty()) {
                         Modification_Produit.getErreur().setText("Veuillez remplir tous les champs.");
@@ -43,7 +43,7 @@ public class Fenêtre_Modification_Produit {
                         produitChoisi.setDproduit(nouvelleDescription);
                         Modification_Produit.getErreur().setText("Produit modifié avec succès !");
                         Modification_Produit.getCodeProduit().clear();
-                        Modification_Produit.getdproduit().clear();
+                        Modification_Produit.getDproduit().clear();
                     }
                 } catch (Exception ex) {
                     Modification_Produit.getErreur().setText("Une erreur est survenue lors de la modification.");
