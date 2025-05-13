@@ -6,7 +6,6 @@ package Controleur;
 
 import Modele.Element;
 import Modele.ModèleCarte;
-import Modele.StockBrut;
 import Vue.Affichage_Stock_Brut;
 import javafx.stage.Stage;
 

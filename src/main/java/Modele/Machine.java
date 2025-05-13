@@ -139,15 +139,7 @@ public String getRefMachine() {
     }
 
     
-    public void afficheMachine(){
-     super.afficheEquipement();
-      System.out.println("Machine de type:" +this.type+", localisation: "+this.x+","+this.y+", etat:"+this.etatMachine+", disponibilite:"+this.dispo);
-      System.out.println("Operation de cette machine:");
-      for (Operation op : operations) {
-        System.out.print(" - ");
-        op.afficheOperation(); 
-    }
-   }
+   
     
     public void modifierMachine(float newx, float newy, float newcout, String newtype, EtatMachine newetat, Operation newoperations,String newrefMachine,String newdMachine){
         if (newrefMachine != null && !newrefMachine.isEmpty()) {

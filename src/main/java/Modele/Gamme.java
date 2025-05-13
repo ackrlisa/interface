@@ -125,27 +125,7 @@ public class Gamme {
  
     
 
-        
-    public void afficheGamme(){
-        if ((refGamme==null)&&(listeEquipement.isEmpty())&&(listeOperation.isEmpty())){
-            System.out.println("La gamme n'existe pas");
-        }else{
-         System.out.println("Gamme de réference: " + refGamme);
-        System.out.println("Liste des equipements necessaires " + listeEquipement.size() + ":");
-        for (Equipement e : listeEquipement) {
-            e.afficheEquipement();
-            System.out.println();
-    }
-        System.out.println("Liste des operations " + listeOperation.size() + ":");
-        for (int i = 0; i < listeOperation.size(); i++) {
-            System.out.println("Etape " + (i+1) + ":");
-            listeOperation.get(i).afficheOperation();
-            System.out.println();
-        }
-        System.out.println("Cout total de la gamme: " + coutGamme() + " euro");
-        System.out.println("Duree totale de la gamme: " + dureeGamme() + " h");
-        }
-       }
+   
     
     public float coutGamme(){
         float coutTotal = 0;

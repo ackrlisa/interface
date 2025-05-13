@@ -52,11 +52,6 @@ public class Operateur extends Personne{
         return "Operateur [Nom: " + super.getNom() + ", Prénom " + super.getPrenom() + ", Code " + super.getCode() +"]";
     }
     
-    @Override
-    public void afficher() {
-        System.out.print("Operateur: "+this.getPrenom()+" "+this.getNom()+",code: "+this.getCode()+",competence "+this.competance+ " et il est"+this.statut);
-            
-    }
    
     
 }

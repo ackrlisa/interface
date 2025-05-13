@@ -78,13 +78,7 @@ public class Poste extends Equipement {
         return "Poste [Référence: " + refPoste + ", Nombre de machines: " + listeMachine.size() + "]";
     }
     
-    public void affichePoste(){
-        super.afficheEquipement();
-        System.out.println("Liste des Machines de ce poste:");
-        for (Machine i:this.listeMachine){
-            i.afficheMachine();
-        }
-}
+    
     public void modifierPoste(Machine machine, boolean ajouter){
        if (ajouter){
            if (this.getListeMachine().contains(machine)){

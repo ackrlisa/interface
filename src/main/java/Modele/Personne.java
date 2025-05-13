@@ -49,9 +49,5 @@ public abstract class Personne {
     }
     
    
-
-    public void afficher(){
-        System.out.println(this.prenom+", "+ this.nom+"code d'identification:"+this.code);
-    }
     
 }

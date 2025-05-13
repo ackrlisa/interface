@@ -4,7 +4,7 @@
  */
 package Controleur;
 
-import Modele.StockBrut;
+
 import Modele.Element;
 import Modele.ModèleCarte;
 import Vue.Création_Stock_Brut;
