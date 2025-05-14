@@ -4,12 +4,9 @@
  */
 package Controleur;
 
-import Modele.Machine;
 import Modele.ModèleCarte;
 import Modele.Produit;
-import Vue.Modification_Identite_Machine;
 import Vue.Modification_Produit;
-import java.util.ArrayList;
 import javafx.stage.Stage;
 
 /**
@@ -25,7 +22,7 @@ public class Fenêtre_Modification_Produit {
     this.modeleCarte=modeleCarte;
     
     stage.setTitle("Modification d'un produit du catalogue");
-        stage.setScene(Modification_Produit.getFenêtre_Modification_Produit()); // Appelle la méthode pour obtenir la scène de la vue
+        stage.setScene(Modification_Produit.getFenêtre_Modification_Produit());
         Modification_Produit.getComboProduits().getItems().setAll(Produit.getListeProduits());      
         stage.show();
         

@@ -21,7 +21,7 @@ public class Fenêtre_Modification_Poste {
     public Fenêtre_Modification_Poste (Stage stage, ModèleCarte modeleCarte) {
         Modification_Poste = new Modification_Poste();
         this.modeleCarte=modeleCarte;
-        stage.setScene(Modification_Poste.getFenêtre_Modification_Poste()); // Appelle la méthode pour obtenir la scène de la vue
+        stage.setScene(Modification_Poste.getFenêtre_Modification_Poste());
         Modification_Poste.getComboMachine().getItems().setAll(Machine.getListeMachines());
         Modification_Poste.getComboPoste().getItems().setAll(Poste.getListePostes());
         stage.show();
@@ -52,7 +52,7 @@ public class Fenêtre_Modification_Poste {
             stage.close();
             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte);
         });
     }
 }

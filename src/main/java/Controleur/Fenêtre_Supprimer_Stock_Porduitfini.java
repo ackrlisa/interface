@@ -19,10 +19,9 @@ public class Fenêtre_Supprimer_Stock_Porduitfini {
     
     public Fenêtre_Supprimer_Stock_Porduitfini(Stage stage, ModèleCarte modeleCarte){
        this.modeleCarte=modeleCarte;
-        
         supprimerproduitfini = new Supprimer_Stock_Produitfini();
 
-        stage.setTitle("Suppression d'un produit fini");
+        stage.setTitle("Suppression d'un produit fini du stock");
         stage.setScene(supprimerproduitfini.getFenêtre_supprimer_stock_produitfini()); 
         supprimerproduitfini.getComboProduitsFinis().getItems().setAll(ProduitsFinis.getListeStockProduitsFinis());
         stage.show();
@@ -30,7 +29,6 @@ public class Fenêtre_Supprimer_Stock_Porduitfini {
         supprimerproduitfini.getBtnSupprimer().setOnAction(e -> {
            ProduitsFinis produitChoisi = supprimerproduitfini.getComboProduitsFinis().getValue();
            String texteQuantiteASupprimer = supprimerproduitfini.getQuantiteASupprimer().getText();
-
             if (produitChoisi != null && texteQuantiteASupprimer != null && !texteQuantiteASupprimer.isEmpty()) {
                 try {
                     int quantiteDemandee = Integer.parseInt(texteQuantiteASupprimer);
@@ -38,10 +36,8 @@ public class Fenêtre_Supprimer_Stock_Porduitfini {
                         supprimerproduitfini.getResultat().setText("La quantité doit être positive.");
                         return;
                     }else{
-
                         int quantiteActuelle = produitChoisi.getQuantité(); 
                         int nouvelleQuantite = Math.max(0, quantiteActuelle - quantiteDemandee);
-
                         produitChoisi.setQuantité(nouvelleQuantite); 
                         supprimerproduitfini.getResultat().setText("Nouvelle quantité : " + nouvelleQuantite);
                     }
@@ -51,7 +47,6 @@ public class Fenêtre_Supprimer_Stock_Porduitfini {
             } else {
                 supprimerproduitfini.getResultat().setText("Veuillez sélectionner un produit et entrer une quantité.");
             }
-        
         });
         
         supprimerproduitfini.getBtnHome().setOnAction(e -> {
