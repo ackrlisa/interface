@@ -169,6 +169,10 @@ public class Machine extends Equipement {
         }
    }
    
+   public static void supprimerMachineStatique(Machine machine) {
+        Equipement.getListeEquipements().remove(machine);
+    }
+   
    public void supprimerOperationRealisable(Operation operation){
        if(operations.contains(operation)){
            operations.remove(operation);
