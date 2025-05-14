@@ -5,12 +5,8 @@
 package Controleur;
 
 import Modele.ModèleCarte;
-import Modele.Operateur;
-import Modele.Operation;
-import Modele.Poste;
 import Vue.Carte;
 import Vue.CarteFx;
-import java.util.ArrayList;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
@@ -37,16 +33,16 @@ public class Fenêtre_CarteFx {
     
     btnRetourAccueil.setOnAction(e -> {
         stage.close(); // Ferme la fenêtre de la carte
-        Stage accueilStage = new Stage(); // Crée une nouvelle fenêtre pour l'accueil
+        Stage accueilStage = new Stage(); 
         new Fenêtre_Accueil(accueilStage, modeleCarte); // Retourne à l'accueil
     });
 
-    // Ajout des éléments à la scène
+    // Ajout des éléments à la carte
     BorderPane root = new BorderPane();
     root.setCenter(vueCarte); // Ajout de la vue de la carte au centre
-    root.setBottom(btnRetourAccueil); // Ajout du bouton en bas
+    root.setBottom(btnRetourAccueil); 
 
-    // Configuration de la scène
+    // Configuration de la fenêtre carte
     Scene scene = new Scene(root, 800, 800);
     stage.setScene(scene);
     stage.show(); // Affiche la fenêtre

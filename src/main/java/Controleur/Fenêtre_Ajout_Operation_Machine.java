@@ -7,7 +7,6 @@ package Controleur;
 import Modele.Machine;
 import Modele.ModèleCarte;
 import Modele.Operation;
-import Modele.Poste;
 import Vue.Ajout_Operation_Machine;
 import javafx.stage.Stage;
 
@@ -51,7 +50,7 @@ public class Fenêtre_Ajout_Operation_Machine {
         
         Ajout_Operation_Machine.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
+            
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });

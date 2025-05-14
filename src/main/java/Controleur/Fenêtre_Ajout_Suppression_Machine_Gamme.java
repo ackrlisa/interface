@@ -7,7 +7,6 @@ package Controleur;
 import Modele.Gamme;
 import Modele.Machine;
 import Modele.ModèleCarte;
-import Modele.Operation;
 import Vue.Ajout_Suppression_Operation_Gamme;
 import javafx.stage.Stage;
 
@@ -50,8 +49,7 @@ public class Fenêtre_Ajout_Suppression_Machine_Gamme {
         
         Ajout_Suppression_Operation_Gamme.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
-            Stage accueilStage = new Stage();
+                        Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
     }

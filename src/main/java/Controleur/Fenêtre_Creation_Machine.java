@@ -9,7 +9,6 @@ package Controleur;
  * @author alicedeboever
  */
 import Vue.Creation_Machine;
-import Modele.Machine;
 import Modele.ModèleCarte;
 import javafx.stage.Stage;
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ import java.util.ArrayList;
  */
 public class Fenêtre_Creation_Machine {
     private Creation_Machine creationMachine;
-     private ModèleCarte modeleCarte;
+    private ModèleCarte modeleCarte;
 
     public Fenêtre_Creation_Machine(Stage stage, ModèleCarte modeleCarte){
        this.modeleCarte=modeleCarte;

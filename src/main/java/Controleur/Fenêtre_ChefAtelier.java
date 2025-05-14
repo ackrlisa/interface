@@ -5,9 +5,6 @@
 package Controleur;
 import Modele.ModèleCarte;
 import Vue.Chef_Atelier;
-import Vue.Affichage_Atelier;
-import Vue.Calculer;
-import Vue.Gérer_Atelier;
 import javafx.stage.Stage;
 /**
  *
@@ -28,7 +25,7 @@ public class Fenêtre_ChefAtelier {
         chef_atelier.getBtnAffichage().setOnAction(e -> { //quand on clique sur le bouton
             // Ferme la fenêtre 
             stage.close();
-            // Crée une nouvelle fenêtre 
+            
             Stage affichageStage = new Stage();
             new Fenêtre_Affichage_Atelier(affichageStage,modeleCarte);
         });
@@ -36,12 +33,12 @@ public class Fenêtre_ChefAtelier {
         chef_atelier.getBtnGérer_atelier().setOnAction(e -> { //quand on clique sur le bouton
             // Ferme la fenêtre 
             stage.close();
-            // Crée une nouvelle fenêtre pour operateur
+           
             Stage gérerStage = new Stage();
             new Fenêtre_Gérer_Atelier(gérerStage,modeleCarte);
         });
         chef_atelier.getBtnCalculer().setOnAction(e -> { //quand on clique sur le bouton
-            // Ferme la fenêtre 
+            
             stage.close();
             // Crée une nouvelle fenêtre pour operateur
             Stage calculerStage = new Stage();
@@ -50,7 +47,7 @@ public class Fenêtre_ChefAtelier {
       
         
         chef_atelier.getBtnHome().setOnAction(e -> {
-            // Ferme la fenêtre de chefAtelier
+           
             stage.close();
             
             // Crée une nouvelle fenêtre d'accueil

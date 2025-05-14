@@ -45,7 +45,7 @@ public class Fenêtre_Affichage_Produits_Finis {
         
         Affichage_Produits_Finis.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
+            
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });

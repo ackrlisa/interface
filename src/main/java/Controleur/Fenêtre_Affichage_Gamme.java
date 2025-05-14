@@ -37,7 +37,7 @@ public class Fenêtre_Affichage_Gamme {
                     details.append(" - ").append(op.getRefOperation()).append(" : ").append(op.getdOperation()).append("\n");
                 }
 
-                details.append("\nOpérateurs autorisés :\n");
+                details.append("\nMachines associées:\n");
                 for (var equip : gammeChoisie.getListeEquipement()) {
                     details.append(" - ").append(equip.getRefEquipement()).append(" ").append(equip.getdEquipement()).append("\n");
                 }
@@ -52,7 +52,6 @@ public class Fenêtre_Affichage_Gamme {
         
         Affichage_Gamme.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });

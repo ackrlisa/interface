@@ -8,7 +8,6 @@ import Modele.Equipement;
 import Modele.Machine;
 import Modele.Operation;
 import Vue.Creation_Opération;
-import java.util.ArrayList;
 import javafx.stage.Stage;
 import Modele.ModèleCarte;
 

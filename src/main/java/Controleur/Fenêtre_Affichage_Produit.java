@@ -5,12 +5,8 @@
 package Controleur;
 
 import Modele.ModèleCarte;
-import Modele.Operateur;
 import Modele.Produit;
-import Modele.ProduitsFinis;
-import Vue.Affichage_Operateur;
 import Vue.Affichage_Produit;
-import Vue.Affichage_Produits_Finis;
 import javafx.stage.Stage;
 
 /**
@@ -48,7 +44,7 @@ public class Fenêtre_Affichage_Produit {
         
         Affichage_Produit.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
+            
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });

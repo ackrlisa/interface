@@ -4,15 +4,9 @@
  */
 package Controleur;
 import Vue.Affichage_Machine ;
-import Modele.Operation;
-import Modele.Poste ;
 import Modele.Machine;
 import Modele.ModèleCarte;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.stage.Stage;
-import java.util.ArrayList;
-import Modele.Operateur ;
 /**
  *
  * @author alicedeboever
@@ -65,7 +59,7 @@ public class Fenêtre_Affichage_Machine {
         
       Affichage_Machine.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
+            
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });

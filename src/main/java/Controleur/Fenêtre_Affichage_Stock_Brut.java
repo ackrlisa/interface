@@ -39,7 +39,7 @@ public class Fenêtre_Affichage_Stock_Brut {
         
         Affichage_Stock_Brut.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
+            
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });

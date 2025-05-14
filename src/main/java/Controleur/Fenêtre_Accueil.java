@@ -6,8 +6,6 @@ package Controleur;
 
 import Modele.ModèleCarte;
 import Vue.Accueil;
-import Vue.Maintenance;
-import Vue.Affichage_Atelier;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 /**
@@ -46,14 +44,14 @@ public class Fenêtre_Accueil {
         accueil.getBtnOperateur().setOnAction(e -> { //quand on clique sur le bouton
             // Ferme la fenêtre d'accueil
             stage.close();
-            // Crée une nouvelle fenêtre pour la maintenance
+            // Crée une nouvelle fenêtre pour opérateur
             Stage affichage_atelier = new Stage();
             new Fenêtre_Affichage_Atelier(affichage_atelier,modeleCarte);
         });
         accueil.getBtnChefAtelier().setOnAction(e -> { //quand on clique sur le bouton
             // Ferme la fenêtre d'accueil
             stage.close();
-            // Crée une nouvelle fenêtre pour la maintenance
+            // Crée une nouvelle fenêtre pour chef atelier
             Stage chef_AtelierStage = new Stage();
             new Fenêtre_ChefAtelier(chef_AtelierStage,modeleCarte); // Utilise le contrôleur
         });

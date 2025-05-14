@@ -12,7 +12,7 @@ import javafx.stage.Stage;
  * @author alicedeboever
  */
 public class Fenêtre_Affichage_Choix_Personne {
-    private Affichage_Choix_Personne affichageChoixPersonne;  // Vue pour le calcul (fenêtre principale)
+    private Affichage_Choix_Personne affichageChoixPersonne;  
      private ModèleCarte modeleCarte;
     
     public Fenêtre_Affichage_Choix_Personne(Stage stage, ModèleCarte modeleCarte){
@@ -39,14 +39,14 @@ public class Fenêtre_Affichage_Choix_Personne {
         
         affichageChoixPersonne.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
+            
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
         
         affichageChoixPersonne.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
+            
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });

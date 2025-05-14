@@ -6,8 +6,6 @@ package Controleur;
 
 import Vue.Calcul_Cout_Gamme;
 import Modele.Gamme;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import Modele.ModèleCarte;
 
@@ -41,7 +39,6 @@ public class Fenetre_Calcul_Cout_Gamme {
         
         Calcul_Cout_Gamme.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });

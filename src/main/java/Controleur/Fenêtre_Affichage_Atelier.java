@@ -4,10 +4,7 @@
  */
 package Controleur;
 import Modele.ModèleCarte;
-import Vue.Accueil;
-import Vue.Maintenance;
 import Vue.Affichage_Atelier;
-import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 /**
  *
@@ -20,9 +17,7 @@ public class Fenêtre_Affichage_Atelier {
     public Fenêtre_Affichage_Atelier(Stage stage, ModèleCarte modeleCarte){
        this.modeleCarte=modeleCarte;
         affichageAtelier = new Affichage_Atelier();
-        //System.out.println("Initialisation...");
-        //System.out.println("getBtnMachine() = " + affichageAtelier.getBtnMachine());
-
+        
         stage.setTitle("Affichage de l'Atelier");
         stage.setScene(affichageAtelier.getFenêtre_Affichage_Atelier());
         stage.show();
@@ -30,13 +25,12 @@ public class Fenêtre_Affichage_Atelier {
         // Gestionnaire pour le bouton "Machines"
         affichageAtelier.getBtnMachine().setOnAction(e -> {
             stage.close();
-            
-            // Ouvrir une fentre pour afficher les machines
+                        // Ouvrir une fentre pour afficher les machines
             Stage afficherMachineStage = new Stage();
             new Fenêtre_Affichage_Machine(afficherMachineStage,modeleCarte);
             });
         
-        // Gestionnaire pour le bouton "Postes"
+        // Gestionnaire pour le bouton "Poste"
         affichageAtelier.getBtnPoste().setOnAction(e -> {
             stage.close();
             
@@ -88,10 +82,9 @@ public class Fenêtre_Affichage_Atelier {
         affichageAtelier.getBtnHome().setOnAction(e -> {
             System.out.println(affichageAtelier.getBtnMachine());
              stage.close();
-             
-            // Crée une nouvelle fenêtre d'accueil
+             // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage,modeleCarte); // <-- Et pas new Accueil()
+            new Fenêtre_Accueil(accueilStage,modeleCarte); 
         });
     }
 

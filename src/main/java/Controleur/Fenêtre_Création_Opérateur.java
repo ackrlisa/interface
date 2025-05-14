@@ -63,8 +63,7 @@ public class Fenêtre_Création_Opérateur {
         // Gestion de l'événement pour le bouton "HOME"
         creationOperateur.getHome().setOnAction(e -> {
             stage.close();
-            // Ouvrir une nouvelle fenêtre d'accueil
-            Stage accueilStage = new Stage();
+           Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage, modeleCarte);
         });
     }

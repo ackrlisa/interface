@@ -6,16 +6,8 @@ package Controleur;
 
 import Vue.Calcul_Duree_Gamme;
 import Modele.Gamme;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.stage.Stage;
-import Modele.Equipement ;
-import Modele.Machine ;
 import Modele.ModèleCarte;
-import Modele.Operation ;
-import Modele.Operateur ;
-import Modele.Poste ;
-import java.util.ArrayList;
 
 /**
  *
@@ -47,8 +39,7 @@ public class Fenêtre_Calcul_Duree_Gamme {
         
         Calcul_Duree_Gamme.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
-            Stage accueilStage = new Stage();
+                        Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
         

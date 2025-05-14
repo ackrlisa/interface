@@ -40,8 +40,7 @@ public class Fenêtre_Calcul_Cout_Gamme {
         
         Calcul_Cout_Gamme.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
-            Stage accueilStage = new Stage();
+                        Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
         

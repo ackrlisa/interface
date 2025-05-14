@@ -45,7 +45,7 @@ public class Fenêtre_Affichage_Chef_Atelier {
         
         Affichage_Chef_Atelier.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
+            
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
         });
