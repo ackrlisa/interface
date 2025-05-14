@@ -21,40 +21,31 @@ public class Fenêtre_Gestion_Poste {
         gestionposte= new Gestion_Poste();
         
         stage.setTitle("Fenêtre gestion des postes");
-        stage.setScene(gestionposte.getFenêtre_Gestion_Poste()); //Appelle la méthode d'instance de la fenêtre accueil
+        stage.setScene(gestionposte.getFenêtre_Gestion_Poste());
         stage.show();
         
-        gestionposte.getBtnAjouter().setOnAction(e -> { //quand on clique sur le bouton
-            // Ferme la fenêtre 
-            stage.close();
-            // Crée une nouvelle fenêtre pour operateur
-           
+        gestionposte.getBtnAjouter().setOnAction(e -> {
+            stage.close();           
             Stage creationPoste = new Stage();
             new Fenêtre_Creation_Poste(creationPoste,modeleCarte);
         });
         
-        gestionposte.getBtnSupprimer().setOnAction(e -> { //quand on clique sur le bouton
-            stage.close();
-           
+        gestionposte.getBtnSupprimer().setOnAction(e -> {
+            stage.close();           
             Stage suppressionPoste = new Stage();
             new Fenêtre_Supprimer_Poste(suppressionPoste,modeleCarte);
         });
         
-        gestionposte.getBtnModifier().setOnAction(e -> { //quand on clique sur le bouton
-            // Ferme la fenêtre 
+        gestionposte.getBtnModifier().setOnAction(e -> {
             stage.close();     
             Stage modificationPoste = new Stage();
             new Fenêtre_Modification_Poste(modificationPoste,modeleCarte);
         });
     
         gestionposte.getBtnHome().setOnAction(e -> {
-            // Ferme la fenêtre de maintenance
             stage.close();          
-            // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte);
         });
-        
-       
     }
 }

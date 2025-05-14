@@ -21,14 +21,13 @@ public class Fenêtre_Maintenance {
         maintenance= new Maintenance();
         
         stage.setTitle("Fenêtre maintenance");
-        stage.setScene(maintenance.getFenêtre_maintenance()); //Appelle la méthode d'instance de la fenêtre accueil
+        stage.setScene(maintenance.getFenêtre_maintenance());
         stage.show();
         
-        maintenance.getBtnAffichage().setOnAction(e -> { //quand on clique sur le bouton
-            // Ferme la fenêtre d'
+        maintenance.getBtnAffichage().setOnAction(e -> {
             stage.close();
             Stage affichageStage = new Stage();
-            new Fenêtre_Affichage_Atelier(affichageStage,modeleCarte); // <-- C’est lui qui attache les actions !
+            new Fenêtre_Affichage_Atelier(affichageStage,modeleCarte);
         });
                 
         maintenance.getBtnFiabilite().setOnAction(e -> {
@@ -36,17 +35,11 @@ public class Fenêtre_Maintenance {
             Stage affichageStage = new Stage();
             new Fenêtre_Fiabilité(affichageStage,modeleCarte);
                 });
-        
-        
+      
         maintenance.getBtnHome().setOnAction(e -> {
-            // Ferme la fenêtre de maintenance
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte);
         });
-        
-       
     }
-
 }

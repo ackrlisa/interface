@@ -6,7 +6,6 @@ package Controleur;
 
 import Modele.ModèleCarte;
 import Vue.Modification_Gamme;
-import Vue.Modification_Machine;
 import javafx.stage.Stage;
 
 /**
@@ -22,25 +21,23 @@ public class Fenêtre_Modification_Gamme {
         modifiergamme= new Modification_Gamme();
         
         stage.setTitle("Fenêtre modification de gamme");
-        stage.setScene(modifiergamme.getFenêtre_Modification_Gamme()); //Appelle la méthode d'instance de la fenêtre accueil
+        stage.setScene(modifiergamme.getFenêtre_Modification_Gamme());
         try {
             stage.show();
         }catch(Exception ex) {
-    ex.printStackTrace();
-}
+            ex.printStackTrace();
+        }
 
      modifiergamme.getBtnAjout_supprimer_équiop().setOnAction(e->{  
          stage.close();
-            // Crée une nouvelle fenêtre d'accueil
             Stage modificationStage = new Stage();
             new Fenêtre_Ajout_Suppression_Machine_Gamme(modificationStage,modeleCarte);
      });
 
    modifiergamme.getBtnHome().setOnAction(e->{  
        stage.close();
-            // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte);
      });
-}
+    }
 }

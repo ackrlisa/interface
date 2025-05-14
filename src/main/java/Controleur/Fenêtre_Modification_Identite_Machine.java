@@ -4,7 +4,6 @@
  */
 package Controleur;
 import Modele.Machine;
-import Modele.Equipement;
 import Modele.ModèleCarte;
 import Vue.Modification_Identite_Machine;
 import java.util.ArrayList;
@@ -23,14 +22,13 @@ public class Fenêtre_Modification_Identite_Machine {
     this.modeleCarte=modeleCarte;
     
     stage.setTitle("Modification de l'identité de la machine");
-        stage.setScene(Modification_Identite_Machine.getFenêtre_modification_identite_machine()); // Appelle la méthode pour obtenir la scène de la vue
+        stage.setScene(Modification_Identite_Machine.getFenêtre_modification_identite_machine());
         Modification_Identite_Machine.getComboMachine().getItems().setAll(Machine.getListeMachines());      
         stage.show();
         
         Modification_Identite_Machine.getBtnOk().setOnAction(e -> {
             Machine machineChoisie = Modification_Identite_Machine.getComboMachine().getValue();
             if (machineChoisie != null) {
-                //Modification_Identite_Machine.getTexterefMachine().setText(Modification_Identite_Machine.getTexterefMachine().getText() + machineChoisie.getRefEquipement());
                 try {                   
                     String ref = Modification_Identite_Machine.getRefMachine().getText();
                     String description = Modification_Identite_Machine.getdMachine().getText();
@@ -38,8 +36,7 @@ public class Fenêtre_Modification_Identite_Machine {
                     float y = Float.parseFloat(Modification_Identite_Machine.getY().getText());
                     float cout = Float.parseFloat(Modification_Identite_Machine.getCout().getText());
                     String type = Modification_Identite_Machine.getType().getText();
-
-                    // Tu peux modifier ces deux listes si tu veux permettre leur saisie dans l'UI
+                    
                     ArrayList<Modele.Operation> operations = new ArrayList<>();
                     Modele.Poste poste = null;
                     ArrayList<Modele.Operateur> operateurs = new ArrayList<>();
@@ -53,7 +50,7 @@ public class Fenêtre_Modification_Identite_Machine {
                 
                     Modification_Identite_Machine.getErreur().setText("Machine modifiée avec succès !");
                 
-                // Optionnel : Réinitialiser les champs de la vue après la création
+                //Réinitialise les champs de la vue après la création
                     Modification_Identite_Machine.getRefMachine().clear();
                     Modification_Identite_Machine.getdMachine().clear();
                     Modification_Identite_Machine.getX().clear();
@@ -71,7 +68,7 @@ public class Fenêtre_Modification_Identite_Machine {
                     Modification_Identite_Machine.getCout().clear();
                     Modification_Identite_Machine.getType().clear();
                 } catch (Exception ex) {
-                    Modification_Identite_Machine.getBtnOk().setText("Une erreur est survenue.");
+                    Modification_Identite_Machine.getErreur().setText("Une erreur est survenue.");
                 // Optionnel : Réinitialiser les champs de la vue après l'erreur
                     Modification_Identite_Machine.getRefMachine().clear();
                     Modification_Identite_Machine.getdMachine().clear();
@@ -87,9 +84,8 @@ public class Fenêtre_Modification_Identite_Machine {
         
         Modification_Identite_Machine.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte);
         });
     }
 }

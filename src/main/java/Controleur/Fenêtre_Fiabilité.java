@@ -8,6 +8,7 @@ import Modele.ModèleCarte;
 import Modele.TestFichier;
 import Vue.Fiabilite_Atelier;
 import java.util.Arrays;
+import java.util.Map;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 
@@ -44,9 +45,7 @@ public class Fenêtre_Fiabilité {
         fiabilite.getBtnFiabilite_par_machine().setOnAction(e -> {
             TestFichier test = new TestFichier();
             test.Test();
-            String texte = "Fiabilite des machines:\n" + String.join("\n", test.getListe_fiabilité());
-            fiabilite.getReponse().setText(texte);
-            //fiabilite.getReponse().setText("Fiabilite des machines: "+ test.getListe_fiabilité().toString());        
+            fiabilite.getReponse().setText("Fiabilite des machines:\n "+ String.join("\n",test.getListe_fiabilité().toString()));        
         });
         
         fiabilite.getBtnOrdrefiabilite().setOnAction(e -> {
