@@ -15,14 +15,8 @@ import javafx.scene.layout.VBox;
  * @author PC
  */
 public class Affichage_Atelier extends BorderPane{
-    private Button machine;
-    private Button poste;
-    private Button gamme;
-    private Button personnel;
-    private Button produits_finis;
-    private Button stock_brut;
-    private Button home;
-    private Button produit;
+    private Button machine, poste, gamme, personnel, produits_finis, stock_brut, home, produit;
+    
     
     public Affichage_Atelier (){
         home = new Button("HOME");

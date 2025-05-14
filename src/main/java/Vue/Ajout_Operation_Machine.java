@@ -18,8 +18,7 @@ import javafx.scene.layout.VBox;
  * @author PC
  */
 public class Ajout_Operation_Machine extends BorderPane{
-    private Button home ; 
-    private Button ajouter, supprimer ;
+    private Button home, ajouter, supprimer ; 
     private ComboBox<Machine> comboMachine;
     private ComboBox<Operation> comboOperation;
     private Label choixMachine, choixOperation, erreur ;
@@ -37,11 +36,8 @@ public class Ajout_Operation_Machine extends BorderPane{
         comboOperation.getItems().addAll(Operation.getListeOperations());
         
         VBox champs = new VBox(15);
-        champs.getChildren().addAll(
-            choixMachine, comboMachine, choixOperation, comboOperation, ajouter, supprimer, erreur);      
+        champs.getChildren().addAll(choixMachine, comboMachine, choixOperation, comboOperation, ajouter, supprimer, erreur);      
          this.setCenter(champs);
-            
-        // Partie droite : bouton HOME
         this.setRight(home);      
     }
 

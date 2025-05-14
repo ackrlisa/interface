@@ -6,6 +6,7 @@ package Vue;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import Modele.Operateur ;
 /**
  *
  * @author lisaa
@@ -24,6 +25,7 @@ public class Modification_Opérateur extends BorderPane {
 
         // Sélecteur d'opérateurs
         comboOpérateurs = new ComboBox<>();
+        comboOpérateurs.getItems().addAll(Operateur.getListeOperateurs());
         VBox selecteur = new VBox(10);
         selecteur.getChildren().addAll(new Label("Sélectionnez un opérateur :"), comboOpérateurs);
         this.setTop(selecteur);
@@ -68,9 +70,7 @@ public class Modification_Opérateur extends BorderPane {
         return new Scene(this, 600, 450);
     }
 
-    public Object getComboOpérateurs() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 
     
 }

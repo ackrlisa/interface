@@ -14,10 +14,7 @@ import javafx.scene.layout.VBox;
  * @author alicedeboever
  */
 public class Affichage_Choix_Personne extends BorderPane{
-    private Button operateur;
-    private Button chefAtelier;
-    private Button home;
-   
+    private Button operateur, chefAtelier, home;
     
     public Affichage_Choix_Personne (){
         operateur = new Button("Operateurs");

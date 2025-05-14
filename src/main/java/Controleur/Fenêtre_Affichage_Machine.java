@@ -43,10 +43,6 @@ public class Fenêtre_Affichage_Machine {
                     details.append(" - ").append(op.getRefOperation()).append(" : ").append(op.getdOperation()).append("\n");
                 }
 
-                details.append("\nOpérateurs autorisés :\n");
-                for (var oper : machineChoisie.getOperateursMachine()) {
-                    details.append(" - ").append(oper.getPrenom()).append(" ").append(oper.getNom()).append("\n");
-                }
 
                 Affichage_Machine.getAffichageMachine().setText(details.toString());
     

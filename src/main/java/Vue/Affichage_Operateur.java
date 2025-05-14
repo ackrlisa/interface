@@ -17,8 +17,7 @@ import javafx.scene.layout.VBox;
  * @author alicedeboever
  */
 public class Affichage_Operateur extends BorderPane {
-    private Button home;
-    private Button afficher ;
+    private Button home, afficher;
     private ComboBox<Operateur> comboOperateur;
     private Label affichageOperateur ;
 
@@ -35,8 +34,6 @@ public class Affichage_Operateur extends BorderPane {
         VBox centre = new VBox(10);
         centre.getChildren().addAll(comboOperateur, afficher, affichageOperateur);
         this.setCenter(centre);
-
-        // Partie droite : bouton HOME
         this.setRight(home);
         
         

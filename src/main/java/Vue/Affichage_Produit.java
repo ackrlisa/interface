@@ -5,7 +5,6 @@
 package Vue;
 
 import Modele.Produit;
-import Modele.ProduitsFinis;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -18,10 +17,9 @@ import javafx.scene.layout.VBox;
  * @author lisaa
  */
 public class Affichage_Produit extends BorderPane {
-    private Button afficher ;
+    private Button home, afficher ;
     private ComboBox<Produit> comboProduits;
     private Label affichageProduits ;
-    private Button home;
 
     public Affichage_Produit() {
         home = new Button ("HOME");
@@ -30,14 +28,12 @@ public class Affichage_Produit extends BorderPane {
         comboProduits = new ComboBox<>();
         comboProduits.getItems().addAll(Produit.getListeProduits());
         
-        Label question = new Label("Quel produit fini voulez vous afficher ?");
+        Label question = new Label("Quel produit voulez vous afficher ?");
         this.setTop(question);
         
         VBox centre = new VBox(10);
         centre.getChildren().addAll(comboProduits, afficher, affichageProduits);
         this.setCenter(centre);
-
-        // Partie droite : bouton HOME
         this.setRight(home);
         
         

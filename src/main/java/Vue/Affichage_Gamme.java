@@ -17,8 +17,7 @@ import javafx.scene.layout.VBox;
  * @author alicedeboever
  */
 public class Affichage_Gamme extends BorderPane {
-    private Button home;
-    private Button afficher ;
+    private Button home, afficher;
     private ComboBox<Gamme> comboGamme;
     private Label affichageGammme ;
 

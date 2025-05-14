@@ -24,7 +24,6 @@ public class Fenêtre_Modification_Opérateur {
     public Fenêtre_Modification_Opérateur(Stage stage, ModèleCarte modeleCarte) {
         this.modeleCarte = modeleCarte;
 
-        // Initialisation de la vue
         modificationOperateur = new Modification_Opérateur();
 
         // Configuration de la fenêtre
@@ -33,31 +32,31 @@ public class Fenêtre_Modification_Opérateur {
         stage.show();
 
         modificationOperateur.getBtnLibre().setOnAction(e -> {
-        //Operateur operateurChoisie = modificationOperateur.getComboOpérateurs().getValue();
-          //  if (operateurChoisie != null) {
-            //    operateurChoisie.setStatutOpé(StatutOpé.LIBRE);
-                
-                modificationOperateur.getErreur().setText("L'opérateur est maintenant disponible ");
-           // }else{
-           //     modificationOperateur.getErreur().setText("Veuillez sélectionner un opérateur");
-            //}
+        
+        Operateur operateurChoisi = modificationOperateur.getComboOpérateur().getValue();
+            if (operateurChoisi != null) {
+                operateurChoisi.setStatutOpé(StatutOpé.LIBRE);
+                modificationOperateur.getErreur().setText("L'opérateur est maintenant libre ");
+            }else{
+                modificationOperateur.getErreur().setText("Veuillez sélectionner un opérateur");
+            }
      });
     
                modificationOperateur.getBtnOccupé().setOnAction(e -> {
-            //Operateur operateurChoisie = modificationOperateur.getComboOpérateur().getValue();
-           // if (operateurChoisie != null) {
-           //     operateurChoisie.setStatutOpé(StatutOpé.OCCUPE);
-                
+        
+        Operateur operateurChoisi = modificationOperateur.getComboOpérateur().getValue();
+            if (operateurChoisi != null) {
+                operateurChoisi.setStatutOpé(StatutOpé.OCCUPE);
                 modificationOperateur.getErreur().setText("L'opérateur est maintenant occupé ");
-          //  }else{
+            }else{
                 modificationOperateur.getErreur().setText("Veuillez sélectionner un opérateur");
-           // }
-    // });
+            }
+    });
         
       
 
         // Gestion de l'événement pour le bouton "HOME"
-        //modificationOperateur.getHome().setOnAction(e -> {
+        modificationOperateur.getHome().setOnAction(e -> {
             stage.close();
             // Ouvrir une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();

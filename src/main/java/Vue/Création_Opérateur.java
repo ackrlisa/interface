@@ -16,7 +16,7 @@ import javafx.scene.layout.VBox;
  * @author lisaa
  */ 
 public class Création_Opérateur extends BorderPane {
-          private TextField code, nom, prénom, compétence,statut;
+          private TextField code, nom, prénom, compétence;
        
     private Button home, créerOperateur;
     private Label resultat;
@@ -34,7 +34,6 @@ public class Création_Opérateur extends BorderPane {
         nom = new TextField();
         prénom = new TextField();
         compétence = new TextField();
-        statut = new TextField();
 
         resultat = new Label();
         créerOperateur = new Button("Créer l'opérateur");
@@ -45,7 +44,6 @@ public class Création_Opérateur extends BorderPane {
             new Label("Nom :"), nom,
             new Label("Prénom :"), prénom,
             new Label("Compétence :"), compétence,
-            new Label("Statut :"), statut,
             resultat
         );
 
@@ -73,10 +71,6 @@ public class Création_Opérateur extends BorderPane {
 
     public TextField getCompétence() {
         return compétence;
-    }
-
-    public TextField getStatut() {
-        return statut;
     }
 
     public Button getCréerOperateur() {

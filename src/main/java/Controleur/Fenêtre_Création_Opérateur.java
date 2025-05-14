@@ -36,10 +36,9 @@ public class Fenêtre_Création_Opérateur {
             String nom = creationOperateur.getNom().getText();
             String prénom = creationOperateur.getPrénom().getText();
             String compétence = creationOperateur.getCompétence().getText();
-            String statut = creationOperateur.getStatut().getText();
 
             // Vérification des champs vides
-            if (code.isEmpty() || nom.isEmpty() || prénom.isEmpty() || compétence.isEmpty() || statut.isEmpty()) {
+            if (code.isEmpty() || nom.isEmpty() || prénom.isEmpty() || compétence.isEmpty()) {
                 creationOperateur.getResultat().setText("Veuillez remplir tous les champs.");
                 return;
             }
@@ -54,7 +53,6 @@ public class Fenêtre_Création_Opérateur {
                 creationOperateur.getNom().clear();
                 creationOperateur.getPrénom().clear();
                 creationOperateur.getCompétence().clear();
-                creationOperateur.getStatut().clear();
             } catch (Exception ex) {
                 creationOperateur.getResultat().setText("Erreur lors de la création de l'opérateur.");
             }

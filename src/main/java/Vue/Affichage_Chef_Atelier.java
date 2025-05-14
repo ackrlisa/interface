@@ -17,8 +17,7 @@ import javafx.scene.layout.VBox;
  * @author alicedeboever
  */
 public class Affichage_Chef_Atelier extends BorderPane {
-    private Button home;
-    private Button afficher ;
+    private Button home, afficher;
     private ComboBox<ChefAtelier> comboChefAtelier;
     private Label affichageChefsAtelier ;
 
@@ -35,8 +34,6 @@ public class Affichage_Chef_Atelier extends BorderPane {
         VBox centre = new VBox(10);
         centre.getChildren().addAll(comboChefAtelier, afficher, affichageChefsAtelier);
         this.setCenter(centre);
-
-        // Partie droite : bouton HOME
         this.setRight(home);
         
         

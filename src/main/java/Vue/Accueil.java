@@ -3,11 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Vue;
-//import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
-//import javafx.stage.Stage;
 import javafx.scene.layout.HBox;
 import javafx.scene.Scene;
 
@@ -16,10 +14,7 @@ import javafx.scene.Scene;
  * @author PC
  */
 public class Accueil extends BorderPane {
-    private Button maintenance;
-    private Button chefAtelier;
-    private Button operateur;
-    private Button carte;
+    private Button maintenance,chefAtelier,operateur,carte;
     
     public Accueil (){
         maintenance = new Button("Maintenance");
@@ -30,9 +25,9 @@ public class Accueil extends BorderPane {
     
         this.setTop(qui);
         
-        HBox bas = new HBox(10); // 10 = espacement entre les boutons
-        bas.getChildren().addAll(maintenance, chefAtelier, operateur);
-        this.setCenter(bas);
+        HBox center = new HBox(10); 
+        center.getChildren().addAll(maintenance, chefAtelier, operateur);
+        this.setCenter(center);
         this.setRight(carte);
     }
     

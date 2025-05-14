@@ -11,15 +11,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.ComboBox;
-import javafx.stage.Stage;
 
 /**
  *
  * @author alicedeboever
  */
 public class Affichage_Poste extends BorderPane {
-    private Button home ; 
-    private Button afficher ;
+    private Button home, afficher ; 
     private ComboBox<Poste> comboPoste;
     private Label affichagePoste ;
 
@@ -36,8 +34,6 @@ public class Affichage_Poste extends BorderPane {
         VBox centre = new VBox(10);
         centre.getChildren().addAll(comboPoste, afficher, affichagePoste);
         this.setCenter(centre);
-
-        // Partie droite : bouton HOME
         this.setRight(home);
         
         
