@@ -9,7 +9,6 @@ import Modele.Equipement;
 import Modele.Operation ;
 import Modele.ModèleCarte;
 import Vue.Créer_Gamme;
-import Vue.Gestion_Gamme;
 import java.util.ArrayList;
 import javafx.stage.Stage;
 
@@ -81,7 +80,7 @@ public class Fenêtre_Créer_Gamme {
         creationGamme.getOperationAjoutees().setText(builder.toString());
     }
     
-    private void updateEquipementAffiches() { // methode pour afficher les equiepements ajoutée à la gamme
+    private void updateEquipementAffiches() { // methode pour afficher les equipements ajoutés à la gamme
         StringBuilder builder = new StringBuilder();
         for (Equipement equipement : equipementAjoutes) {
             builder.append(equipement.toString()).append("\n");

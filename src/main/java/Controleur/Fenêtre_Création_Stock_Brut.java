@@ -8,7 +8,6 @@ package Controleur;
 import Modele.Element;
 import Modele.ModèleCarte;
 import Vue.Création_Stock_Brut;
-import java.util.ArrayList;
 import javafx.stage.Stage;
 
 /**
@@ -22,7 +21,7 @@ public class Fenêtre_Création_Stock_Brut {
     public Fenêtre_Création_Stock_Brut(Stage stage, ModèleCarte modeleCarte){
        this.modeleCarte=modeleCarte;
         creationstockbrut = new Création_Stock_Brut();
-        stage.setTitle("Ajout stock brut");
+        stage.setTitle("Création stock brut");
         stage.setScene(creationstockbrut.getFenêtre_Création_Stock_Brut());
         stage.show();
 

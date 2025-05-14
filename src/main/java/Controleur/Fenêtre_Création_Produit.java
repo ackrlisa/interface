@@ -4,12 +4,8 @@
  */
 package Controleur;
 
-import Modele.Equipement;
-import Modele.Machine;
 import Modele.ModèleCarte;
-import Modele.Operation;
 import Modele.Produit;
-import Vue.Creation_Opération;
 import Vue.Création_Produit;
 import javafx.stage.Stage;
 
@@ -25,7 +21,7 @@ public class Fenêtre_Création_Produit {
     public Fenêtre_Création_Produit(Stage stage, ModèleCarte modeleCarte) {
        this.modeleCarte=modeleCarte;
         creationProduit = new Création_Produit();
-        stage.setTitle("Création d’une opération");
+        stage.setTitle("Création d’un produit");
         stage.setScene(creationProduit.getFenêtre_Création_Produit());
          stage.show();
 
