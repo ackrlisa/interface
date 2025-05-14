@@ -16,18 +16,13 @@ import javafx.scene.layout.VBox;
  * @author lisaa
  */ 
 public class Création_Opérateur extends BorderPane {
-          private TextField code, nom, prénom, compétence;
-       
+    private TextField code, nom, prénom, compétence;
     private Button home, créerOperateur;
     private Label resultat;
 
     public Création_Opérateur() {
-        // Titre
         Label titre = new Label("Création d’un nouvel opérateur");
         this.setTop(new VBox(titre));
-        
-
-        // Champs pour les informations de l'opérateur
         VBox champs = new VBox(10);
 
         code = new TextField();
@@ -48,15 +43,12 @@ public class Création_Opérateur extends BorderPane {
         );
 
         this.setCenter(champs);
-
-        // Boutons
         this.setBottom(créerOperateur);
         this.setRight(home);
 
         
     }
 
-    // Getters pour récupérer les champs et boutons
     public TextField getCode() {
         return code;
     }

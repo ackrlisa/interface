@@ -16,10 +16,7 @@ import javafx.scene.layout.VBox;
  * @author lisaa
  */
 public class Fiabilite_Atelier extends BorderPane{
-    private Button fiabilite_par_machine;
-    private Button ordrefiabilite;
-    private Button home;
-    private Button inserer;
+    private Button fiabilite_par_machine, ordrefiabilite, home, inserer;
     TextField chemin_acces = new TextField();
     Label ok = new Label("");
     Label reponse = new Label("");
@@ -30,11 +27,6 @@ public class Fiabilite_Atelier extends BorderPane{
         ordrefiabilite = new Button("Ordre de fiabilité");
         inserer = new Button("Inserer");
    
-        //VBox haut = new VBox(3);
-        //Label indication = new Label("veuillez entrez le chemin d'accès au fichier de maintenance à analyser");
-        
-        //haut.getChildren().addAll(indication, chemin_acces, inserer, ok);
-        //this.setTop(haut);
         VBox milieu = new VBox(5); 
         milieu.getChildren().addAll(fiabilite_par_machine, ordrefiabilite, reponse);
         this.setCenter(milieu);
@@ -52,7 +44,7 @@ public class Fiabilite_Atelier extends BorderPane{
     public Button getBtnHome() {
         return home;
     }
-public Scene getFenêtre_Fiabilite_Atelier(){
+    public Scene getFenêtre_Fiabilite_Atelier(){
          return new Scene(this, 600, 400);
     } 
 

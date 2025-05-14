@@ -13,10 +13,7 @@ import javafx.scene.layout.VBox;
  * @author lisaa
  */
 public class Chef_Atelier extends BorderPane{
-    private Button home;
-    private Button gérer_atelier;
-    private Button calculer;
-    private Button affichage;
+    private Button home, gérer_atelier, calculer, affichage;
             
     public Chef_Atelier(){
         home = new Button("HOME");

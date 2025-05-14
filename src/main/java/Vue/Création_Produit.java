@@ -4,12 +4,9 @@
  */
 package Vue;
 
-import Modele.Equipement;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -20,9 +17,7 @@ import javafx.scene.layout.VBox;
  */
 public class Création_Produit extends BorderPane{
     private TextField codeProduit, dproduit;
-    
     private Button home, créerproduit;
-    
     private Label resultat;
 
     public Création_Produit() {
@@ -30,13 +25,9 @@ public class Création_Produit extends BorderPane{
         this.setTop(titre);
 
         VBox champs = new VBox(10);
-
         codeProduit = new TextField();
         dproduit = new TextField();
-        
-       
         resultat = new Label();
-
         créerproduit = new Button("Créer le produit");
         home = new Button("HOME");
 

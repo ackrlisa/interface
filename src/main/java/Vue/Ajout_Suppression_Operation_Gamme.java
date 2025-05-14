@@ -4,11 +4,8 @@
  */
 package Vue;
 
-import Modele.Equipement;
 import Modele.Gamme;
 import Modele.Machine;
-import Modele.Operation;
-import Modele.Poste;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -21,8 +18,7 @@ import javafx.scene.layout.VBox;
  * @author PC
  */
 public class Ajout_Suppression_Operation_Gamme extends BorderPane{
-    private Button home ; 
-    private Button ajouter, supprimer ;
+    private Button home, ajouter, supprimer ;
     private ComboBox<Gamme> comboGamme;
     private ComboBox<Machine> comboMachines;
     private Label choixGamme, choixEquipement, erreur ;

@@ -6,9 +6,7 @@ package Vue;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -28,7 +26,6 @@ public class Création_Stock_Brut extends BorderPane {
         Label titre = new Label("Ajouter un élément au stock brut de l'atelier");
         this.setTop(titre);
         resultat = new Label();
-        
         VBox champs = new VBox(10);
 
         designation = new TextField();

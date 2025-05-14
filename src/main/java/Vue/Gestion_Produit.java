@@ -15,10 +15,7 @@ import javafx.scene.layout.VBox;
  * @author lisaa
  */
 public class Gestion_Produit extends BorderPane{
-    private Button home;
-    private Button créer;
-    private Button supprimer;
-    private Button modifier;
+    private Button home, créer, supprimer, modifier;
             
     public Gestion_Produit(){
         home = new Button("HOME");

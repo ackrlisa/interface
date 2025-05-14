@@ -13,9 +13,7 @@ import javafx.scene.layout.VBox;
  * @author lisaa
  */
 public class Calculer extends BorderPane {
-   private Button duréegamme;
-    private Button coutgamme;
-    private Button home;
+   private Button duréegamme, coutgamme, home;
    
     
     public Calculer (){

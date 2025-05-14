@@ -15,18 +15,15 @@ import javafx.scene.layout.VBox;
  * @author lisaa
  */
 public class Gestion_Opérateur extends BorderPane{
-     private Button home;
-    private Button créer;
+     private Button home, créer;
     
     private Button modifier;
             
     public Gestion_Opérateur(){
         home = new Button("HOME");
         créer= new Button ("Ajouter un opérateur");
-        
         modifier = new Button("Modifier le statut d'un opérateur");
         Label titre = new Label("Que voulez-vous faire?");
-        
         this.setTop(titre);
         VBox milieu = new VBox(5); 
         milieu.getChildren().addAll(créer, modifier);

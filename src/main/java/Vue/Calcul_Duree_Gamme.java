@@ -9,17 +9,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 /**
  *
  * @author alicedeboever
  */
 public class Calcul_Duree_Gamme extends BorderPane {
-    private Button home;
-    private Button calculer ;
+    private Button home, calculer;
     private ComboBox<Gamme> comboGamme;
     private Label affichageResultat ;
 
@@ -36,8 +33,6 @@ public class Calcul_Duree_Gamme extends BorderPane {
         VBox centre = new VBox(10);
         centre.getChildren().addAll(comboGamme, calculer, affichageResultat);
         this.setCenter(centre);
-
-        // Partie droite : bouton HOME
         this.setRight(home);
         
         

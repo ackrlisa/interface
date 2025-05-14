@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import java.util.ArrayList;
 /**
  *
  * @author alicedeboever
@@ -29,10 +28,8 @@ public class Creation_Poste extends BorderPane {
 
         refPoste = new TextField();
         dPoste = new TextField();
-
         comboMachines = new ComboBox<>();
         ajouterMachine = new Button("Ajouter au poste");
-
         machinesAjoutees = new TextArea();
         machinesAjoutees.setEditable(false);
 

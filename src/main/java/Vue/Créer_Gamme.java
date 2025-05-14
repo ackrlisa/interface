@@ -11,7 +11,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import Modele.Operation;
 import Modele.Equipement;
@@ -24,35 +23,25 @@ public class Créer_Gamme extends BorderPane {
     private Button creer, home, ajouterOperation, ajouterEquipement;
     private ComboBox<Operation> comboOperation;
     private ComboBox<Equipement> comboEquipement;
-    private TextArea operationAjoutees;
-    private TextArea equipementAjoutes;
+    private TextArea operationAjoutees, equipementAjoutes;
     private Label resultat;
 
     public Créer_Gamme() {
         Label titre = new Label("Création d'une nouvelle gamme");
         this.setTop(titre);
-
         VBox champs = new VBox(10);
-
         refGamme = new TextField();
-
         comboOperation = new ComboBox<>();
         ajouterOperation = new Button("Ajouter l'opération à la gamme");
-
         operationAjoutees = new TextArea();
         operationAjoutees.setEditable(false);
-        
         comboEquipement = new ComboBox<>();
         ajouterEquipement = new Button("Ajouter l'équipement à la gamme");
-
         equipementAjoutes = new TextArea();
         equipementAjoutes.setEditable(false);
-
         resultat = new Label();
-
         creer = new Button("Créer la gamme");
         home = new Button("HOME");
-
         champs.getChildren().addAll(
             new Label("Référence de la gamme :"), refGamme,
             new Label("Ajouter une opération à la gamme  :"),
@@ -65,9 +54,7 @@ public class Créer_Gamme extends BorderPane {
         );
 
         this.setCenter(champs);
-
         creer = new Button("Créer la gamme");
-        
         home = new Button("HOME");
         this.setRight(home);
         this.setBottom(creer);
@@ -114,9 +101,7 @@ public class Créer_Gamme extends BorderPane {
     public Label getResultat() {
         return resultat;
     }
-
-   
-    
+ 
     public Scene getFenêtre_Créer_Gamme(){
          return new Scene(this, 600, 400);
     }

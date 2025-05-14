@@ -5,7 +5,6 @@
 package Vue;
 import Modele.Machine;
 import Modele.ModèleCarte;
-import java.util.ArrayList;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
@@ -28,7 +27,6 @@ public class Carte extends BorderPane {
     public Carte(ModèleCarte modeleCarte) {
         this.modeleCarte = modeleCarte;
 
-        // Titre
         Label titre = new Label("Carte de l'atelier de fabrication");
        titre.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
 
@@ -41,7 +39,6 @@ public class Carte extends BorderPane {
         cartePane = new Pane();
         setCenter(cartePane);
 
-        // Rafraîchir pour afficher les machines
         rafraichirCarte();
     }
 
@@ -60,16 +57,13 @@ public class Carte extends BorderPane {
         rectMachine.setFill(Color.PINK);
         rectMachine.setStroke(Color.BLACK);
 
-        // Créer le texte pour la référence de la machine
     Text textRef = new Text(machine.getRefMachine());
     textRef.setFill(Color.BLACK);
     textRef.setStyle("-fx-font-size: 12px;"); // Enlève le gras en supprimant `font-weight: bold`
 
-   // Positionner le texte au-dessus du rectangle
-    textRef.setX(x + 15 - textRef.getBoundsInLocal().getWidth() / 2); // Centrer horizontalement
-    textRef.setY(y - 5); // Placer juste au-dessus du rectangle
+    textRef.setX(x + 15 - textRef.getBoundsInLocal().getWidth() / 2);
+    textRef.setY(y - 5); 
 
-    // Positionner le rectangle
     rectMachine.setX(x);
     rectMachine.setY(y);
 

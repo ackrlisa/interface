@@ -15,10 +15,7 @@ import javafx.scene.layout.HBox;
  * @author lisaa
  */
 public class Gestion_Poste extends BorderPane{
-    private Button ajouter;
-    private Button supprimer;
-    private Button modifier;
-    private Button home;
+    private Button ajouter, supprimer, modifier, home;
     
     public Gestion_Poste(){
         ajouter = new Button("Ajouter un poste");
@@ -26,7 +23,6 @@ public class Gestion_Poste extends BorderPane{
         modifier = new Button("Modifier un poste");
         home= new Button ("HOME");
         Label qui = new Label("Bonjour, qui êtes vous?");
-    
         this.setTop(qui);
         
         HBox bas = new HBox(10); // 10 = espacement entre les boutons
@@ -34,7 +30,7 @@ public class Gestion_Poste extends BorderPane{
         this.setCenter(bas);
         this.setRight(home);
     }
-public BorderPane getGestion_Poste() {
+    public BorderPane getGestion_Poste() {
         return this;
     }
     public Button getBtnAjouter() {
