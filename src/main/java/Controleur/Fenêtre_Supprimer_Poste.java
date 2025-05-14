@@ -23,17 +23,15 @@ public class Fenêtre_Supprimer_Poste {
         supprimerposte= new Supprimer_Poste();
         
         stage.setTitle("Fenêtre supprimer poste");
-        stage.setScene(supprimerposte.getFenetre_supprimer_poste()); //Appelle la méthode d'instance de la fenêtre accueil
+        stage.setScene(supprimerposte.getFenetre_supprimer_poste());
         stage.show(); 
         
         supprimerposte.getBtnSupprimer().setOnAction(e->{
-            Poste poste = supprimerposte.getComboPoste().getValue(); // Récupérer la machine sélectionnée
-    
+            Poste poste = supprimerposte.getComboPoste().getValue();
             if (poste != null) {
                 Equipement.getListeEquipements().remove(poste);
                 supprimerposte.getComboPoste().getItems().remove(poste); // Mise à jour du menu déroulant
-                supprimerposte.getResultat().setText("Poste supprimée.");
-    
+                supprimerposte.getResultat().setText("Poste supprimé");
             } else {
                 supprimerposte.getResultat().setText("Veuillez sélectionner un poste à supprimer.");
             }
@@ -44,6 +42,5 @@ public class Fenêtre_Supprimer_Poste {
             Stage accueilStage = new Stage();
             new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
            });
-        
     }
 }

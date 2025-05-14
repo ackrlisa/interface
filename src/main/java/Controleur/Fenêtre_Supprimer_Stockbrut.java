@@ -19,10 +19,9 @@ public class Fenêtre_Supprimer_Stockbrut {
     
     public Fenêtre_Supprimer_Stockbrut(Stage stage, ModèleCarte modeleCarte){
        this.modeleCarte=modeleCarte;
-        
         supprimerelement = new Supprimer_Stockbrut();
 
-        stage.setTitle("Suppression d'un produit fini");
+        stage.setTitle("Suppression d'un élément du stock brut");
         stage.setScene(supprimerelement.getFenêtre_supprimer_stockbrut()); 
         supprimerelement.getComboElement().getItems().setAll(Element.getListeStockBrut());
         stage.show();
@@ -38,10 +37,8 @@ public class Fenêtre_Supprimer_Stockbrut {
                         supprimerelement.getResultat().setText("La quantité doit être positive.");
                         return;
                     }else{
-
                         int quantiteActuelle = elementChoisi.getQuantite(); 
                         int nouvelleQuantite = Math.max(0, quantiteActuelle - quantiteDemandee);
-
                         elementChoisi.setQuantite(nouvelleQuantite); 
                         supprimerelement.getResultat().setText("Nouvelle quantité : " + nouvelleQuantite);
                     }
@@ -50,8 +47,7 @@ public class Fenêtre_Supprimer_Stockbrut {
                 }  
             } else {
                 supprimerelement.getResultat().setText("Veuillez sélectionner un produit et entrer une quantité.");
-            }
-        
+            } 
         });
         
         supprimerelement.getBtnHome().setOnAction(e -> {
