@@ -22,8 +22,8 @@ public class Fenêtre_Modification_Etat_Machine {
        this.modeleCarte=modeleCarte;
         Modification_Etat_Machine= new Modification_Etat_Machine();
         
-        stage.setTitle("Fenêtre modification de gamme");
-        stage.setScene(Modification_Etat_Machine.getFenêtre_Modification_Etat_Machine()); //Appelle la méthode d'instance de la fenêtre accueil
+        stage.setTitle("Fenêtre modification état machine");
+        stage.setScene(Modification_Etat_Machine.getFenêtre_Modification_Etat_Machine());
         stage.show();
        
      Modification_Etat_Machine.getBtnOperationnel().setOnAction(e->{
@@ -36,6 +36,7 @@ public class Fenêtre_Modification_Etat_Machine {
                 Modification_Etat_Machine.getErreur().setText("Veuillez sélectionner une machine");
             }
      });
+     
      Modification_Etat_Machine.getBtnOperationnel2().setOnAction(e->{
          Machine machineChoisie = Modification_Etat_Machine.getComboMachine().getValue();
             if (machineChoisie != null) {

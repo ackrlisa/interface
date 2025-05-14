@@ -5,7 +5,6 @@
 package Controleur;
 
 import Modele.ModèleCarte;
-import Vue.Gestion_Gamme;
 import Vue.Gestion_Stockfini;
 import javafx.stage.Stage;
 
@@ -16,33 +15,31 @@ import javafx.stage.Stage;
 public class Fenêtre_Gestion_Stockfini {
     private Gestion_Stockfini gestionstockfini;
      private ModèleCarte modeleCarte;
+     
     public Fenêtre_Gestion_Stockfini(Stage stage, ModèleCarte modeleCarte){
        this.modeleCarte=modeleCarte;
         gestionstockfini= new Gestion_Stockfini();
         
         stage.setTitle("Fenêtre gestion des produits finis, du stock de l'atelier");
-        stage.setScene(gestionstockfini.getFenêtre_Gestion_Stockfini()); //Appelle la méthode d'instance de la fenêtre accueil
+        stage.setScene(gestionstockfini.getFenêtre_Gestion_Stockfini());
         stage.show();
         
         gestionstockfini.getBtnAjouter().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
             Stage créationstockfiniStage = new Stage();
-            new Fenêtre_Création_Stock_Produitfini(créationstockfiniStage,modeleCarte); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Création_Stock_Produitfini(créationstockfiniStage,modeleCarte);
            });
         
         gestionstockfini.getBtnSupprimer().setOnAction(e -> {
            stage.close();
-            // Crée une nouvelle fenêtre d'accueil
             Stage suppressionstockfiniStage = new Stage();
-            new Fenêtre_Supprimer_Stock_Porduitfini(suppressionstockfiniStage,modeleCarte); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Supprimer_Stock_Porduitfini(suppressionstockfiniStage,modeleCarte);
            
            });
         gestionstockfini.getBtnHome().setOnAction(e->{  
        stage.close();
-            // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Accueil(accueilStage,modeleCarte);
      });
 }
 }

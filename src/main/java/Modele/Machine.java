@@ -24,8 +24,6 @@ public class Machine extends Equipement {
     private static ArrayList<Machine> listeMachines = new ArrayList<>(); 
 
 
-   
-
     public Machine(String refEquipement,String dMachine, float x, float y,float cout, ArrayList<Operation> listOperations, String type,Poste poste, ArrayList<Operateur> operateurMachine) {
        super(refEquipement, dMachine, cout);
         this.x = x;
@@ -38,13 +36,8 @@ public class Machine extends Equipement {
         this.operateursMachine = new ArrayList<>(operateurMachine);
         Equipement.getListeEquipements().add(this);
     }
-public String getRefMachine() {
-      
-    return super.getRefEquipement();
-       
-}
-    public ArrayList<Operateur> getOperateursMachine() {
-        return operateursMachine;
+    public String getRefMachine() {
+        return super.getRefEquipement();
     }
 
     public float getX() {

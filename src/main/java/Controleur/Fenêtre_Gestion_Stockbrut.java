@@ -21,14 +21,13 @@ public class Fenêtre_Gestion_Stockbrut {
         gérerstockbrut= new Gestion_Stockbrut();
         
         stage.setTitle("Fenêtre gestion stock brut");
-        stage.setScene(gérerstockbrut.getFenêtre_Gestion_Stockbrut()); //Appelle la méthode d'instance de la fenêtre accueil
+        stage.setScene(gérerstockbrut.getFenêtre_Gestion_Stockbrut());
         stage.show();
         
         gérerstockbrut.getBtnAjouter().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
             Stage créationstockbrutStage = new Stage();
-            new Fenêtre_Création_Stock_Brut(créationstockbrutStage,modeleCarte); // Redirige vers la fenêtre d'accueil
+            new Fenêtre_Création_Stock_Brut(créationstockbrutStage,modeleCarte);
            });
         
         gérerstockbrut.getBtnSupprimer().setOnAction(e -> {
@@ -38,11 +37,8 @@ public class Fenêtre_Gestion_Stockbrut {
            });
         gérerstockbrut.getBtnHome().setOnAction(e -> {
             stage.close();
-            // Crée une nouvelle fenêtre d'accueil
             Stage accueilStage = new Stage();
-            new Fenêtre_Accueil(accueilStage,modeleCarte); // Redirige vers la fenêtre d'accueil
-        });
-           
-                
-}
+            new Fenêtre_Accueil(accueilStage,modeleCarte);
+        });          
+    }
 }
