@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Vue;
-
 /**
  *
  * @author alicedeboever
@@ -26,9 +25,7 @@ public class Creation_Machine extends BorderPane {
         this.setTop(titre);
         resultat = new Label();
 
-
         VBox champs = new VBox(10);
-
         refMachine = new TextField();
         dMachine = new TextField();
         x = new TextField();
@@ -47,7 +44,6 @@ public class Creation_Machine extends BorderPane {
         );
 
         this.setCenter(champs);
-
         creer = new Button("Créer la machine");
         home = new Button("HOME");
         carte=new Button ("Carte");
