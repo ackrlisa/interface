@@ -18,7 +18,6 @@ public class Fenêtre_Affichage_Gamme {
      private ModèleCarte modeleCarte;
     public Fenêtre_Affichage_Gamme(Stage stage, ModèleCarte modeleCarte){
        this.modeleCarte=modeleCarte;
-        
         Affichage_Gamme = new Affichage_Gamme();
 
         stage.setTitle("Affichage d'une gamme");
@@ -40,6 +39,11 @@ public class Fenêtre_Affichage_Gamme {
                 details.append("\nMachines associées:\n");
                 for (var equip : gammeChoisie.getListeEquipement()) {
                     details.append(" - ").append(equip.getRefEquipement()).append(" ").append(equip.getdEquipement()).append("\n");
+                }
+                
+                details.append("\nProduits associés:\n");
+                for (var prod : gammeChoisie.getListeProduit()) {
+                    details.append(" - ").append(prod.getDproduit()).append(" ").append(prod.getCodeProduit()).append("\n");
                 }
 
                 Affichage_Gamme.getAffichageGamme().setText(details.toString());

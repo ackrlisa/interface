@@ -14,8 +14,13 @@ import java.util.ArrayList;
 public class Gamme {
     private String refGamme, n ;
     private ArrayList<Operation> listeOperation=new ArrayList<>();
+    private ArrayList<Produit> listeProduit=new ArrayList<>();
     private ArrayList<Equipement> listeEquipement=new ArrayList<>() ;
     private static ArrayList<Gamme> listeGammes = new ArrayList<>(); 
+
+    public ArrayList<Produit> getListeProduit() {
+        return listeProduit;
+    }
 
     public String getRefGamme() {
         return refGamme;
@@ -33,7 +38,6 @@ public class Gamme {
         return listeGammes;
     }
     
-    
     public void setRefGamme(String refGamme) {
         this.refGamme = refGamme;
     }
@@ -46,6 +50,10 @@ public class Gamme {
         this.listeEquipement = listeEquipement;
     }
 
+    public void setListeProduit(ArrayList<Produit> listeProduit) {
+        this.listeProduit = listeProduit;
+    }
+
     public String getN() {
         return n;
     }
@@ -54,10 +62,11 @@ public class Gamme {
         this.n = n;
     }
 
-    public Gamme(String refGamme, ArrayList<Operation> listeOperation, ArrayList<Equipement> listeEquipement) {
+    public Gamme(String refGamme, ArrayList<Operation> listeOperation, ArrayList<Equipement> listeEquipement, ArrayList<Produit> listeProduit) {
         this.refGamme = refGamme;
         this.listeOperation = listeOperation;
         this.listeEquipement = listeEquipement;
+        this.listeProduit= listeProduit;
         listeGammes.add(this);
     }
     // Méthode toString redéfinie
@@ -67,7 +76,7 @@ public class Gamme {
     }
     
     public static void creerGamme(String refGamme) {
-        Gamme nouvelle = new Gamme(refGamme, new ArrayList<>(), new ArrayList<>());
+        Gamme nouvelle = new Gamme(refGamme, new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
         System.out.println("Nouvelle gamme créée de référence : " + refGamme);
     }
     //Modifier la référence de la game
@@ -81,11 +90,10 @@ public class Gamme {
         this.refGamme = null;
         this.listeOperation.clear();
         this.listeEquipement.clear();
-        listeGammes.remove(this);  // Supprime cette instance de la liste
-        
+        this.listeProduit.clear();
+        listeGammes.remove(this);  // Supprime cette instance de la liste   
         System.out.println("Gamme supprimée !");   
-    }
-    
+    }   
     
    //Modifier gamme en ajoutant ou supprimant une opération ou un équipement
     public void ajoutEquipement(Machine machine){
@@ -102,6 +110,14 @@ public class Gamme {
         }else{
             this.listeOperation.add(operation);
             this.setN("operation "+operation.getdOperation()+" ajoutée!");
+        }
+    }
+    public void ajoutProduit(Produit produit){
+        if (this.getListeProduit().contains(produit)){
+            this.setN("Ce produit est déjà associée à cette gamme");
+        }else{
+            this.listeProduit.add(produit);
+            this.setN("produit "+produit.getDproduit()+" ajouté!");
         }
     }
     
@@ -123,10 +139,15 @@ public class Gamme {
         }
     }
  
-    
+    public void enleverProduit(Produit produit){
+        if (listeProduit.contains(produit)) { 
+            listeProduit.remove(produit);
+            this.setN("produit" + produit.getDproduit() + " retiré!");
+        } else {
+            this.setN("Ce produit n'est pas associé à cette gamme");
+        }
+    }
 
-   
-    
     public float coutGamme(){
         float coutTotal = 0;
         

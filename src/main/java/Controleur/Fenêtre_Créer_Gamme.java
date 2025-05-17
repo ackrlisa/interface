@@ -8,6 +8,7 @@ import Modele.Gamme;
 import Modele.Equipement;
 import Modele.Operation ;
 import Modele.ModèleCarte;
+import Modele.Produit;
 import Vue.Créer_Gamme;
 import java.util.ArrayList;
 import javafx.stage.Stage;
@@ -19,6 +20,7 @@ import javafx.stage.Stage;
 public class Fenêtre_Créer_Gamme {
     private Créer_Gamme creationGamme;
     private ArrayList<Operation> operationAjoutees = new ArrayList<>();
+    private ArrayList<Produit> produitAjoutes = new ArrayList<>();
     private ArrayList<Equipement> equipementAjoutes = new ArrayList<>();
     private ModèleCarte modeleCarte;
 
@@ -29,8 +31,8 @@ public class Fenêtre_Créer_Gamme {
         stage.setScene(creationGamme.getFenêtre_Créer_Gamme());
         creationGamme.getComboOperation().getItems().addAll(Operation.getListeOperations());
         creationGamme.getComboEquipement().getItems().addAll(Equipement.getListeEquipements());
+        creationGamme.getComboProduit().getItems().addAll(Produit.getListeProduits());
         stage.show();
-
 
         creationGamme.getAjouterOperation().setOnAction(e -> {
             Operation operationChoisie = creationGamme.getComboOperation().getValue();
@@ -47,21 +49,30 @@ public class Fenêtre_Créer_Gamme {
                 updateEquipementAffiches();
             }
         });
+        
+        creationGamme.getAjouterProduit().setOnAction(e -> {
+            Produit produitChoisi = creationGamme.getComboProduit().getValue();
+            if (produitChoisi != null && !produitAjoutes.contains(produitChoisi)) {
+                produitAjoutes.add(produitChoisi);
+                updateProduitAffiches();
+            }
+        });
 
         creationGamme.getCreer().setOnAction(e -> {
-            String refGamme = creationGamme.getRefGamme().getText();
-            
+            String refGamme = creationGamme.getRefGamme().getText();          
             if (refGamme.isEmpty() ) {
                 creationGamme.getResultat().setText("Veuillez remplir tous les champs.");
             } else {
-                Gamme nouvelleGamme = new Gamme(refGamme, new ArrayList<>(operationAjoutees),new ArrayList<>(equipementAjoutes));
+                Gamme nouvelleGamme = new Gamme(refGamme, new ArrayList<>(operationAjoutees),new ArrayList<>(equipementAjoutes), new ArrayList<>(produitAjoutes));
                 
                 creationGamme.getResultat().setText("Gamme créée avec succès !");
                 creationGamme.getRefGamme().clear();
                 operationAjoutees.clear();
                 equipementAjoutes.clear();
+                produitAjoutes.clear();
                 creationGamme.getOperationAjoutees().clear();
                 creationGamme.getEquipementAjoutes().clear();
+                creationGamme.getProduitAjoutes().clear();
             }
         });
 
@@ -87,6 +98,12 @@ public class Fenêtre_Créer_Gamme {
         }
         creationGamme.getEquipementAjoutes().setText(builder.toString());
     }
-
     
+    private void updateProduitAffiches() { // methode pour afficher les equipements ajoutés à la gamme
+        StringBuilder builder = new StringBuilder();
+        for (Produit produit : produitAjoutes) {
+            builder.append(produit.toString()).append("\n");
+        }
+        creationGamme.getProduitAjoutes().setText(builder.toString());
+    } 
 }

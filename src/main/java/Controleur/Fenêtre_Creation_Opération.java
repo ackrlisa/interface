@@ -35,7 +35,7 @@ public class Fenêtre_Creation_Opération {
             Equipement equipementChoisi = creationOperation.getComboEquipement().getValue();
             if (equipementChoisi != null  ) {
                 refEquipement = equipementChoisi.getRefEquipement();
-                creationOperation.getEquipementsAjoutes().setText("Référence de l'équipement ajoutée à l'opération");
+                creationOperation.getEquipementsAjoutes().setText(equipementChoisi.getdEquipement()+"ajoutée à l'opération");
             }else{
                 creationOperation.getEquipementsAjoutes().setText("Veuillez remplir tous les champs");                
             }
@@ -59,6 +59,7 @@ public class Fenêtre_Creation_Opération {
                     creationOperation.getResultat().setText("Opération créée avec succès !");
                     creationOperation.getRefOperation().clear();
                     creationOperation.getdOperation().clear();
+                    creationOperation.getDuréeOpération().clear();
                     creationOperation.getEquipementsAjoutes().clear();
                     refEquipement = null; // remise à zéro si nécessaire
                 } catch (NumberFormatException ex) {

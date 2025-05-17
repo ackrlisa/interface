@@ -79,21 +79,10 @@ public void supprimerProduit(){
         System.out.println("Produit "+dproduit+" supprimé !");  
         this.dproduit=null;
     }
-//Gestion gammes
-public void ajouterGamme (Gamme gamme){
-    if (!this.listeGamme.contains(gamme)){
-        this.listeGamme.add(gamme);
-        System.out.println("Gamme de fabrication ajoutée à ce produit");
+// Méthode toString redéfinie
+    @Override
+    public String toString() {
+        return "Produit [Référence: " + this.codeProduit + ", description:"+this.dproduit;
     }
-}
-   public void retirerGamme (Gamme gamme){
-    if (this.listeGamme.remove(gamme)){
-        System.out.println("Gamme de fabrication retirée de ce produit");
-    } else {
-        System.out.println("Cette gamme n’est pas associée à ce produit");
-    }
-}
-
-
 }
 

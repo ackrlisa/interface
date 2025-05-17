@@ -14,16 +14,18 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import Modele.Operation;
 import Modele.Equipement;
+import Modele.Produit;
 /**
  *
  * @author lisaa
  */
 public class Créer_Gamme extends BorderPane {
     private TextField refGamme ;
-    private Button creer, home, ajouterOperation, ajouterEquipement;
+    private Button creer, home, ajouterOperation, ajouterEquipement, ajouterProduit;
     private ComboBox<Operation> comboOperation;
     private ComboBox<Equipement> comboEquipement;
-    private TextArea operationAjoutees, equipementAjoutes;
+    private ComboBox<Produit> comboProduit;
+    private TextArea operationAjoutees, equipementAjoutes, produitAjoutes;
     private Label resultat;
 
     public Créer_Gamme() {
@@ -39,6 +41,10 @@ public class Créer_Gamme extends BorderPane {
         ajouterEquipement = new Button("Ajouter l'équipement à la gamme");
         equipementAjoutes = new TextArea();
         equipementAjoutes.setEditable(false);
+        comboProduit = new ComboBox<>();
+        ajouterProduit = new Button("Associer le produit à la gamme");
+        produitAjoutes = new TextArea();
+        produitAjoutes.setEditable(false);
         resultat = new Label();
         creer = new Button("Créer la gamme");
         home = new Button("HOME");
@@ -50,6 +56,9 @@ public class Créer_Gamme extends BorderPane {
             new Label("Ajouter un équipement à la gamme  :"),
             comboEquipement, ajouterEquipement,
             new Label("Équipement ajoutés :"), equipementAjoutes,
+            new Label("Associer un produit à la gamme  :"),
+            comboProduit, ajouterProduit,
+            new Label("Produits associés :"), produitAjoutes,
             resultat
         );
 
@@ -82,6 +91,18 @@ public class Créer_Gamme extends BorderPane {
         return ajouterEquipement;
     }
 
+    public Button getAjouterProduit() {
+        return ajouterProduit;
+    }
+
+    public ComboBox<Produit> getComboProduit() {
+        return comboProduit;
+    }
+
+    public TextArea getProduitAjoutes() {
+        return produitAjoutes;
+    }
+
     public ComboBox<Operation> getComboOperation() {
         return comboOperation;
     }
@@ -103,6 +124,6 @@ public class Créer_Gamme extends BorderPane {
     }
  
     public Scene getFenêtre_Créer_Gamme(){
-         return new Scene(this, 600, 400);
+         return new Scene(this, 800, 600);
     }
 }
