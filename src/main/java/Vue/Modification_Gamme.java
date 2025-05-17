@@ -16,18 +16,19 @@ import javafx.scene.layout.VBox;
  * @author lisaa
  */
 public class Modification_Gamme extends BorderPane{
-    private Button ajout_supprimer_équiop;
+    private Button ajout_supprimer_équiop, ajout_supprimer_produit;
         private Button home;
     
     public Modification_Gamme(){
         ajout_supprimer_équiop = new Button("Ajouter/supprimer une machines donc opération(s) à la gamme");
+        ajout_supprimer_produit = new Button("Ajouter/supprimer un produit à la gamme ");
         home= new Button ("HOME");
         Label qui = new Label("Que voulez-vous modifier");
     
         this.setTop(qui);
         
         VBox milieu = new VBox(10); // 10 = espacement entre les boutons
-        milieu.getChildren().addAll(ajout_supprimer_équiop);
+        milieu.getChildren().addAll(ajout_supprimer_équiop,ajout_supprimer_produit);
         this.setCenter(milieu);
         this.setRight(home);
     }
@@ -36,6 +37,10 @@ public class Modification_Gamme extends BorderPane{
         return ajout_supprimer_équiop;
     }
 
+    public Button getAjout_supprimer_produit() {
+        return ajout_supprimer_produit;
+    }
+    
 
     public Button getBtnHome() {
         return home;

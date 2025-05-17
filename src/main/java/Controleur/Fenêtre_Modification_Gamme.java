@@ -33,6 +33,12 @@ public class Fenêtre_Modification_Gamme {
             Stage modificationStage = new Stage();
             new Fenêtre_Ajout_Suppression_Machine_Gamme(modificationStage,modeleCarte);
      });
+     
+     modifiergamme.getAjout_supprimer_produit().setOnAction(e->{  
+         stage.close();
+            Stage modificationStage = new Stage();
+            new Fenêtre_Ajout_Suppression_Produit_Gamme(modificationStage,modeleCarte);
+     });
 
    modifiergamme.getBtnHome().setOnAction(e->{  
        stage.close();
