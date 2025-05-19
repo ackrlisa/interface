@@ -40,11 +40,10 @@ public class Fenêtre_Creation_Machine {
                 // Tu peux modifier ces deux listes si tu veux permettre leur saisie dans l'UI
                 ArrayList<Modele.Operation> operations = new ArrayList<>();
                 Modele.Poste poste = null;
-                ArrayList<Modele.Operateur> operateurs = new ArrayList<>();
 
                 
                //ajout machine au modèle pour récupérer pour la carte
-               modeleCarte.ajoutMachine(ref, description, x, y, cout, operations, type, poste, operateurs);
+               modeleCarte.ajoutMachine(ref, description, x, y, cout, operations, type, poste);
                
                
                 creationMachine.getResultat().setText("Machine créée avec succès !");
