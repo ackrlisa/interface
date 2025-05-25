@@ -44,8 +44,8 @@ public class ModèleCarte {
         return null;
     }
     
-    public void ajoutMachine(String refMachine, String dMachine, float x, float y,float cout, ArrayList<Operation> listOperations, String type,Poste poste, ArrayList<Operateur> operateurMachine) {
-        machines.add(new Machine(refMachine,dMachine, x, y, cout, listOperations, type, poste, operateurMachine));
+    public void ajoutMachine(String refMachine, String dMachine, float x, float y,float cout, ArrayList<Operation> listOperations, String type,Poste poste) {
+        machines.add(new Machine(refMachine,dMachine, x, y, cout, listOperations, type, poste));
     }
     // Méthode pour mettre à jour la position d'une machine existante
     public boolean updateEmplacement(String refMachine, float newX, float newY) {

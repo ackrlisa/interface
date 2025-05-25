@@ -20,11 +20,10 @@ public class Machine extends Equipement {
     private EtatMachine etatMachine;
     private ArrayList<Operation> operations = new ArrayList<>();    
     private Poste poste;
-    private ArrayList<Operateur> operateursMachine = new ArrayList<>();
     private static ArrayList<Machine> listeMachines = new ArrayList<>(); 
 
 
-    public Machine(String refEquipement,String dMachine, float x, float y,float cout, ArrayList<Operation> listOperations, String type,Poste poste, ArrayList<Operateur> operateurMachine) {
+    public Machine(String refEquipement,String dMachine, float x, float y,float cout, ArrayList<Operation> listOperations, String type,Poste poste) {
        super(refEquipement, dMachine, cout);
         this.x = x;
         this.dispo = true;
