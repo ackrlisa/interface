@@ -30,7 +30,7 @@ public class TestFichier {
       //établis liste des machines étudiées dans la fichier suiviMaintenance"
         ArrayList<String> machines = new ArrayList<>();
         try {
-            BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\PC\\OneDrive - INSA Strasbourg\\Documents\\interface\\src\\suiviMaintenance.txt"));
+            BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\PC\\OneDrive - INSA Strasbourg\\Documents\\Rendu_Code_Projet_Acker_De_Boever_Jozan_STH1B_Gr2\\src\\suiviMaintenance.txt"));
             String ligne;
 
             while ((ligne = in.readLine()) != null) {
@@ -60,7 +60,7 @@ public class TestFichier {
         List<String> evenements = new ArrayList<>();
 
         try {
-            BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\PC\\OneDrive - INSA Strasbourg\\Documents\\interface\\src\\suiviMaintenance.txt" ));
+            BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\PC\\OneDrive - INSA Strasbourg\\Documents\\Rendu_Code_Projet_Acker_De_Boever_Jozan_STH1B_Gr2\\src\\suiviMaintenance.txt" ));
             String ligne;
             while ((ligne = in.readLine()) != null) {
                 String[] parts = ligne.split(";"); //sépare chaque ligne en tableau, un mot=une case
